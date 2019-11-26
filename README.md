@@ -1,7 +1,7 @@
 # Website for the Multimedia Technologies Unit at Eurecat.
 
 This is the website of our academic research at Eurecat.	
-Have a look here [here](multimedia-eurecat.github.io).
+Have a look [here](https://multimedia-eurecat.github.io/).
 
 If you plan to contribute, it is highly recommended to use [Jekyll](https://jekyllrb.com) for debugging purposes.	
 So, after cloning this repo, install and run Jekyll:
