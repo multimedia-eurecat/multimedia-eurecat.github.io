@@ -6,7 +6,7 @@ sitemap: false
 permalink: /
 ---
 
-The Multimedia Technologies Unit (MTU) at [Eurecat](https://www.eurecat.org) has three main research groups *audio processing*, *computer vision*, and *interactive visualization*. 
+The Multimedia Technologies Unit (MTU) at [Eurecat](https://www.eurecat.org) has three main research groups for *audio processing*, *image processing*, and *interactive visualization*. Check out our open source code in [Github-MTU](https://github.com/multimedia-eurecat).
 
 
 <div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" >
