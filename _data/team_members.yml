@@ -1,0 +1,18 @@
+# - name: firstname lastname
+#   photo: bio-photo.jpg
+#   info: position, date.
+#   email: firstname.lastname@eurecat.org
+#   number_educ: 3
+#   education1: title description.
+#   education2: title description.
+#   education3: title description.
+
+
+- name: Rafael Redondo
+  photo: RRT.jpg
+  info: Senior resercher, started at 2015.
+  email: rafael.redondo@eurecat.org
+  number_educ: 3
+  education1: Msc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
+  education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
+  education3: Bsc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.

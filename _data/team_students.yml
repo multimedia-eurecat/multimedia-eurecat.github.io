@@ -1,0 +1,8 @@
+# - name: firstname lastname
+#   photo: filename.jpg
+#   info: position, date
+#   email: firstname.lastname@eurecat.org
+#   number_educ: 3
+#   education1: title description
+#   education2: title description
+#   education3: title description

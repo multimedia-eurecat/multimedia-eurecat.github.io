@@ -1,0 +1,94 @@
+# - name: "Project acromnym"
+#   title: "Project title"
+#   image: image.png
+#   description: Write a description here.
+#   date: 2015-2018
+#   ref: Funders, and other project reference descriptors.
+#   url: https://www.domain.org/projectsite
+
+
+# Projects
+
+- name: DACOM2
+  title: Descripción Automática de Contenidos Multimedia 2 (Automatic description of Multimedia contents 2)
+  description: This project aims at developing automatic tools for emotion detection in images and scene categorization using deep learning neural network models
+  ref: Project financed by Catalan Government.
+  date: 2019-2021
+
+- name: BINCI
+  title: Binaural Tools for the Creative Industries.
+  description: Binci’s main objective is to develop an integrated software and hardware solution to ease the production, post - production and distribution of 3D audio content meant to be experienced by consumers through head phones. BINCI tools for binaural 3D audio production will be fully suitable to develop professional applications in the creative industries (e.g. music,  video games, virtual and augmented reality, etc).
+  image: logo-binci.jpg
+  ref: ICT - 21 - 2016, GA No. 732130.
+  date: 2017 - 2018
+ 
+- name: DACOM
+  title: Descripción Automática de Contenidos Multimedia (Automatic description of Multimedia contents).
+  description: This project aims at developing automatic tools for similar image detection and text localization and recognition in images using deep learning neural network models.
+  ref: Project financed by Catalan Government.
+  date: 2018
+
+- name: ARSI
+  title: Aerial Robot for Sewer inspection.
+  description: This project aims at automated inspection of service ability and structure assessment of accessible sewers.
+  image: arsi.jpg
+  date: 2016-2018
+  reF: EU PDTI project of ECHORD++.
+  url: http://echord.eu/essential_grid/arsi/   
+
+- name: Look@U
+  title: Development of a recommending system for glasses based on face digitization and best-fit algorithms.
+  description: This project aims at 3D reconstruction of faces from multiple cameras for generating custom-made glasses.
+  ref: Nuclis program, Catalan Government.
+  date: 2015
+
+- name: AUTOPOST
+  title: Deformable surface tracking and alpha-matting for the automation of post-production workflows.
+  description: This project aims at developing productive end- user solutions for small and medium posthouses.
+  image: autopost.jpg
+  ref: H2020-ICT-2014-1, GA No. 644629.
+  date: 2015-2016
+  url: http://www.autopost-project.eu
+
+- name: 3FLEX 
+  title: Depth enabled workflow for flexible 2D and multiview video production.
+  description: This project aims to define and develop a new advanced workflow for flexible 2D, stereo and multiview video production capable to deal with and take advantage of the image+depth content approach and to develop the building blocks to implement it.
+  image: 3flex.jpg
+  ref: FP7-SME-2013, GA No. 605181.
+  date: 2013-2015
+  url: http://www.3flex-project.eu 
+ 
+- name: SCENE
+  title: Novel scene representations for richer networked media.
+  description: SCENE’s objective is to conduct further research into tools that give audiences a greater sense of reality and offer more possibilities of expression for professionals, through the development of new digital-media representations that enable the capture of 3D audiovisual formats and the mixing of real and artificial images.
+  ref: FP7-ICT-2011-7, GA No. 287693.
+  date: 2011-2014
+  url: http://3d-scene.eu 
+
+- name: 3D MEDIA
+  title: Spatial sound and vision.
+  description: Researched, developed and tested new forms of experience in the field of entertainment, based on technologies for the capture, production, network distribution and exhibition of immersive sound and images of a 3D, stereoscopic and multi-view nature.
+  image: 3Dmedia.jpg
+  ref: FP7-ICT-2007-1, GA No. 215475.
+  date: 2008-2012
+  url: http://www.20203dmedia.eu  
+
+- name: FINE
+  title: Free-viewpoint Immersive Networked Experience.
+  description: The FINE project is focused on researching and developing an architecture for the creation and distribution of a new form of live multimedia content.
+  image: FINE.jpg
+  ref: FP7-ICT-2009-4, GA No. 248020.
+  date: 2010-2013
+  url: http://www.projectfine.eu  
+ 
+- name: Cenit SOCIAL MEDIA
+  image: social_media.jpg
+  description: The aim is to exploit the latest social phenomenon provided by the Internet. The publication of information and opinions by online users and their growing participation in social networks. It is a mayor national project funded under the CENIT 2010 call of the Spanish Ministry of Economy and Competitiveness.
+  date: 2010-2013
+  url: http://www.cenitsocialmedia.es 
+
+ 
+- name: i3MEDIA
+  image: logo-i3media.jpg
+  description: Technologies for the creation and automated management of smart audiovisual content. It was carried out by a consortium made up of twelve medium-sized nationwide companies and involved the participation of over 140 senior researchers. It is a mayor national project funded under the CENIT 2007 call of the Spanish Ministry of Economy and Competitiveness.
+  date: 2007-2010
