@@ -1,5 +1,5 @@
 # - name: firstname lastname
-#   photo: filename.jpg
+#   photo: filename.jpg (located at ./assets/team)
 #   info: position, date
 #   email: firstname.lastname@eurecat.org
 #   number_educ: 3

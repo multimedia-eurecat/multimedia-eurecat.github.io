@@ -1,5 +1,5 @@
 # - name: firstname lastname
-#   photo: bio-photo.jpg
+#   photo: bio-photo.jpg (located at ./assets/team)
 #   info: position, date.
 #   email: firstname.lastname@eurecat.org
 #   number_educ: 3
@@ -16,7 +16,6 @@
   education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
   education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
   education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
-
 
 - name: Anica Bukva
   photo: anica.png
