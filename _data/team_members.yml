@@ -50,3 +50,11 @@
   number_educ: 2
   education1: MSc Electrical Engineer at <a href="https://www.ensea.fr/fr">ENSEA</a>.
   education2: MSc Signal Processing and Acoustics at <a href="https://www.en.aau.dk/education/master/signal-processing-and-acoustics">Aalborg University</a>.
+
+- name: Niklas Reppel
+  photo: nikpic.jpg
+  info: Researcher and Developer at Eurecat since 2017  
+  email: niklas.reppel@eurecat.org
+  number_educ: 2
+  education1: BSc Computer Science at <a href="https://www.tu-dortmund.de">TU Dortmund</a>.
+  education2: MA Music Informatics at <a href="http://www.hfm-karlsruhe.de/imwi/">HfM Karlsruhe</a>.
