@@ -1,6 +1,6 @@
 # - name: "Project acromnym"
 #   title: "Project title"
-#   image: image.png
+#   image: image.png (located at ./assets/projects)
 #   description: Write a description here.
 #   date: 2015-2018
 #   ref: Funders, and other project reference descriptors.

@@ -1,5 +1,5 @@
 # - name: firstname lastname
-#   photo: bio-photo.jpg
+#   photo: bio-photo.jpg (located at ./assets/team)
 #   info: position, date.
 #   email: firstname.lastname@eurecat.org
 #   number_educ: 3
@@ -16,7 +16,6 @@
   education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
   education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
   education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
-
 
 - name: Anica Bukva
   photo: anica.png
@@ -44,6 +43,7 @@
   education2: MSc in Computer and Information Sciences at <a href="http://www.um.es/">UM</a>.
   education3: PhD in Computer Vision at <a href="https://www.cranfield.ac.uk">Cranfield University</a>.
 
+<<<<<<< HEAD
 - name: Andrés Pérez-López       
   photo: APL.png
   info: Researcher at Eurecat since 2016  
@@ -53,3 +53,12 @@
   education2: MSc in Sound and Music Computing at <a href="http://www.upf.edu/">UPF</a>.
   education3: Ongoing: Industrial PhD in jointly with <a href="https://www.upf.edu">UPF</a>.
 
+=======
+- name: Julien De Muynke
+  photo: julien.jpg
+  info: Senior researcher at Eurecat since 2015  
+  email: julien.demuynke@eurecat.org
+  number_educ: 2
+  education1: MSc Electrical Engineer at <a href="https://www.ensea.fr/fr">ENSEA</a>.
+  education2: MSc Signal Processing and Acoustics at <a href="https://www.en.aau.dk/education/master/signal-processing-and-acoustics">Aalborg University</a>.
+>>>>>>> 2f6d16e0c0036563ad8c51bd619407ec67d0130c
