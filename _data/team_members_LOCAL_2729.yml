@@ -7,15 +7,6 @@
 #   education2: title description.
 #   education3: title description.
 
-- name: Adan Garriga
-  photo: adan.jpg
-  info: Director of the MTU at Eurecat since 2015  
-  email: adan.garriga@eurecat.org
-  number_educ: 4
-  education1: Professional Piano Degree at <a href="https://www.conservatoriliceu.es/en">LICEO</a>.
-  education2: BSc in Physics at <a href="https://www.ub.edu/web/ub/en/index.html">UB</a>.
-  education3: PhD in Physics (Complex Systems) at <a href="http://ubics.ub.edu">UB</a>.
-  education4: Executive MBA at <a href="https://www.eae.es/landing/executive-mba">EAE</a>.
 
 - name: Rafael Redondo
   photo: RRT.jpg
@@ -27,7 +18,7 @@
   education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
 
 - name: Anica Bukva
-  photo: anica.jpg
+  photo: anica.png
   info: Senior resercher at Eurecat since 2015  
   email: anica.bukva@eurecat.org
   number_educ: 2
@@ -70,16 +61,4 @@
   number_educ: 2
   education1: MSc Electrical Engineer at <a href="https://www.ensea.fr/fr">ENSEA</a>.
   education2: MSc Signal Processing and Acoustics at <a href="https://www.en.aau.dk/education/master/signal-processing-and-acoustics">Aalborg University</a>.
-<<<<<<< .merge_file_G9wKLy
 >>>>>>> 2f6d16e0c0036563ad8c51bd619407ec67d0130c
-=======
-
-- name: Niklas Reppel
-  photo: nikpic.jpg
-  info: Researcher and Developer at Eurecat since 2017  
-  email: niklas.reppel@eurecat.org
-  number_educ: 2
-  education1: BSc Computer Science at <a href="https://www.tu-dortmund.de">TU Dortmund</a>.
-  education2: MA Music Informatics at <a href="http://www.hfm-karlsruhe.de/imwi/">HfM Karlsruhe</a>.
-
->>>>>>> .merge_file_Aht7Uh
