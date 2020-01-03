@@ -6,6 +6,8 @@
 #   education1: title description.
 #   education2: title description.
 #   education3: title description.
+#
+#   Please, keep alphabetical order!
 
 - name: Adan Garriga
   photo: adan.jpg
@@ -17,14 +19,14 @@
   education3: PhD in Physics (Complex Systems) at <a href="http://ubics.ub.edu">UB</a>.
   education4: Executive MBA at <a href="https://www.eae.es/landing/executive-mba">EAE</a>.
 
-- name: Rafael Redondo
-  photo: RRT.jpg
-  info: Senior resercher at Eurecat since 2015  
-  email: rafael.redondo@eurecat.org
+- name: Andrés Pérez-López       
+  photo: APL.png
+  info: Researcher at Eurecat since 2016  
+  email: andres.perez@eurecat.org
   number_educ: 3
-  education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
-  education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
-  education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
+  education1: BSc Telecommunication Engineer at <a href="https://www.upv.es">UPV</a>.
+  education2: MSc in Sound and Music Computing at <a href="http://www.upf.edu/">UPF</a>.
+  education3: (Ongoing) Industrial PhD jointly with the <a href="https://www.upf.edu/web/mtg">Music Technology Group, UPF</a>.
 
 - name: Anica Bukva
   photo: anica.jpg
@@ -43,24 +45,6 @@
   education2: MSc in Computer Vision and Artificial Intelligence at <a href="http://www.cvc.uab.es/">CVC</a>.
   education3: PhD in Computer Science at <a href="https://www.uab.cat/">UAB</a> and <a href="http://www.cvc.uab.es/">CVC</a>.
 
-- name: Pedro Cavestany       
-  photo: PCO.jpeg
-  info: Senior researcher at Eurecat since 2015  
-  email: pedro.cavestany@eurecat.org
-  number_educ: 3
-  education1: BSc Industrial Engineer at <a href="https://www.upv.es">UPV</a> and <a href="https://www.upct.es">UPCT</a> 
-  education2: MSc in Computer and Information Sciences at <a href="http://www.um.es/">UM</a>.
-  education3: PhD in Computer Vision at <a href="https://www.cranfield.ac.uk">Cranfield University</a>.
-
-- name: Andrés Pérez-López       
-  photo: APL.png
-  info: Researcher at Eurecat since 2016  
-  email: andres.perez@eurecat.org
-  number_educ: 3
-  education1: BSc Telecommunication Engineer at <a href="https://www.upv.es">UPV</a>.
-  education2: MSc in Sound and Music Computing at <a href="http://www.upf.edu/">UPF</a>.
-  education3: (Ongoing) Industrial PhD jointly with the <a href="https://www.upf.edu/web/mtg">Music Technology Group, UPF</a>.
-
 - name: Julien De Muynke
   photo: julien.jpg
   info: Senior researcher at Eurecat since 2015  
@@ -76,3 +60,21 @@
   number_educ: 2
   education1: BSc Computer Science at <a href="https://www.tu-dortmund.de">TU Dortmund</a>.
   education2: MA Music Informatics at <a href="http://www.hfm-karlsruhe.de/imwi/">HfM Karlsruhe</a>.
+
+- name: Pedro Cavestany       
+  photo: PCO.jpeg
+  info: Senior researcher at Eurecat since 2015  
+  email: pedro.cavestany@eurecat.org
+  number_educ: 3
+  education1: BSc Industrial Engineer at <a href="https://www.upv.es">UPV</a> and <a href="https://www.upct.es">UPCT</a> 
+  education2: MSc in Computer and Information Sciences at <a href="http://www.um.es/">UM</a>.
+  education3: PhD in Computer Vision at <a href="https://www.cranfield.ac.uk">Cranfield University</a>.
+
+- name: Rafael Redondo
+  photo: RRT.jpg
+  info: Senior resercher at Eurecat since 2015  
+  email: rafael.redondo@eurecat.org
+  number_educ: 3
+  education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
+  education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
+  education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
