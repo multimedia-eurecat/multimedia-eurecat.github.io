@@ -52,6 +52,15 @@
   education2: MSc in Computer and Information Sciences at <a href="http://www.um.es/">UM</a>.
   education3: PhD in Computer Vision at <a href="https://www.cranfield.ac.uk">Cranfield University</a>.
 
+- name: Andrés Pérez-López       
+  photo: APL.png
+  info: Researcher at Eurecat since 2016  
+  email: andres.perez@eurecat.org
+  number_educ: 3
+  education1: BSc Telecommunication Engineer at <a href="https://www.upv.es">UPV</a>.
+  education2: MSc in Sound and Music Computing at <a href="http://www.upf.edu/">UPF</a>.
+  education3: (Ongoing) Industrial PhD jointly with the <a href="https://www.upf.edu/web/mtg">Music Technology Group, UPF</a>.
+
 - name: Julien De Muynke
   photo: julien.jpg
   info: Senior researcher at Eurecat since 2015  
@@ -67,4 +76,3 @@
   number_educ: 2
   education1: BSc Computer Science at <a href="https://www.tu-dortmund.de">TU Dortmund</a>.
   education2: MA Music Informatics at <a href="http://www.hfm-karlsruhe.de/imwi/">HfM Karlsruhe</a>.
-
