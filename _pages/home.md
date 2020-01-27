@@ -53,4 +53,6 @@ The image processing group focuses on computer vision technologies for image, vi
 
 ## Interactive Visualization
 
-The Laboratory of Virtual Visualization in Eurecat’s Multimedia Technologies Unit focuses its activity on immersive and interactive data representation, to improve the understanding of complex information, and adding value to the context of the heterogeneous data sources involved on mixing geolocated data, Industrial and Digital assets through optimal User Experience interfaces. A wide array of outputs and devices (Smart glasses, holograms, desktop, etc) are always involved with the objective of facilitating the adoption of state of the art interaction technology.  
+The Laboratory of Virtual Visualization in Eurecat’s Multimedia Technologies Unit focuses its activity on immersive and interactive data representation, to improve the understanding of complex information, and adding value to the context of the heterogeneous data sources involved on mixing geolocated data, Industrial and Digital assets through optimal User Experience interfaces. A wide array of outputs and devices (Smart glasses, holograms, desktop, etc) are always involved with the objective of facilitating the adoption of state of the art interaction technology. 
+
+<br>
