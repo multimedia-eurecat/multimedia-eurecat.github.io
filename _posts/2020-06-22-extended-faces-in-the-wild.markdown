@@ -17,6 +17,16 @@ tags:
 
 > Work in progress...
 
+---
+**Authors**   
+[Rafael Redondo](https://valillon.github.io) & Jaume Gibert   
+CC BY 2019-20.
+
+---
+[Full Paper](https://arxiv.org/abs/2006.13980) (ArXiv)  |  [Code](https://github.com/multimedia-eurecat/ELFW) (GitHub) |   ELFW Dataset (pending link)
+
+---
+
 # Abstract
 
 Existing face datasets often lack sufficient representation of occluding objects, which can hinder recognition, but also supply meaningful  information to understand the visual context. In this work, we introduce Extended Labeled Faces in-the-Wild (ELFW), a dataset supplementing with additional face-related categories ---and also additional faces--- the originally released  semantic labels in the  vastly used Labeled Faces in-the-Wild ([LFW](https://hal.inria.fr/docs/00/32/19/23/PDF/Huang_long_eccv2008-lfw.pdf)) dataset. Additionally, two object-based data augmentation techniques are deployed to synthetically enrich under-represented categories which, in benchmarking experiments, reveal that not only segmenting the augmented categories improves, but also the remaining ones benefit.
@@ -103,3 +113,9 @@ Labeling faces at the lab: occluding with hands. Successful segmentation example
 # Conclusions
 
 The ELFW dataset has been presented as an extension of the widely used dataset LFW for semantic segmentation. It expands the set of images for which semantic ground-truth was available by labeling new images, defining new categories and correcting existing label maps. The main goal was to provide a broader contextual set of classes that are usually present around faces and may particularly harden identification and facial understanding in general. Different category augmentation strategies were deployed, which yielded better segmentation results on benchmarking deep models for the targeted classes, preserving and sometimes improving the performance for the remaining ones. In particular, we have also observed that the segmentation models were able to generalize to classes that were only seen synthetically at the training stage.
+
+---
+**Acknowledgements**   
+Authors want to thank Carles Bosch, Aniça Bukva, and Pedro Cavestany, who significantly contributed to annotate the ELFW dataset. Also to Umut Sayin for his accidental collaboration.
+
+---
