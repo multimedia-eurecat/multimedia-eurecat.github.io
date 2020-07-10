@@ -10,20 +10,15 @@ classes: wide
 tags:
   - semantic segmentation
   - deeplabv3
-  - fully convolutionaal networks
+  - fully convolutional networks
   - hidden faces
   - faces in the wild
 ---
 
-> Work in progress...
-
 ---
-**Authors**   
-[Rafael Redondo](https://valillon.github.io) & Jaume Gibert   
-CC BY 2019-20.
-
----
-[Full Paper](https://arxiv.org/abs/2006.13980) (ArXiv)  |  [Code](https://github.com/multimedia-eurecat/ELFW) (GitHub) |   ELFW Dataset (pending link)
+[Full Paper](https://arxiv.org/abs/2006.13980) (ArXiv)  |  [Code](https://github.com/multimedia-eurecat/ELFW) (GitHub) |   [ELFW Dataset](https://forms.gle/XqrMixtZUKrYCoYC8) (Hippocratic Licence)    
+[Rafael Redondo](https://valillon.github.io) and Jaume Gibert   
+CC BY 2019-20
 
 ---
 
@@ -90,7 +85,7 @@ Overall, both augmentation techniques improve the segmentation accuracy for both
 Gain effect per class on Mean IU with different data augmentation typesand ratios (\\(\sigma\\)) for both FCN and DeepLabV3 architectures. The size of each training dataset is proportionally represented by each circular area.
 {: .figurecaption}
 
-## Field experiments
+## Field Experiments
 
 We want to visualize the models' generalization capacity on the *mouth-mask* category, which was purely synthetically added to the training set with \\(\sigma = 0.5\\). Head-wearables such as caps, wool hats or helmets were properly categorized, sunglasses were identified, and hair was acceptably segmented in a wide range of situations. The same sunglasses in the examples transited from *sunglasses* to *head-wearable* when moving from the eyes to the top of the head. The mouth-occluding objects were typically designated as *mouth-mask*. Furthermore, some failures simply happened spuriously, while others do have a direct link to the ELFW's particularities. Hands occluding the mouth were sometimes confused with mouth-masks, specially when the nose was occluded too, which again does not frequently occur in the actual data augmentation strategy.
 
