@@ -146,7 +146,7 @@ In alphabetical order.
 </div>
 
 <div class="col-sm-4 clearfix">
-<h4>Master students</h4>
+<h4>Master and PhD students</h4>
 {% for member in site.data.former_phd_msc %}
 {{ member.name }}
 {% endfor %}
