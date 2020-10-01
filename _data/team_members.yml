@@ -19,15 +19,6 @@
   education3: PhD in Physics (Complex Systems) at <a href="http://ubics.ub.edu">UB</a>.
   education4: Executive MBA at <a href="https://www.eae.es/landing/executive-mba">EAE</a>.
 
-- name: Andrés Pérez-López       
-  photo: APL.png
-  info: Researcher at Eurecat since 2016  
-  email: andres.perez@eurecat.org
-  number_educ: 3
-  education1: BSc Telecommunication Engineer at <a href="https://www.upv.es">UPV</a>.
-  education2: MSc in Sound and Music Computing at <a href="http://www.upf.edu/">UPF</a>.
-  education3: (Ongoing) Industrial PhD jointly with the <a href="https://www.upf.edu/web/mtg">Music Technology Group, UPF</a>.
-
 - name: Anica Bukva
   photo: anica.jpg
   info: Senior resercher at Eurecat since 2015  
@@ -36,14 +27,14 @@
   education1: <a href="http://ftn.uns.ac.rs/674464826/power--electronic-and-telecommunication-engineering">BSc</a> and <a href="http://ftn.uns.ac.rs/n1847675942/power--electronic-and-telecommunication-engineering">MSc</a> in Communications Technologies and Signal Processing at <a href="http://ftn.uns.ac.rs/n1386094394/faculty-of-technical-sciences">FTN</a>.
   education2: <a href="https://www.tdx.cat/handle/10803/112128#page=1">PhD</a> in Signal Theory and Communications at <a href="https://www.upc.edu/en">UPC</a> and <a href="http://www.cttc.es/">CTTC</a>.
 
-- name: Jaume Gibert
-  photo: bio-photo.jpg
-  info: Senior researcher at Eurecat since 2015  
-  email: jaume.gibert@eurecat.org
+- name: David Berga      
+  photo: david.png
+  info: Researcher at Eurecat since 2020
+  email: david.berga@eurecat.org
   number_educ: 3
-  education1: BSc in Mathematics at <a href="https://www.ub.edu">UB</a>.
-  education2: MSc in Computer Vision and Artificial Intelligence at <a href="http://www.cvc.uab.es/">CVC</a>.
-  education3: PhD in Computer Science at <a href="https://www.uab.cat/">UAB</a> and <a href="http://www.cvc.uab.es/">CVC</a>.
+  education1: BSc in Computer Engineering at <a href="https://www.upf.edu">UPF</a>.
+  education2: MSc in Cognitive Systems and Interactive Media at <a href="http://www.upf.edu/">UPF</a>.
+  education3: PhD in Computer Science at <a href="https://www.uab.cat/">Universitat Autonoma de Barcelona, UAB</a>.
 
 - name: Julien De Muynke
   photo: julien.jpg
