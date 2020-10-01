@@ -24,8 +24,9 @@ permalink: /publications/
 <div class="col-sm-6 clearfix">
  <div class="well">
   <pubtit><a href="{{ publi.url }}">{{ publi.title }}</a></pubtit>
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/publications/{{ publi.image }}" class="img-responsive" width="33%" style="float: left" />
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/publications/{{ publi.image }}" class="img-responsive" width="50%" style="float: left" />
   <p>{{ publi.description }}</p>
+  <br>
   <p><em>{{ publi.authors }}</em></p>
   <p>{{ publi.details }}</p>
   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
@@ -60,3 +61,4 @@ permalink: /publications/
 
 {% endfor %}
 
+<br>

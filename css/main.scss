@@ -19,7 +19,12 @@ figcaption {
     margin-bottom: 20px;
 }
 
-
+p.figurecaption {
+  font-style: italic;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
 
 /* Top navigation bar */
 
@@ -75,10 +80,10 @@ firstp {
 }
 
 /* Grid overrides */
-.col-sm-4 {
+/*.col-sm-4 {
 	padding-left: 26px;
 	padding-right: 26px;
-}
+}*/
 
 
 /* Carusel */
