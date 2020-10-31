@@ -26,7 +26,8 @@ CC BY 2019-20
 
 Existing face datasets often lack sufficient representation of occluding objects, which can hinder recognition, but also supply meaningful  information to understand the visual context. In this work, we introduce Extended Labeled Faces in-the-Wild (ELFW), a dataset supplementing with additional face-related categories ---and also additional faces--- the originally released  semantic labels in the  vastly used Labeled Faces in-the-Wild ([LFW](https://hal.inria.fr/docs/00/32/19/23/PDF/Huang_long_eccv2008-lfw.pdf)) dataset. Additionally, two object-based data augmentation techniques are deployed to synthetically enrich under-represented categories which, in benchmarking experiments, reveal that not only segmenting the augmented categories improves, but also the remaining ones benefit.
 
-![Teaser](/assets/posts/extendedfacesinthewild/teaser.jpg)
+<img src="/assets/posts/extendedfacesinthewild/teaser.jpg" alt="Teaser" style="width:100%"/>
+<!-- ![Teaser](/assets/posts/extendedfacesinthewild/teaser.jpg) -->
 Examples of the ELFW dataset: the original LFW categories *background*, *skin*, and *hair*, the new categories *beard-mustache*, *sunglasses*, *head-wearable*, and the exclusively synthetic *mouth-mask*. (left) Re-labeled faces with manual refinement compared to the original LFW labels in blue background, (right-top) faces previously unlabeled in LFW, and (right-bottom) synthetic object augmentation with sunglasses, mouth-masks, and occluding hands.
 {: .figurecaption}
 
@@ -50,13 +51,15 @@ From the 2,927 images annotated with the original categories (*background*, *ski
 
 The category *sunglasses* is the worst balanced category throughout the collected data. Moreover, the dataset does not present even a single case of an image with a common object typically present in faces, *mouth-masks*. To this end, 40 diverse types of sunglasses and 12 diverse types of mouth masks were obtained from the Internet, manually retouched to guarantee an appropriate blending, and placed and resized proportionally to the interocular distance provided by the Viola-Jones face detector. A total of 2,003 faces were suitable for category  augmentation. Blending source hands into faces requires realistic color and pose matching with respect to the targeted face. 
 
-![sunglasses](/assets/posts/extendedfacesinthewild/augmentation_sunglasses_masks.jpg)
+<img src="/assets/posts/extendedfacesinthewild/augmentation_sunglasses_masks.jpg" alt="sunglasses" style="width:100%"/>
+<!-- ![sunglasses](/assets/posts/extendedfacesinthewild/augmentation_sunglasses_masks.jpg) -->
 Examples  of  automatic  category  augmentation  with sunglasses and mouth-mask in ELFW.
 {: .figurecaption }
 
 Hands are, by nature, one of the most frequent elements among occluders. However, they are an specially challenging object since the skin color shared with the face can entangle posterior face-hand discrimination. The hands used in this work were compiled from both Hand2Face and HandOverFace. Firstly, the source head pose ---originally with hands on it--- is matched against all the target head poses in ELFW by using Dlib. Secondly, the hands color is corrected according to each facial tone. The averaged color is transferred from the target face to the source hands by correcting the mean and standard deviation for each channel in the \\(l\alpha\beta\\) color space. The hands are placed and resized relative to both origin and destination face sizes.
 
-![hands](/assets/posts/extendedfacesinthewild/augmentation_hands.jpg)
+<img src="/assets/posts/extendedfacesinthewild/augmentation_hands.jpg" alt="hands" style="width:100%"/>
+<!-- ![hands](/assets/posts/extendedfacesinthewild/augmentation_hands.jpg) -->
  Illustration of occluding hands synthetically attached to ELFW. The first and second rows (images and labels) show paired examples of re-used hands on different faces with their corresponding automatic color tone correction, scaling, and positioning. The third and fourth rows (images and labels) depict an assortment of hand poses, with the same automatic attachment procedure.
 {: .figurecaption }
 
@@ -81,7 +84,8 @@ We employed the frameworks PyTorch 1.1.0 and TorchVision 0.3.0 versions, which o
 
 Overall, both augmentation techniques improve the segmentation accuracy for both networks, although not always steady. Indeed, \\(\sigma=1\\) tends to deliver the best results, i.e. the more augmentation data, generally the better. Although DeeplabV3 provides interesting multi-scale features, they probably do not make much of a difference in a dataset like this, since segments actually mostly preserve their size across images.
 
-![Gain](/assets/posts/extendedfacesinthewild/augmentation_gain_comparison.jpg)  
+<img src="/assets/posts/extendedfacesinthewild/augmentation_gain_comparison.jpg" alt="Gain" style="width:75%"/><br>
+<!-- ![Gain](/assets/posts/extendedfacesinthewild/augmentation_gain_comparison.jpg)   -->
 Gain effect per class on Mean IU with different data augmentation typesand ratios (\\(\sigma\\)) for both FCN and DeepLabV3 architectures. The size of each training dataset is proportionally represented by each circular area.
 {: .figurecaption}
 
@@ -89,19 +93,23 @@ Gain effect per class on Mean IU with different data augmentation typesand ratio
 
 We want to visualize the models' generalization capacity on the *mouth-mask* category, which was purely synthetically added to the training set with \\(\sigma = 0.5\\). Head-wearables such as caps, wool hats or helmets were properly categorized, sunglasses were identified, and hair was acceptably segmented in a wide range of situations. The same sunglasses in the examples transited from *sunglasses* to *head-wearable* when moving from the eyes to the top of the head. The mouth-occluding objects were typically designated as *mouth-mask*. Furthermore, some failures simply happened spuriously, while others do have a direct link to the ELFW's particularities. Hands occluding the mouth were sometimes confused with mouth-masks, specially when the nose was occluded too, which again does not frequently occur in the actual data augmentation strategy.
 
-![Experiment1](/assets/posts/extendedfacesinthewild/lab-examples.jpg)   
+<img src="/assets/posts/extendedfacesinthewild/lab-examples.jpg" alt="Experiment1" style="width:85%"/><br>
+<!-- ![Experiment1](/assets/posts/extendedfacesinthewild/lab-examples.jpg)    -->
 Labeling faces at the lab: sample assortment of successful detections of a casual variety of objects and poses never seen before by the neural network.
 {: .figurecaption}
 
-![Experiment2](/assets/posts/extendedfacesinthewild/lab-mouth-masks.jpg)  
+<img src="/assets/posts/extendedfacesinthewild/lab-mouth-masks.jpg" alt="Experiment2" style="width:85%"/><br>
+<!-- ![Experiment2](/assets/posts/extendedfacesinthewild/lab-mouth-masks.jpg)   -->
 Labeling faces at the lab: mouth-masks detection. Even though *mouth-mask* only occurs synthetically in the train set, the segmentation network is able to generally give accurate results for such category. 
 {: .figurecaption}
 
-![Experiment3](/assets/posts/extendedfacesinthewild/lab-hands.jpg)  
+<img src="/assets/posts/extendedfacesinthewild/lab-hands.jpg" alt="Experiment3" style="width:85%"/><br>
+<!-- ![Experiment3](/assets/posts/extendedfacesinthewild/lab-hands.jpg)   -->
 Labeling faces at the lab: occluding with hands. Successful segmentation examples of hands occluding significant parts of the face. 
 {: .figurecaption}
 
-![Experiment4](/assets/posts/extendedfacesinthewild/lab-failures.jpg)   
+<img src="/assets/posts/extendedfacesinthewild/lab-failures.jpg" alt="Experiment4" style="width:85%"/><br>
+<!-- ![Experiment4](/assets/posts/extendedfacesinthewild/lab-failures.jpg)    -->
  Labeling faces at the lab: limitations due to severe head rotations, hands at unseen locations, and other category confusion.  
 {: .figurecaption}
 
