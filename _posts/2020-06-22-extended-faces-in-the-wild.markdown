@@ -22,6 +22,8 @@ CC BY 2019-20
 
 ---
 
+> **ELFW v2.0**: it corrects face-to-label misalignments found in skin and hair-only LFW faces due to an entanglement between funneled and deep-funneled aligned faces in the first ELFW version. Although not planned experimental re-runs ahead, slightly higher overall accuracies and similar performance tendency regarding data augmentation are expected as compared to the related paper. Release date 23.02.2021.
+
 # Abstract
 
 Existing face datasets often lack sufficient representation of occluding objects, which can hinder recognition, but also supply meaningful  information to understand the visual context. In this work, we introduce Extended Labeled Faces in-the-Wild (ELFW), a dataset supplementing with additional face-related categories ---and also additional faces--- the originally released  semantic labels in the  vastly used Labeled Faces in-the-Wild ([LFW](https://hal.inria.fr/docs/00/32/19/23/PDF/Huang_long_eccv2008-lfw.pdf)) dataset. Additionally, two object-based data augmentation techniques are deployed to synthetically enrich under-represented categories which, in benchmarking experiments, reveal that not only segmenting the augmented categories improves, but also the remaining ones benefit.
