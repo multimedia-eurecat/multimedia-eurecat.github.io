@@ -8,6 +8,46 @@
 #   news1: <a href="https://aip.scitation.org/doi/10.1063/1.5043267">Instrument details in Rev. Sci. Instrum. 89, 093709 (2018)</a>
 #   news2: See also <a href="http://www.quantumuniverse.nl/een-isolerende-supergeleider"> quantum universe </a> (in dutch), <a href="https://phys.org/news/2018-10-mysterious-insulating-phenomenon-superconductor.html"> Phys.org </a>, <a href="https://www.universiteitleiden.nl/en/news/2018/10/insulating-phenomenon-in-superconductor"> Leiden University news</a>, <a href="http://iop.uva.nl/content/news/2018/10/noise-helps-physicists-discover-insulating-phenomenon-in-superconductor.html"> UvA news<a>.
 
+# 2023
+
+- title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
+  authors: Peichert, S., & De Muynke, J.
+  details:  Proceedings of the colloquium Résonances Gothiques, September 7–9, in Avignon, France, 2023 (submitted).
+  url: 
+  highlight: 0
+
+
+- title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
+  authors: De Muynke, J., Ferrando, J., & Katz B. F. G.
+  details: Journal of SOund Studies, 2023 (submitted).
+  url: 
+  highlight: 0
+
+- title: "Creating navigable auralisations using RIR convolution: Impact of grid density and panning method on perceived source stability"
+  authors: De Muynke, J., Poirier-Quinot, D., & Katz, B. F. G.
+  details: Proceedings of the AES Conference on Spatial and Immersive Audio, 2023.
+  url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
+  highlight: 0
+
+# 2022
+
+- title: "Preliminary analysis of vocal ensemble performances in real-time historical auralizations of the Palais des Papes"
+  authors: De Muynke, J., Eley, N., Ferrando, J., & Katz, B. F. G.
+  details: Proceedings of the 2nd Symposium; The Acoustics of Ancient Theaters, 6-8 July 2022, Verona, Italy
+  url: https://www.researchgate.net/publication/363713153_Preliminary_analysis_of_vocal_ensemble_performances_in_real-time_historical_auralizations_of_the_Palais_des_Papes
+  highlight: 0
+
+- title: "Spatially Oriented Format for Acoustics 2.1: Introduction and Recent Advances"
+  authors: Majdak, P., Zotter F., Brinkmann, F., De Muynke, J., Mihocic, M., & Noisternig, M.
+  details: Journal of the Audio Engineering Society, vol. 70, no 7/8, pp. 565--584, 2022.
+  url: https://www.aes.org/e-lib/browse.cfm?elib=21824
+  highlight: 0
+
+- title: "Ears of the past, an inquiry into the sonic memory of the acoustics of Notre-Dame before the fire of 2019"
+  authors: De Muynke, J., Baltazar, M., Monferran, M., Voisenat, C., & Katz, B. F. G.
+  details: Journal of Cultural Heritage, vol. 56, pp. 130--137, 2022.
+  url: https://www.sciencedirect.com/science/article/pii/S1296207422001455?via%3Dihub
+  highlight: 0
 
 # 2020
 
@@ -112,13 +152,13 @@
   highlight: 0
   
 - title: "Ambisonics Directional Room Impulse Response as a new Convention of the Spatially Oriented Format for Acoustics"
-  authors: A. Pérez-López, J. De Muynke.
+  authors: Pérez-López, A., & De Muynke, J.
   details: AES 144th Convention, May 2018.
   url: https://www.researchgate.net/publication/327987244_Ambisonics_Directional_Room_Impulse_Response_as_a_new_Convention_of_the_Spatially_Oriented_Format_for_Acoustics
   highlight: 0
   
 - title: "Tools for the production of spatial audio within BINCI"
-  authors: A. Kruh-Elendt, A. Fiebig, R. Sottek, J. De Muynke.
+  authors: Kruh-Elendt, A., Fiebig, A., Sottek, R., & De Muynke, J.
   details: DAGA 2018.
   url: https://www.researchgate.net/publication/336739126_Tools_for_the_production_of_spatial_audio_within_BINCI
   highlight: 0
