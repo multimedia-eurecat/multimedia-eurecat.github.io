@@ -8,20 +8,27 @@
 #   news1: <a href="https://aip.scitation.org/doi/10.1063/1.5043267">Instrument details in Rev. Sci. Instrum. 89, 093709 (2018)</a>
 #   news2: See also <a href="http://www.quantumuniverse.nl/een-isolerende-supergeleider"> quantum universe </a> (in dutch), <a href="https://phys.org/news/2018-10-mysterious-insulating-phenomenon-superconductor.html"> Phys.org </a>, <a href="https://www.universiteitleiden.nl/en/news/2018/10/insulating-phenomenon-in-superconductor"> Leiden University news</a>, <a href="http://iop.uva.nl/content/news/2018/10/noise-helps-physicists-discover-insulating-phenomenon-in-superconductor.html"> UvA news<a>.
 
-# 2023
+# 2024
+
+- title: "Experimental Virtual Archaeological-Acoustics: Studying Historical French Spaces and Performance Practice"
+  authors: Katz, B. F. G., Eley, N., De Muynke, J., Mullins, S. S., & Canfield-Dafilou E. K.
+  details:  In Archaeoacoustics, M. Kolar and K. Primeau (Eds.) Springer/ASA Press, 2024 (submitted).
+  url: 
+  highlight: 0
 
 - title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
-  authors: Peichert, S., & De Muynke, J.
+  authors: De Muynke, J., & Peichert, S.
   details:  Proceedings of the colloquium Résonances Gothiques, September 7–9, in Avignon, France, 2023 (submitted).
   url: 
   highlight: 0
 
-
 - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
   authors: De Muynke, J., Ferrando, J., & Katz B. F. G.
-  details: Journal of SOund Studies, 2023 (submitted).
+  details: Journal of Sound Studies, 2024 (submitted).
   url: 
   highlight: 0
+
+  # 2023
 
 - title: "Creating navigable auralisations using RIR convolution: Impact of grid density and panning method on perceived source stability"
   authors: De Muynke, J., Poirier-Quinot, D., & Katz, B. F. G.
