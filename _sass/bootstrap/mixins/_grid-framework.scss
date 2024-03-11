@@ -33,12 +33,12 @@
 @mixin calc-grid-column($index, $class, $type) {
   @if ($type == width) and ($index > 0) {
     .col-#{$class}-#{$index} {
-      width: calc(100% * $index / $grid-columns); // percentage((calc($index / $grid-columns)));
+      width: calc(100% * calc($index / $grid-columns)); // percentage((calc($index / $grid-columns)));
     }
   }
   @if ($type == push) and ($index > 0) {
     .col-#{$class}-push-#{$index} {
-      left: calc(100% * $index / $grid-columns); // percentage(calc($index / $grid-columns));
+      left: calc(100% * calc($index / $grid-columns)); // percentage(calc($index / $grid-columns));
     }
   }
   @if ($type == push) and ($index == 0) {
@@ -48,7 +48,7 @@
   }
   @if ($type == pull) and ($index > 0) {
     .col-#{$class}-pull-#{$index} {
-      right: calc(100% * $index / $grid-columns); // percentage((calc($index / $grid-columns)));
+      right: calc(100% * calc($index / $grid-columns)); // percentage((calc($index / $grid-columns)));
     }
   }
   @if ($type == pull) and ($index == 0) {
@@ -58,7 +58,7 @@
   }
   @if ($type == offset) {
     .col-#{$class}-offset-#{$index} {
-      margin-left: calc(100% * $index / $grid-columns); // percentage((calc($index / $grid-columns)));
+      margin-left: calc(100% * calc($index / $grid-columns)); // percentage((calc($index / $grid-columns)));
     }
   }
 }
