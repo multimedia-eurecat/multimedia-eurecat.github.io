@@ -10,22 +10,37 @@
 
 # 2024
 
-- title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
-  authors: De Muynke, J., Ferrando, J., & Katz, B. F. G.
-  details: Journal of Sound Studies, 2024 (submitted).
-  url:
-  highlight: 0
+# - title: "Acoustic coherence in extended reality: challenges and strategies"
+#   authors: Sayin Saraç, U.
+#   details: "EMRN Conference: A Metaverse for the good (submitted)"
+#   highlight: 0
 
-- title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
-  authors: Peichert, S., & De Muynke, J.
-  details:  Proceedings of the colloquium Résonances Gothiques, September 7–9, Avignon, France, 2023 (submitted).
-  url:
-  highlight: 0
+# - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
+#   authors: De Muynke, J., Ferrando, J., & Katz, B. F. G.
+#   details: Journal of Sound Studies, 2024 (submitted).
+#   highlight: 0
+
+# - title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
+#   authors: Peichert, S., & De Muynke, J.
+#   details:  Proceedings of the colloquium Résonances Gothiques, September 7–9, Avignon, France, 2023 (submitted).
+#   highlight: 0
 
   # 2023
 
+- title: "Comparison of synthesized Virtual Sound Environments with validated Hearing Aid experiments"
+  authors: Sayin Saraç, U.
+  details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
+  url: https://www.aes.org/e-lib/browse.cfm?elib=22271
+  highlight: 0
+
+- title: "Comparison of synthesized Virtual Sound Environments with validated Hearing Aid experiments"
+  authors: Sayin Saraç, U.
+  details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
+  url: https://www.aes.org/e-lib/browse.cfm?elib=22271
+  highlight: 0
+
 - title: "Listen and Move: Improving GANs Coherency in Agnostic Sound-to-Video Generation"
-  authors: Redondo, R.
+  authors: R. Redondo
   details: "AV4D: Visual Learning of Sounds in Spaces. ICCV Workshop, 2023."
   description: Generic sound-to-video adversarial generation based on a triple sound routing, a multi-scale residual and dilated RNN, and a novel recurrent and directional video prediction layer.
   url: https://av4d.org/papers/iccv23/p4.pdf
@@ -47,6 +62,14 @@
   highlight: 0
 
 # 2022
+
+- title: "Use of synthesized higher order ambisonics impulse responses to generate virtual sound environments for hearing aids research"
+  authors: Sayin Sarac, U.
+  details: Journal of Hearing Science, 12(1), 2022.
+  url: https://openurl.ebsco.com/EPDB%3Agcd%3A8%3A19275560/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A156438170&crl=c
+  highlight: 0
+
+
 - title: "On loss functions and evaluation metrics for music source separation."
   authors: Gusó, E., Pons, J., Pascual, S., & Serrà, J.
   details: In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (pp. 306-310).
@@ -130,6 +153,12 @@
 
 
 # 2018
+
+- title: "Controlling the apparent sourcesize in ambisonics using decorrelation filters"
+  authors: Schmele, T., & Sayin, U.
+  details: AES International Conference on Spatial Reproduction-Aesthetics and Science. Audio Engineering Society, 2018.
+  url: https://binci.eu/wp-content/uploads/2018/09/AES2018_Controlling_The_Apparent_Source_Size_In_Ambisonics_Paper.pdf
+  highlight: 0
 
 - title: "Psychophysiological Methods for Quality of Experience Research in Virtual Reality Systems and Applications"
   authors: M. Barreda-Ángeles, R. Redondo-Tejedor, A. Pereda-Baños.
