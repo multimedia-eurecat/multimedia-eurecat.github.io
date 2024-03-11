@@ -18,7 +18,7 @@ permalink: /projects/
   {% endif %} 
   {% if project.url %}
   <a href="{{ project.url }}">
-  {% endif %} {{ project.name }} {% if project.url %}  </a> {% endif %}  ({{ project.date }})<br/>
+  {% endif %} <b>{{ project.name }}</b> {% if project.url %}  </a> {% endif %}  ({{ project.date }})<br/>
   {% if project.title %}<em>{{ project.title }}</em><br />{% endif %}
   {{ project.description }}<br />
   <em>{{ project.ref }}</em>

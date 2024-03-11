@@ -19,12 +19,23 @@
   education3: PhD in Physics (Complex Systems) at <a href="http://ubics.ub.edu">UB</a>.
   education4: Executive MBA at <a href="https://www.eae.es/landing/executive-mba">EAE</a>.
 
-- name: Daniel van Sabben
-  photo: danielvansabben.jpg
-  info: Researcher at Eurecat since 2021
-  email: daniel.vansabben@eurecat.org
-  number_educ: 1
-  education1: BSc in Telecommunications Engineering at <a href="https://telecos.upc.edu">ETSETB-UPC</a>.
+- name: Umut Sayin
+  photo: umut.jpg
+  info: Senior Researcher at Eurecat since 2015<br>Head of the Audio Group
+  email: umut.sayin@eurecat.org
+  number_educ: 3
+  education1: BSc in Electrical and Electronics Engineering at <a href="https://w3.bilkent.edu.tr/bilkent">Bilkent University</a>.
+  education2: MSc in Acoustics at <a href="https://www.en.aau.dk">Aalborg University</a>.
+  education3: PhD in Acoustics at <a href="https://www.salleurl.edu/en">La Salle</a>.
+
+- name: Rafael Redondo
+  photo: RRT.jpg
+  info: Senior researcher at Eurecat since 2015<br>Head of the Image Group
+  email: rafael.redondo@eurecat.org
+  number_educ: 3
+  education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
+  education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
+  education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
 
 - name: David Berga      
   photo: david.png
@@ -43,37 +54,26 @@
   education1: MSc Electrical Engineer at <a href="https://www.ensea.fr/fr">ENSEA</a>.
   education2: MSc Signal Processing and Acoustics at <a href="https://www.en.aau.dk/education/master/signal-processing-and-acoustics">Aalborg University</a>.
 
-- name: Niklas Reppel
-  photo: nikpic.jpg
-  info: Researcher and Developer at Eurecat since 2017  
-  email: niklas.reppel@eurecat.org
-  number_educ: 2
-  education1: BSc Computer Science at <a href="https://www.tu-dortmund.de">TU Dortmund</a>.
-  education2: MA Music Informatics at <a href="http://www.hfm-karlsruhe.de/imwi/">HfM Karlsruhe</a>.
-
-- name: Rafael Redondo
-  photo: RRT.jpg
-  info: Senior resercher at Eurecat since 2015  
-  email: rafael.redondo@eurecat.org
-  number_educ: 3
-  education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
-  education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
-  education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
-
 - name: Timothy Schmele
   photo: bild_leger.jpg
-  info: Senior resercher at Eurecat since 2015  
+  info: Senior researcher at Eurecat since 2015  
   email: tim.schmele@eurecat.org
   number_educ: 3
   education1: BSc Informatics at <a href="https://www.uni-kl.de">TU Kaiserslautern</a>.
   education2: MA Music Technology at <a href="https://www.ul.ie">Univ. of Limerick</a>.
-  education3: MSc Sound and Music Computing <a href="https://www.upf.edu/web/mtg">UPF</a>.
+  education3: MSc Sound and Music Computing at <a href="https://www.upf.edu/web/mtg">UPF</a>.
 
-- name: Umut Sayin
-  photo: umut.jpg
-  info: Senior Researcher at Eurecat since 2015
-  email: umut.sayin@eurecat.org
-  number_educ: 3
-  education1: BSc in Electrical and Electronics Engineering at <a href="https://w3.bilkent.edu.tr/bilkent">Bilkent University</a>.
-  education2: MSc in Acoustics at <a href="https://www.en.aau.dk">Aalborg University</a>.
-  education3: PhD in Acoustics at <a href="https://www.salleurl.edu/en">La Salle</a>.
+# - name: Daniel van Sabben
+#   photo: danielvansabben.jpg
+#   info: Researcher at Eurecat since 2021
+#   email: daniel.vansabben@eurecat.org
+#   number_educ: 1
+#   education1: BSc in Telecommunications Engineering at <a href="https://telecos.upc.edu">ETSETB-UPC</a>.
+
+# - name: Niklas Reppel
+#   photo: nikpic.jpg
+#   info: Researcher and Developer at Eurecat since 2017  
+#   email: niklas.reppel@eurecat.org
+#   number_educ: 2
+#   education1: BSc Computer Science at <a href="https://www.tu-dortmund.de">TU Dortmund</a>.
+#   education2: MA Music Informatics at <a href="http://www.hfm-karlsruhe.de/imwi/">HfM Karlsruhe</a>.

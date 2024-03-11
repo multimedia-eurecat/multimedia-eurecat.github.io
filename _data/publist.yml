@@ -30,13 +30,34 @@
 
   # 2023
 
+- title: "Listen and Move: Improving GANs Coherency in Agnostic Sound-to-Video Generation"
+  authors: Redondo, R.
+  details: "AV4D: Visual Learning of Sounds in Spaces. ICCV Workshop, 2023."
+  description: Generic sound-to-video adversarial generation based on a triple sound routing, a multi-scale residual and dilated RNN, and a novel recurrent and directional video prediction layer.
+  url: https://av4d.org/papers/iccv23/p4.pdf
+  image: avgan.jpg
+  highlight: 1
+
 - title: "Creating navigable auralisations using RIR convolution: Impact of grid density and panning method on perceived source stability"
   authors: De Muynke, J., Poirier-Quinot, D., & Katz, B. F. G.
   details: Proceedings of the AES Conference on Spatial and Immersive Audio, 2023.
   url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
+  description: Assessment of the impact of various interpolation parameters on perceived auditory source stability under various auralisation conditions.
+  image: navigable auralisations.jpg
+  highlight: 1
+
+- title: "An Objective Evaluation of Hearing AIDS and DNN-Based Binaural Speech Enhancement in Complex Acoustic Scenes"
+  authors: Gusó, E., Luberadzka, J., Baig, M., Sayin, U., & Serra, X.
+  details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA) (pp. 1-5), 2023.
+  url: https://ieeexplore.ieee.org/abstract/document/10248112
   highlight: 0
 
 # 2022
+- title: "On loss functions and evaluation metrics for music source separation."
+  authors: Gusó, E., Pons, J., Pascual, S., & Serrà, J.
+  details: In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (pp. 306-310).
+  url: https://arxiv.org/pdf/2202.07968
+  highlight: 0
 
 - title: "Preliminary analysis of vocal ensemble performances in real-time historical auralizations of the Palais des Papes"
   authors: De Muynke, J., Eley, N., Ferrando, J., & Katz, B. F. G.

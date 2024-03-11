@@ -6,3 +6,11 @@
 #   education1: title description
 #   education2: title description
 #   education3: title description
+
+- name: Enric Gusó Muñoz
+  photo: enric_guso.jpg
+  info: Pre-doctoral researcher at Eurecat since 2023
+  email: enric.guso@eurecat.org
+  number_educ: 1
+  education1: MSc Sound and Music Computing at <a href="https://www.upf.edu/web/mtg">UPF</a>.
+  
