@@ -10,22 +10,16 @@
 
 # 2024
 
-- title: "Experimental Virtual Archaeological-Acoustics: Studying Historical French Spaces and Performance Practice"
-  authors: Katz, B. F. G., Eley, N., De Muynke, J., Mullins, S. S., & Canfield-Dafilou, E. K.
-  details:  In Archaeoacoustics, M. Kolar and K. Primeau (Eds.) Springer/ASA Press, 2024 (submitted).
-  url: 
-  highlight: 0
-
 - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
   authors: De Muynke, J., Ferrando, J., & Katz, B. F. G.
   details: Journal of Sound Studies, 2024 (submitted).
-  url: 
+  url:
   highlight: 0
 
 - title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
-  authors: De Muynke, J., & Peichert, S.
+  authors: Peichert, S., & De Muynke, J.
   details:  Proceedings of the colloquium Résonances Gothiques, September 7–9, Avignon, France, 2023 (submitted).
-  url: 
+  url:
   highlight: 0
 
   # 2023
@@ -152,7 +146,7 @@
 - title: "Urban weathering: Interactive rendering of polluted cities"
   authors: Muñoz-Pandiella, I., Bosch, C., Mérillou, N., Patow, G., Mérillou, S., & Pueyo, X.
   details: IEEE transactions on visualization and computer graphics, 24(12), 3239-3252, 2018.
-  url: 
+  url:
   highlight: 0
 
 - title: "Sound-Space Choreography"
@@ -170,7 +164,7 @@
 - title: "Ambiscaper: A Tool for Automatic Generation and Annotation of Reverberant Ambisonics Sound Scenes"
   authors: Perez-Lopez, A.
   details: 16th IEEE International Workshop on Acoustic Signal Enhancement (IWAENC) (pp. 1-9), September 2018.
-  url: 
+  url:
   highlight: 0
 
 - title: "Controlling the apparent sourcesize in ambisonics using decorrelation filters"
@@ -178,13 +172,13 @@
   details: AES International Conference on Spatial Reproduction-Aesthetics and Science, Audio Engineering Society Conference, July 2018.
   url: https://binci.eu/wp-content/uploads/2018/09/AES2018_Controlling_The_Apparent_Source_Size_In_Ambisonics_Paper.pdf
   highlight: 0
-  
+
 - title: "Ambisonics Directional Room Impulse Response as a new Convention of the Spatially Oriented Format for Acoustics"
   authors: Pérez-López, A., & De Muynke, J.
   details: AES 144th Convention, May 2018.
   url: https://www.researchgate.net/publication/327987244_Ambisonics_Directional_Room_Impulse_Response_as_a_new_Convention_of_the_Spatially_Oriented_Format_for_Acoustics
   highlight: 0
-  
+
 - title: "Tools for the production of spatial audio within BINCI"
   authors: Kruh-Elendt, A., Fiebig, A., Sottek, R., & De Muynke, J.
   details: DAGA 2018.
