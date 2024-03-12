@@ -26,7 +26,7 @@
   info: At Eurecat since 2015
   email: umut.sayin@eurecat.org
   number_educ: 3
-  education1: BSc in Electrical and Electronics Engineering at <a href="https://w3.bilkent.edu.tr/bilkent">Bilkent University</a>.
+  education1: BSc in Electrical and Electronics Eng. at <a href="https://w3.bilkent.edu.tr/bilkent">Bilkent University</a>.
   education2: MSc in Acoustics at <a href="https://www.en.aau.dk">Aalborg University</a>.
   education3: PhD in Acoustics at <a href="https://www.salleurl.edu/en">La Salle</a>.
 
@@ -48,7 +48,7 @@
   number_educ: 3
   education1: BSc in Computer Engineering at <a href="https://www.upf.edu">UPF</a>.
   education2: MSc in Cognitive Systems and Interactive Media at <a href="http://www.upf.edu/">UPF</a>.
-  education3: PhD in Computer Science at <a href="https://www.uab.cat/">Universitat Autonoma de Barcelona, UAB</a>.
+  education3: PhD in Computer Science at <a href="https://www.uab.cat/">UAB</a>.
 
 - name: Roger Marí
   photo: roger_mari.jpg
@@ -75,7 +75,7 @@
   email: tim.schmele@eurecat.org
   number_educ: 3
   education1: BSc Informatics at <a href="https://www.uni-kl.de">TU Kaiserslautern</a>.
-  education2: MA Music Technology at <a href="https://www.ul.ie">Univ. of Limerick</a>.
+  education2: MA Music Technology at <a href="https://www.ul.ie">Limerick University</a>.
   education3: MSc Sound and Music Computing at <a href="https://www.upf.edu/web/mtg">UPF</a>.
 
 - name: Joanna Luberadzka
@@ -85,8 +85,8 @@
   email: joanna.luberadzka@eurecat.org
   number_educ: 3
   education1: BSc in Acoustics with Sound Engineering at <a href="https://www.put.poznan.pl/en">Poznan University</a>.
-  education2: MSc in Hearing Technology and Audiology at <a href="https://uol.de/en">Oldenburg University</a>.
-  education3: PhD in Auditory Signal Processing and Hearing Devices at <a href="https://uol.de/en">Oldenburg University</a>.
+  education2: MSc in Hearing Technology and Audiology at <a href="https://uol.de/en">Oldenburg Univ</a>.
+  education3: PhD in Auditory Signal Processing and Hearing Devices at <a href="https://uol.de/en">Oldenburg Univ</a>.
 
 # - name: Daniel van Sabben
 #   photo: danielvansabben.jpg

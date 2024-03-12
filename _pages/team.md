@@ -27,8 +27,8 @@ permalink: /team/
 <div class="row">
 {% endif %}
 
-<div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="100em" style="float: left" />
+<div class="col-lg-6 clearfix">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="95em" style="float: left" />
   <h4>{{ member.name }}</h4>
   <!-- <i>{{ member.info }}<br>email: <{{ member.email | encode_email }}></i> -->
   {{ member.role }}<br><i>{{ member.info }}.<br><a href="mailto:{{ member.email | encode_email }}" title="e-mail">e-mail</a></i>  
@@ -91,8 +91,8 @@ permalink: /team/
 <div class="row">
 {% endif %}
 
-<div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="100em" style="float: left" />
+<div class="col-lg-6 clearfix">
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="95em" style="float: left" />
   <h4>{{ member.name }}</h4>
   {{ member.role }}<br><i>{{ member.info }}.<br><a href="mailto:{{ member.email | encode_email }}" title="e-mail">e-mail</a></i>  
   <ul style="overflow: hidden">
