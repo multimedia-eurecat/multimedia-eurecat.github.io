@@ -9,14 +9,16 @@
 
 - name: Enric Gusó Muñoz
   photo: enric_guso.jpg
-  info: PhD Student at Eurecat since 2023
+  role: PhD Student
+  info: At Eurecat since 2023
   email: enric.guso@eurecat.org
   number_educ: 1
   education1: MSc Sound and Music Computing at <a href="https://www.upf.edu/web/mtg">UPF</a>.
   
 - name: Albert Barreiro Díaz
   photo: albert_barreiro.jpg
-  info: PhD student at Eurecat since 2023
+  role: PhD student
+  info: At Eurecat since 2023
   email: albert.barreiro@eurecat.org
   number_educ: 2
   education1: MSc in Computer Vision at <a href="https://www.cvc.uab.es/">CVC</a>-<a href="https://www.uab.cat/">UAB</a>.
