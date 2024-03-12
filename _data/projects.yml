@@ -9,6 +9,66 @@
 
 # Projects
 
+- name: PHASE IV AI
+  title: Privacy Compliant Health Data As A Service For AI Development.
+  description: Artificial intelligence (AI) enables data-driven innovations in health care. AI systems, which process vast amounts of data quickly and in detail, show promise both as a tool for preventive health care and clinical decision-making. However, the distributed storage and limited access to health data form a barrier to innovation, as developing trustworthy AI systems requires large datasets for training and validation. Furthermore, the availability of anonymous datasets would increase the adoption of AI-powered tools by supporting health technology assessments and education. Secure, privacy compliant data utilization is key for unlocking the full potential of AI and data analytics. In this proposal, we will advance the current state-of-the-art data synthesis methods towards a more generalized approach of synthetic data generation. We will also develop metrics for testing and validation, as well as protocols that enable synthetic data generation without access to real-world data (through multi-party computation).
+  ref: HORIZON-HLTH-2022-IND-13, GA No 101095384.
+  image: phase_iv_ai_logo.png
+  date: 2023-2026
+  url: https://www.phase4ai-project.eu
+
+- name: INDUX-R
+  title: Transforming European Industrial Ecosystems through eXtended Reality enhanced with human-centric Al and secure, 5G-enabled loT.
+  description: This project envisions a human-centric XR ecosystem that will transform European industrial sectors by empowering humans and creating innovate XR products and services of significant added value. It targets for concrete scientific breakthroughs integrated in technological enablers that will be applied in use cases driven from real-life needs while having the potential to be replicated in several other applications. These breakthroughs are focused on core XR technologies, namely, digitisation and creation of XR assets, realistic animation, light-field HMDs, XR media streaming and egocentric perception. To address challenges that multi-user XR applications pose, INDUX-R will implement a highly scalable, zero-touch 5G architecture and a secure, interoperable IoT network that can accommodate fluctuating demands and  minimize waste of resources. see the latest updates.
+  ref: HORIZON-CL4-2023-HUMAN-01-CNECT, GA No. 101135556.
+  image: indux_r_logo.jpg
+  date: 2023-2026
+  url: https://www.linkedin.com/company/indux-r/posts/?feedView=all
+
+- name: AI4Heritage
+  title: Acoustic and Image Reconstruction for Cultural Heritage Preservation.
+  description: This project aims to familiarize and advance the state of the art in the common workflows of modern image and acoustic digitization techniques based on Radiance Neural Fields to contribute to the preservation, analysis, and dissemination of cultural heritage artifacts and emblematic sites.
+  date: 2023-24
+  ref: Eurecat's internal project within the R+D Traça program.
+
+- name: MÖBIUS
+  title: The power of prosumers in publishing.
+  description: An initiative funded under the European Commission Horizon 2020 programme that aims to modernize the European book publishing industry by remodelling the traditional value chains and business models uncovering the prosumers potential and delivering new enriched media experiences.
+  ref: H2020-ICT-2020-44, GA No. 957185 (Coordinator Eurecat)
+  image: möbius.jpg
+  date: 2021-2023
+  url: https://mobius-project.eu
+
+- name: GUESTXR
+  title: A Machine Learning Agent for Social Harmony in eXtended Reality.
+  description: The GuestXR project aims to create an immersive online social space through extended reality, where the focus is on the existence of a machine learning agent called “The Guest”, which can facilitate interaction between participants to help them achieve their intended goals. The innovation seeks to help avert conflicts and cyberbullying in digital interaction environments, make it easier for people with communication problems to get involved and detect antisocial behaviour, among other similar issues.
+  ref: FETPROACT-2018-2020, GA No. 10101788 (Coordinator Eurecat).
+  image: GuestXR.jpg
+  date: 2022-2025
+  url: https://guestxr.eu/
+
+- name: ViVIM
+  title: Computer Vision for Multi-platform Immersive Video.
+  description: This project aims to create a new audiovisual format based on omnidirectional video. This new format will offer end users a coherent audiovisual experience on virtual reality devices, tablets and the smart TVs, instead of dividing their attention between them. This new type of content will integrate, and enhance, traditional media and the increasingly common second screen (tablets and mobile phones).
+  ref: Project financed by Catalan Government within the RIS3CAT program.
+  image: vivim_logo.jpg
+  url: https://comunitatmedia.cat/es/portfolio/proyecto-vivim/
+  date: 2021-2023
+
+- name: Mironins
+  title: Augmented and interactive reality experiences within the world of Joan Miro.
+  description: This project build upon an augmented and interactive reality experiences to create a new digital environment within the Joan Miró Foundation, where Mironins, small drops of paint that live inside the Joan Miró's paintings, help children to enter the world of art and develop their artistic abilities while having fun.
+  ref: Project financed by Catalan Government within the RIS3CAT program.
+  image: mironins.jpg
+  url: https://comunitatmedia.cat/es/portfolio/proyecto-mironins/
+  date: 2021-2023
+
+- name: DACOM2
+  title: Descripción Automática de Contenidos Multimedia 2 (Automatic description of Multimedia contents 2)
+  description: This project aims at developing automatic tools for emotion detection in images and scene categorization using deep learning neural network models
+  ref: Project financed by Catalan Government.
+  date: 2019-2021
+
 - name: DACOM2
   title: Descripción Automática de Contenidos Multimedia 2 (Automatic description of Multimedia contents 2)
   description: This project aims at developing automatic tools for emotion detection in images and scene categorization using deep learning neural network models
@@ -17,7 +77,7 @@
 
 - name: BINCI
   title: Binaural Tools for the Creative Industries.
-  description: Binci’s main objective is to develop an integrated software and hardware solution to ease the production, post - production and distribution of 3D audio content meant to be experienced by consumers through head phones. BINCI tools for binaural 3D audio production will be fully suitable to develop professional applications in the creative industries (e.g. music,  video games, virtual and augmented reality, etc).
+  description: Binci's main objective is to develop an integrated software and hardware solution to ease the production, post - production and distribution of 3D audio content meant to be experienced by consumers through head phones. BINCI tools for binaural 3D audio production will be fully suitable to develop professional applications in the creative industries (e.g. music,  video games, virtual and augmented reality, etc).
   image: logo-binci.jpg
   ref: ICT - 21 - 2016, GA No. 732130.
   date: 2017 - 2018
@@ -60,10 +120,9 @@
  
 - name: SCENE
   title: Novel scene representations for richer networked media.
-  description: SCENE’s objective is to conduct further research into tools that give audiences a greater sense of reality and offer more possibilities of expression for professionals, through the development of new digital-media representations that enable the capture of 3D audiovisual formats and the mixing of real and artificial images.
+  description: SCENE's objective is to conduct further research into tools that give audiences a greater sense of reality and offer more possibilities of expression for professionals, through the development of new digital-media representations that enable the capture of 3D audiovisual formats and the mixing of real and artificial images.
   ref: FP7-ICT-2011-7, GA No. 287693.
   date: 2011-2014
-  url: http://3d-scene.eu 
 
 - name: 3D MEDIA
   title: Spatial sound and vision.
