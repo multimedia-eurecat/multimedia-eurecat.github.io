@@ -75,9 +75,10 @@ p {
 // -------------------------
 
 // Ex: (12px small font / 14px base font) * 100% = about 85%
+$fontsize_percentage: calc(100% * $font-size-small / $font-size-base);
 small,
 .small {
-  font-size: 100% * (calc($font-size-small / $font-size-base));
+  font-size: #{$fontsize_percentage}; //(100% * calc($font-size-small / $font-size-base));
 }
 
 mark,
