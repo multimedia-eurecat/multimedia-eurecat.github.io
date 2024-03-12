@@ -27,6 +27,18 @@
 
   # 2023
 
+- title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG: a proof-of-concept study"
+  authors: De Filippi, E., Schmele, T., Nandi, A., Torres, A. G., & Pereda-Banos, A.
+  details: Authorea Preprints.
+  url: https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.21789866.v1
+  highlight: 0
+
+- title: "Emulating Vector Base Amplitude Panning Using Panningtable Synthesis"
+  authors: Schmele, T., & Reppel, N.
+  details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
+  url: https://www.aes.org/e-lib/browse.cfm?elib=22273
+  highlight: 0
+
 - title: "Comparison of synthesized Virtual Sound Environments with validated Hearing Aid experiments"
   authors: Sayin Saraç, U.
   details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
@@ -74,6 +86,12 @@
   highlight: 0
  
 # 2022
+
+- title: "Comparisons between VBAP and WFS using Spatial Sound Synthesis"
+  authors: Schmele, T., & Lopez, J. J.
+  details: In Audio Engineering Society Convention 153. Audio Engineering Society, 2022.
+  url: https://www.aes.org/e-lib/browse.cfm?elib=21951
+  highlight: 0
 
 - title: "Use of synthesized higher order ambisonics impulse responses to generate virtual sound environments for hearing aids research"
   authors: Sayin Sarac, U.

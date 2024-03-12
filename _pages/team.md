@@ -28,10 +28,10 @@ permalink: /team/
 {% endif %}
 
 <div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="25%" style="float: left" />
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="20%" style="float: left" />
   <h4>{{ member.name }}</h4>
   <!-- <i>{{ member.info }}<br>email: <{{ member.email | encode_email }}></i> -->
-  <i>{{ member.info }}<br><a href="mailto:{{ member.email | encode_email }}" title="E-mail">E-mail</a></i>  
+  <i>{{ member.role }}<br>{{ member.info }}.<br><a href="mailto:{{ member.email | encode_email }}" title="E-mail">E-mail</a></i>  
   <ul style="overflow: hidden">
 
   {% if member.number_educ == 1 %}
@@ -92,7 +92,7 @@ permalink: /team/
 {% endif %}
 
 <div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="25%" style="float: left" />
+  <img src="{{ site.url }}{{ site.baseurl }}/assets/team/{{ member.photo }}" class="img-responsive" width="22%" style="float: left" />
   <h4>{{ member.name }}</h4>
   <i>{{ member.info }}<br><a href="mailto:{{ member.email | encode_email }}" title="E-mail">E-mail</a></i>  
   <ul style="overflow: hidden">

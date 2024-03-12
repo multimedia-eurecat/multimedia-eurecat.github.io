@@ -28,7 +28,7 @@
 - name: AI4Heritage
   title: Acoustic and Image Reconstruction for Cultural Heritage Preservation.
   description: This project aims to familiarize and advance the state of the art in the common workflows of modern image and acoustic digitization techniques based on Radiance Neural Fields to contribute to the preservation, analysis, and dissemination of cultural heritage artifacts and emblematic sites.
-  date: 2023-24
+  date: 2023-2024
   ref: Eurecat's internal project within the R+D Traça program.
 
 - name: MÖBIUS
@@ -47,6 +47,12 @@
   date: 2022-2025
   url: https://guestxr.eu/
 
+- name: DeepArts
+  title: AI for Art, Culture, and Media.
+  description: Research on AI-based tools for the arts, creative and media industries based on domain translation adversarial generative models, in particular for temporally coherence text-to-audio and sound-to-video generation.
+  ref: Eurecat's internal project within the R+D Traça program.
+  date: 2021-2022
+
 - name: ViVIM
   title: Computer Vision for Multi-platform Immersive Video.
   description: This project aims to create a new audiovisual format based on omnidirectional video. This new format will offer end users a coherent audiovisual experience on virtual reality devices, tablets and the smart TVs, instead of dividing their attention between them. This new type of content will integrate, and enhance, traditional media and the increasingly common second screen (tablets and mobile phones).
@@ -63,11 +69,11 @@
   url: https://comunitatmedia.cat/es/portfolio/proyecto-mironins/
   date: 2021-2023
 
-- name: DACOM2
-  title: Descripción Automática de Contenidos Multimedia 2 (Automatic description of Multimedia contents 2)
-  description: This project aims at developing automatic tools for emotion detection in images and scene categorization using deep learning neural network models
-  ref: Project financed by Catalan Government.
-  date: 2019-2021
+- name: SAHAR
+  title: Spatial Audio for Hearing Aids Research.
+  description: This project aims to understand the necessities of hearing aids research to close the gap between laboratory environment and real life use of hearing aids devices. Focusing on use of spatial audio, both for device benchmarking and development of new machine learning algorithms, the aim is to help hearing loss patients understand better how spatial audio help them understand their hearing works, how the device and the right communication with the audiologists help their fitting process, and how they can adapt to their new way of listening faster.
+  ref: Eurecat's internal project within the R+D Traça program.
+  date: 2020-2021
 
 - name: DACOM2
   title: Descripción Automática de Contenidos Multimedia 2 (Automatic description of Multimedia contents 2)

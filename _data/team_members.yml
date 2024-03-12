@@ -1,6 +1,6 @@
 # - name: firstname lastname
 #   photo: bio-photo.jpg (located at ./assets/team)
-#   info: position, date.
+#   info: position, date
 #   email: firstname.lastname@eurecat.org
 #   number_educ: 3
 #   education1: title description.
@@ -11,7 +11,8 @@
 
 - name: Adan Garriga
   photo: adan.jpg
-  info: Director of the MTU at Eurecat since 2015  
+  role: Director of the MTU
+  info: At Eurecat since 2015
   email: adan.garriga@eurecat.org
   number_educ: 4
   education1: Professional Piano Degree at <a href="https://www.conservatoriliceu.es/en">LICEO</a>.
@@ -21,7 +22,8 @@
 
 - name: Umut Sayin
   photo: umut.jpg
-  info: Senior Researcher at Eurecat since 2015<br>Head of the Audio Group
+  role: Head of the Audio Group
+  info: At Eurecat since 2015
   email: umut.sayin@eurecat.org
   number_educ: 3
   education1: BSc in Electrical and Electronics Engineering at <a href="https://w3.bilkent.edu.tr/bilkent">Bilkent University</a>.
@@ -30,7 +32,8 @@
 
 - name: Rafael Redondo
   photo: RRT.jpg
-  info: Senior researcher at Eurecat since 2015<br>Head of the Image Group
+  role: Head of the Image Group
+  info: At Eurecat since 2015
   email: rafael.redondo@eurecat.org
   number_educ: 3
   education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
@@ -39,16 +42,27 @@
 
 - name: David Berga      
   photo: david_berga.jpg
-  info: Researcher at Eurecat since 2020
+  role: Senior Researcher
+  info: At Eurecat since 2020
   email: david.berga@eurecat.org
   number_educ: 3
   education1: BSc in Computer Engineering at <a href="https://www.upf.edu">UPF</a>.
   education2: MSc in Cognitive Systems and Interactive Media at <a href="http://www.upf.edu/">UPF</a>.
   education3: PhD in Computer Science at <a href="https://www.uab.cat/">Universitat Autonoma de Barcelona, UAB</a>.
 
+- name: Roger Marí
+  photo: roger_mari.jpg
+  role: Senior Researcher
+  info: At Eurecat since 2024
+  email: roger.mari@eurecat.org
+  number_educ: 2
+  education1: MSc Computer Vision at <a href="http://www.cvc.uab.es">CVC</a>.
+  education2: PhD Applied Mathematics at <a href="https://ens-paris-saclay.fr">ENS-Paris-Saclay</a>.
+
 - name: Julien De Muynke
   photo: julien.jpg
-  info: Senior researcher at Eurecat since 2015  
+  role: Senior Researcher
+  info: At Eurecat since 2015
   email: julien.demuynke@eurecat.org
   number_educ: 2
   education1: MSc Electrical Engineer at <a href="https://www.ensea.fr/fr">ENSEA</a>.
@@ -56,12 +70,23 @@
 
 - name: Timothy Schmele
   photo: bild_leger.jpg
-  info: Senior researcher at Eurecat since 2015  
+  role: Senior Researcher
+  info: At Eurecat since 2015
   email: tim.schmele@eurecat.org
   number_educ: 3
   education1: BSc Informatics at <a href="https://www.uni-kl.de">TU Kaiserslautern</a>.
   education2: MA Music Technology at <a href="https://www.ul.ie">Univ. of Limerick</a>.
   education3: MSc Sound and Music Computing at <a href="https://www.upf.edu/web/mtg">UPF</a>.
+
+- name: Joanna Luberadzka
+  photo: joanna_luberadzka.jpg
+  role: Senior researcher
+  info: At Eurecat since 2022
+  email: joanna.luberadzka@eurecat.org
+  number_educ: 3
+  education1: BSc in Acoustics with Sound Engineering at <a href="https://www.put.poznan.pl/en">Poznan University</a>.
+  education2: MSc in Hearing Technology and Audiology at <a href="https://uol.de/en">Oldenburg University</a>.
+  education3: PhD in Auditory Signal Processing and Hearing Devices at <a href="https://uol.de/en">Oldenburg University</a>.
 
 # - name: Daniel van Sabben
 #   photo: danielvansabben.jpg
@@ -72,7 +97,7 @@
 
 # - name: Niklas Reppel
 #   photo: nikpic.jpg
-#   info: Researcher and Developer at Eurecat since 2017  
+#   info: Researcher and Developer at Eurecat since 2017
 #   email: niklas.reppel@eurecat.org
 #   number_educ: 2
 #   education1: BSc Computer Science at <a href="https://www.tu-dortmund.de">TU Dortmund</a>.
