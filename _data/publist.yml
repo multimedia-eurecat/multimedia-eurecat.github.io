@@ -66,7 +66,7 @@
   details: Proceedings of the AES Conference on Spatial and Immersive Audio, 2023.
   url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
   description: Assessment of the impact of various interpolation parameters on perceived auditory source stability under various auralisation conditions.
-  image: navigable_auralisations.jpg
+  image: RIR_interpolation.jpg
   highlight: 1
 
 - title: "An Objective Evaluation of Hearing AIDS and DNN-Based Binaural Speech Enhancement in Complex Acoustic Scenes"
