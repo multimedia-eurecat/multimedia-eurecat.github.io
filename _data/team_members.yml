@@ -40,15 +40,14 @@
   education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
   education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
 
-- name: David Berga      
-  photo: david_berga.jpg
-  role: Senior Researcher
-  info: At Eurecat since 2020
-  email: david.berga@eurecat.org
-  number_educ: 3
-  education1: BSc in Computer Engineering at <a href="https://www.upf.edu">UPF</a>.
-  education2: MSc in Cognitive Systems and Interactive Media at <a href="http://www.upf.edu/">UPF</a>.
-  education3: PhD in Computer Science at <a href="https://www.uab.cat/">UAB</a>.
+- name: Stefan Hristov      
+  photo: Stefan_Hristov.jpg
+  role: Researcher
+  info: At Eurecat since 2024
+  email: stefan.hristov@eurecat.org
+  number_educ: 2
+  education1: BSc in Creative Technology at <a href="https://www.utwente.nl/en/">Univesity of Twente</a>.
+  education2: MSc in Intelligent Interactive Systems at <a href="http://www.upf.edu/">UPF</a>.
 
 - name: Roger Marí
   photo: roger_mari.jpg
