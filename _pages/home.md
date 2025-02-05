@@ -25,12 +25,12 @@ The Multimedia Technologies Unit (MTU) at [Eurecat](https://www.eurecat.org) has
     <div class="carousel-inner" markdown="0">
         <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/audio3D_study.jpg" alt="Slide 1"/></div>
         <div class="item active"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/mini_estadi_3Drecons.jpg" alt="Slide 2"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/multimodal_retrieval.jpg" alt="Slide 3"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/natural_matting_autopost.jpg" alt="Slide 4"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/inpainting_3flex.jpg" alt="Slide 5"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/logo_detection.jpg" alt="Slide 6"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/audio3D_marquee.jpg" alt="Slide 7"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/face_object_3Drecons.jpg" alt="Slide 8"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/natural_matting_autopost.jpg" alt="Slide 3"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/inpainting_3flex.jpg" alt="Slide 4"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/logo_detection.jpg" alt="Slide 5"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/multimodal_retrieval.jpg" alt="Slide 6"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/face_object_3Drecons.jpg" alt="Slide 7"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/audio3D_marquee.jpg" alt="Slide 8"/></div>
     </div>
   <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
