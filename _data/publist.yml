@@ -8,6 +8,13 @@
 #   news1: <a href="https://aip.scitation.org/doi/10.1063/1.5043267">Instrument details in Rev. Sci. Instrum. 89, 093709 (2018)</a>
 #   news2: See also <a href="http://www.quantumuniverse.nl/een-isolerende-supergeleider"> quantum universe </a> (in dutch), <a href="https://phys.org/news/2018-10-mysterious-insulating-phenomenon-superconductor.html"> Phys.org </a>, <a href="https://www.universiteitleiden.nl/en/news/2018/10/insulating-phenomenon-in-superconductor"> Leiden University news</a>, <a href="http://iop.uva.nl/content/news/2018/10/noise-helps-physicists-discover-insulating-phenomenon-in-superconductor.html"> UvA news<a>.
 
+# 2025
+- title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
+  authors: De Muynke, J., Ferrando, J., & Katz, B. F. G.
+  details: Journal of Sound Studies, 2025.
+  url : https://www.tandfonline.com/doi/full/10.1080/20551940.2025.2459454
+  highlight: 1
+
 # 2024
 
 # - title: "Acoustic coherence in extended reality: challenges and strategies"
@@ -15,15 +22,25 @@
 #   details: "EMRN Conference: A Metaverse for the good (submitted)"
 #   highlight: 0
 
-# - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
-#   authors: De Muynke, J., Ferrando, J., & Katz, B. F. G.
-#   details: Journal of Sound Studies, 2024 (submitted).
-#   highlight: 0
+- title: "Effect of interpolation artifacts on perceived stability of nearby sources in a navigable reverberant virtual environment"
+  authors: De Muynke, J., Poirier-Quinot, D., & Katz, B. F. G.
+  details: Journal of the Audio Engineering Society, 2024.
+  url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
+  image: RIR_interpolation.jpg
+  highlight: 1
 
-# - title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
-#   authors: Peichert, S., & De Muynke, J.
-#   details:  Proceedings of the colloquium Résonances Gothiques, September 7–9, Avignon, France, 2023 (submitted).
-#   highlight: 0
+- title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
+  authors: Peichert, S., & De Muynke, J.
+  details:  Résonances Gothiques, Collegium Musicae (2024).
+  url: https://zenodo.org/records/14163355
+  highlight: 0
+  
+  
+- title: "The Past Has Ears at Notre-Dame: Acoustic digital twins for research and narration."
+  authors: Katz, B.F.G., Cros C., Peichert, S., De Muynke, J.
+  details: Digital Applications in Archaeology and Cultural Heritage, 2024.
+  url: https://www.sciencedirect.com/science/article/abs/pii/S2212054824000547?via%3Dihub
+  highlight: 0
 
   # 2023
 
@@ -61,7 +78,7 @@
   url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
   description: Assessment of the impact of various interpolation parameters on perceived auditory source stability under various auralisation conditions.
   image: RIR_interpolation.jpg
-  highlight: 1
+  highlight: 0
 
 - title: "An Objective Evaluation of Hearing AIDS and DNN-Based Binaural Speech Enhancement in Complex Acoustic Scenes"
   authors: Gusó, E., Luberadzka, J., Baig, M., Sayin, U., & Serra, X.
