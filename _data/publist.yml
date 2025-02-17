@@ -16,6 +16,24 @@
   image: DiM_PRISM.jpg
   highlight: 1
 
+- title: "Audio technology for improving social interaction in extended reality"
+  authors: J. Luberadzka, E. Gusó Muñoz, U. Sayin, and A. Garriga
+  details: Front. Virtual Real., Sec. Technologies for VR, Volume 5 - 2024, 23 January 2025
+  url: https://doi.org/10.3389/frvir.2024.1442774
+  highlight: 0
+
+- title: "Specularity in NeRFs: A Comparative Study of Ref-NeRF and NRFF"
+  authors: Barreiro, A. and Marí, R. and Redondo, R. and Haro, G. and Bosch, C. and Berga, D.
+  details: Image Processing On Line, 2025.
+  url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000506
+  highlight: 0
+
+- title: "Latent Diffusion Approaches for Conditional Generation of Aerial Imagery: A Study"
+  authors: Marí, R. and Redondo, R.
+  details: Image Processing On Line, 2025.
+  url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000505
+  highlight: 0
+
 # 2024
 
 # - title: "Acoustic coherence in extended reality: challenges and strategies"
@@ -35,8 +53,13 @@
   details:  Résonances Gothiques, Collegium Musicae (2024).
   url: https://zenodo.org/records/14163355
   highlight: 0
-  
-  
+
+- title: "Characterization of Synthetic Lung Nodules in Conditional Latent Diffusion of Chest CT Scans"
+  authors: Marí Molas, R., Subías-Beltrán, P., Pitarch Abaigar, C., Galofré Cardo, M., & Redondo Tejedor, R.
+  details: In Artificial Intelligence Research and Development (pp. 44-51). IOS Press.
+  url: https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240408
+  highlight: 0
+
 - title: "The Past Has Ears at Notre-Dame: Acoustic digital twins for research and narration."
   authors: Katz, B.F.G., Cros C., Peichert, S., De Muynke, J.
   details: Digital Applications in Archaeology and Cultural Heritage, 2024.
@@ -98,9 +121,9 @@
 - title: "Spatial Matrix Synthesis"
   authors: Schmele, T., & Garriga, A.
   details: Journal of the Audio Engineering Society, 2023.
-  url: 
+  url:
   highlight: 0
- 
+
 # 2022
 
 - title: "Comparisons between VBAP and WFS using Spatial Sound Synthesis"
