@@ -38,7 +38,9 @@
   authors: Schmele, T., De Filippi, E., Nandi, A., Pereda Baños, A. & Garriga, A.
   details: Music and Sound Generation in the AI Era, Lecture Notes in Computer Science, 2025.
   url: https://link.springer.com/book/10.1007/978-3-032-02042-0
-  highlight: 0
+  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
+  image: emotional_impact.jpg
+  highlight: 1
 
 - title: "Differentiating Sensations of Sound Envelopment in Spatial Sound Synthesis Approaches: an Explorative Study"
   authors: Schmele, T. & De Filippi, E.
@@ -96,9 +98,7 @@
   authors: De Filippi, E., Schmele, T., Nandi, A., Garriga Torres, A., & Pereda-Banos, A.
   details: Authorea Preprints.
   url: https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.21789866.v1
-  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
-  image: emotional_impact.jpg
-  highlight: 1
+  highlight: 0
 
 - title: "Emulating Vector Base Amplitude Panning Using Panningtable Synthesis"
   authors: Schmele, T., & Reppel, N.
