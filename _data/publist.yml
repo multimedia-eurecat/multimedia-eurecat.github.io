@@ -10,7 +10,7 @@
 
 # 2025
 - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
-  authors: De Muynke, J., Ferrando, J., & Katz, B. F. G.
+  authors: De Muynke, J., Ferrando, J., & Katz, B.F.G.
   details: Journal of Sound Studies, 2025.
   url : https://www.tandfonline.com/doi/full/10.1080/20551940.2025.2459454
   image: DiM_PRISM.jpg
@@ -34,18 +34,10 @@
   url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000505
   highlight: 0
 
-- title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG"
-  authors: Schmele, T., De Filippi, E., Nandi, A., Pereda Baños, A. & Garriga, A.
-  details: Music and Sound Generation in the AI Era, Lecture Notes in Computer Science, 2025.
-  url: https://link.springer.com/book/10.1007/978-3-032-02042-0
-  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
-  image: emotional_impact.jpg
-  highlight: 1
-
-- title: "Differentiating Sensations of Sound Envelopment in Spatial Sound Synthesis Approaches: an Explorative Study"
-  authors: Schmele, T. & De Filippi, E.
-  details: In Audio Engineering Society Convention 159. Audio Engineering Society, 2025.
-  url: https://aes2.org/publications/elibrary-page/?id=23095
+- title: "Reconstructing acoustic heritage: Methods and tools for interdisciplinary research and audio-augmented experiences"
+  authors: De Muynke, J.
+  details: PhD dissertation, Sorbonne Université.
+  url: https://theses.hal.science/tel-05319073
   highlight: 0
 
 # 2024
@@ -56,15 +48,15 @@
 #   highlight: 0
 
 - title: "Effect of interpolation artifacts on perceived stability of nearby sources in a navigable reverberant virtual environment"
-  authors: De Muynke, J., Poirier-Quinot, D., & Katz, B. F. G.
-  details: Journal of the Audio Engineering Society, 2024.
+  authors: De Muynke, J., Poirier-Quinot, D., & Katz, B.F.G.
+  details: Journal of the Audio Engineering Society.
   url: https://aes2.org/publications/elibrary-page/?id=22770
   image: RIR_interpolation.jpg
   highlight: 1
 
 - title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
-  authors: Peichert, S., & De Muynke, J.
-  details:  Résonances Gothiques, Collegium Musicae (2024).
+  authors: Peichert, S., De Muynke, J., & Katz, B.F.G
+  details:  Résonances Gothiques, Collegium Musicae.
   url: https://zenodo.org/records/14163355
   highlight: 0
 
@@ -74,31 +66,33 @@
   url: https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240408
   highlight: 0
 
-- title: "The Past Has Ears at Notre-Dame: Acoustic digital twins for research and narration."
+- title: "The Past Has Ears at Notre-Dame: Acoustic digital twins for research and narration"
   authors: Katz, B.F.G., Cros C., Peichert, S., De Muynke, J.
-  details: Digital Applications in Archaeology and Cultural Heritage, 2024.
+  details: Digital Applications in Archaeology and Cultural Heritage.
   url: https://www.sciencedirect.com/science/article/abs/pii/S2212054824000547?via%3Dihub
   highlight: 0
 
-- title: "Spatial Matrix Synthesis"
-  authors: Schmele, T., & Garriga, A.
-  details: Journal of the Audio Engineering Society, 2024.
-  url: https://secure.aes.org/forum/pubs/journal/?elib=22390
+- title: "Interpretation of a medieval vocal repertoire in the reconstructed acoustics of the Great Chapel of the Palais des Papes"
+  authors: Ferrando, J. & De Muynke, J.
+  details: Historical Resonances: Space, Senses and Early Music, Brill Fink, The Netherlands.
+  url: https://hal.science/hal-04928924v1/document
   highlight: 0
 
-- title: "Spherical Glitch Study"
-  authors: Schmele, T.
-  details: Speculative Sound Synthesis Symposium, 2024.
-  url: https://speculativesoundsynthesis.iem.sh/symposium/docs/proceedings/schmele/
+- title: "HeSoAN : un projet archéoacoustique"
+  authors: Ferrando, J., De Muynke, J., Katz, B.F.G.
+  details: Résonances Gothiques, Collegium Musicae.
+  url: https://hal.science/hal-04817835
   highlight: 0
 
   # 2023
 
 - title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG: a proof-of-concept study"
-  authors: De Filippi, E., Schmele, T., Nandi, A., Garriga Torres, A., & Pereda-Banos, A.
+  authors: De Filippi, E., Schmele, T., Nandi, A., Torres, A. G., & Pereda-Banos, A.
   details: Authorea Preprints.
   url: https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.21789866.v1
-  highlight: 0
+  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
+  image: emotional_impact.jpg
+  highlight: 1
 
 - title: "Emulating Vector Base Amplitude Panning Using Panningtable Synthesis"
   authors: Schmele, T., & Reppel, N.
@@ -121,7 +115,7 @@
   highlight: 1
 
 - title: "Creating navigable auralisations using RIR convolution: Impact of grid density and panning method on perceived source stability"
-  authors: De Muynke, J., Poirier-Quinot, D., & Katz, B. F. G.
+  authors: De Muynke, J., Poirier-Quinot, D., & Katz, B.F.G.
   details: Proceedings of the AES Conference on Spatial and Immersive Audio, 2023.
   url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
   description: Assessment of the impact of various interpolation parameters on perceived auditory source stability under various auralisation conditions.
@@ -140,6 +134,12 @@
   authors: Schmele, T., & Garriga, A.
   details: Audio Engineering Society Convention 154, 2023.
   url: https://www.aes.org/e-lib/browse.cfm?elib=22126
+  highlight: 0
+
+- title: "Spatial Matrix Synthesis"
+  authors: Schmele, T., & Garriga, A.
+  details: Journal of the Audio Engineering Society, 2023.
+  url:
   highlight: 0
 
 # 2022
@@ -164,7 +164,7 @@
   highlight: 0
 
 - title: "Preliminary analysis of vocal ensemble performances in real-time historical auralizations of the Palais des Papes"
-  authors: De Muynke, J., Eley, N., Ferrando, J., & Katz, B. F. G.
+  authors: De Muynke, J., Eley, N., Ferrando, J., & Katz, B.F.G.
   details: Proceedings of the 2nd Symposium; The Acoustics of Ancient Theaters, 6-8 July 2022, Verona, Italy
   url: https://www.researchgate.net/publication/363713153_Preliminary_analysis_of_vocal_ensemble_performances_in_real-time_historical_auralizations_of_the_Palais_des_Papes
   highlight: 0
@@ -176,7 +176,7 @@
   highlight: 0
 
 - title: "Ears of the past, an inquiry into the sonic memory of the acoustics of Notre-Dame before the fire of 2019"
-  authors: De Muynke, J., Baltazar, M., Monferran, M., Voisenat, C., & Katz, B. F. G.
+  authors: De Muynke, J., Baltazar, M., Monferran, M., Voisenat, C., & Katz, B.F.G.
   details: Journal of Cultural Heritage, vol. 56, pp. 130--137, 2022.
   url: https://www.sciencedirect.com/science/article/pii/S1296207422001455?via%3Dihub
   highlight: 0
