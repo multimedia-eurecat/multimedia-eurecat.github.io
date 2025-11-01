@@ -53,12 +53,20 @@ permalink: /publications/
 
 ## Full List
 
-{% for publi in site.data.publist %}
+{% assign grouped_pubs = site.data.publist | sort: "year" | reverse | group_by: "year" %}
 
-  <a href="{{ publi.url }}">{{ publi.title }}</a> <br />
-  <em>{{ publi.authors }} </em><br />
-  {{ publi.details }}
-
+{% for year_group in grouped_pubs %}
+  <h3>{{ year_group.name }}</h3>
+  <ul>
+  {% for publi in year_group.items %}
+    <li>
+      <a href="{{ publi.url }}">{{ publi.title }}</a><br/>
+      <em>{{ publi.authors }}</em><br/>
+      {{ publi.details }}
+    </li>
+  {% endfor %}
+  </ul>
 {% endfor %}
+
 
 <br>

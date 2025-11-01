@@ -1,6 +1,7 @@
 # - title: "Charge trapping and super-Poissonian noise centres in a cuprate superconductor"
 #   authors: KM Bastiaans* & D Cho*, T Benschop, I Battisti, Y Huang, MS Golden, Q Dong, Y Jin, J Zaanen, MP Allan
 #   details:  Nature Physics 14, 1183 (2018)
+#   year: 2018
 #   url: https://www.nature.com/articles/s41567-018-0300-z
 #   highlight: 0          **** fields bellow will be rendered only if highlight 1 ***
 #   image: Pub_BCl.png (located at ./assets/publications)
@@ -9,34 +10,61 @@
 #   news2: See also <a href="http://www.quantumuniverse.nl/een-isolerende-supergeleider"> quantum universe </a> (in dutch), <a href="https://phys.org/news/2018-10-mysterious-insulating-phenomenon-superconductor.html"> Phys.org </a>, <a href="https://www.universiteitleiden.nl/en/news/2018/10/insulating-phenomenon-in-superconductor"> Leiden University news</a>, <a href="http://iop.uva.nl/content/news/2018/10/noise-helps-physicists-discover-insulating-phenomenon-in-superconductor.html"> UvA news<a>.
 
 # 2025
+
+- title: "Differentiating Sensations of Sound Envelopment in Spatial Sound Synthesis Approaches: an Explorative Study"
+  authors: Schmele, T., De Filippi, E.
+  details: 159th Convention of the Audio Engineering Society, Long Beach, CA, USA, October 23-25. 
+  year: 2025
+  url: 
+  highlight: 0
+
+- title: "S-EO: A Large-Scale Dataset for Geometry-Aware Shadow Detection in Remote Sensing Applications"
+  authors: Masquil, E., Marí, R., Ehret, T., Meinhardt-Llopis, E., Musé, P., & Facciolo, G.
+  details: 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW 2025).
+  year: 2025
+  url: https://openaccess.thecvf.com/content/CVPR2025W/EarthVision/papers/Masquil_S-EO_A_Large-Scale_Dataset_for_Geometry-Aware_Shadow_Detection_in_Remote_CVPRW_2025_paper.pdf
+  highlight: 0
+
+- title: "Using Virtual Reality to Raise Awareness of Communication Challenges Faced by Individuals with Hearing Loss"
+  authors: Luberadzka, J., Gusó, E., Sayin, U., & Garriga, A.
+  details: IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW) (pp. 1640-1641).
+  year: 2025
+  url: https://ieeexplore.ieee.org/abstract/document/10972720/
+  highlight: 0
+
 - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
   authors: De Muynke, J., Ferrando, J., & Katz, B.F.G.
   details: Journal of Sound Studies, 2025.
-  url : https://www.tandfonline.com/doi/full/10.1080/20551940.2025.2459454
+  year: 2025
+  url: https://www.tandfonline.com/doi/full/10.1080/20551940.2025.2459454
   image: DiM_PRISM.jpg
   highlight: 1
 
 - title: "Audio technology for improving social interaction in extended reality"
   authors: J. Luberadzka, E. Gusó Muñoz, U. Sayin, and A. Garriga
   details: Front. Virtual Real., Sec. Technologies for VR, Volume 5 - 2024, 23 January 2025
+  year: 2025
   url: https://doi.org/10.3389/frvir.2024.1442774
   highlight: 0
 
 - title: "Specularity in NeRFs: A Comparative Study of Ref-NeRF and NRFF"
   authors: Barreiro, A. and Marí, R. and Redondo, R. and Haro, G. and Bosch, C. and Berga, D.
   details: Image Processing On Line, 2025.
+  year: 2025
   url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000506
   highlight: 0
 
 - title: "Latent Diffusion Approaches for Conditional Generation of Aerial Imagery: A Study"
   authors: Marí, R. and Redondo, R.
   details: Image Processing On Line, 2025.
+  year: 2025
   url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000505
   highlight: 0
 
 - title: "Reconstructing acoustic heritage: Methods and tools for interdisciplinary research and audio-augmented experiences"
   authors: De Muynke, J.
   details: PhD dissertation, Sorbonne Université.
+  year: 2025
   url: https://theses.hal.science/tel-05319073
   highlight: 0
 
@@ -47,9 +75,17 @@
 #   details: "EMRN Conference: A Metaverse for the good (submitted)"
 #   highlight: 0
 
+- title: "Schmele-Spherical Glitch Study"
+  authors: Schmele, T.
+  details: In Speculative Sound Synthesis Symposium.
+  year: 2024
+  url: https://speculativesoundsynthesis.iem.sh/symposium/docs/proceedings/schmele/
+  highlight: 0
+
 - title: "Effect of interpolation artifacts on perceived stability of nearby sources in a navigable reverberant virtual environment"
   authors: De Muynke, J., Poirier-Quinot, D., & Katz, B.F.G.
   details: Journal of the Audio Engineering Society.
+  year: 2024
   url: https://aes2.org/publications/elibrary-page/?id=22770
   image: RIR_interpolation.jpg
   highlight: 1
@@ -57,38 +93,58 @@
 - title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
   authors: Peichert, S., De Muynke, J., & Katz, B.F.G
   details:  Résonances Gothiques, Collegium Musicae.
+  year: 2024
   url: https://zenodo.org/records/14163355
   highlight: 0
 
 - title: "Characterization of Synthetic Lung Nodules in Conditional Latent Diffusion of Chest CT Scans"
   authors: Marí Molas, R., Subías-Beltrán, P., Pitarch Abaigar, C., Galofré Cardo, M., & Redondo Tejedor, R.
   details: In Artificial Intelligence Research and Development (pp. 44-51). IOS Press.
+  year: 2024
   url: https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240408
   highlight: 0
 
 - title: "The Past Has Ears at Notre-Dame: Acoustic digital twins for research and narration"
   authors: Katz, B.F.G., Cros C., Peichert, S., De Muynke, J.
   details: Digital Applications in Archaeology and Cultural Heritage.
+  year: 2024
   url: https://www.sciencedirect.com/science/article/abs/pii/S2212054824000547?via%3Dihub
   highlight: 0
 
 - title: "Interpretation of a medieval vocal repertoire in the reconstructed acoustics of the Great Chapel of the Palais des Papes"
   authors: Ferrando, J. & De Muynke, J.
-  details: Historical Resonances: Space, Senses and Early Music, Brill Fink, The Netherlands.
+  details: "Historical Resonances: Space, Senses and Early Music, Brill Fink, The Netherlands."
+  year: 2024
   url: https://hal.science/hal-04928924v1/document
   highlight: 0
 
 - title: "HeSoAN : un projet archéoacoustique"
   authors: Ferrando, J., De Muynke, J., Katz, B.F.G.
   details: Résonances Gothiques, Collegium Musicae.
+  year: 2024
   url: https://hal.science/hal-04817835
+  highlight: 0
+
+- title: "Spatial Matrix Synthesis"
+  authors: Schmele, T., & Garriga, A.
+  details: Journal of the Audio Engineering Society, 72(4), 193-210.
+  year: 2024
+  url: https://www.aes.org/tmpFiles/elib/20251031/22390.pdf
   highlight: 0
 
   # 2023
 
+- title: "A New Framework for Evaluating Image Quality Including Deep Learning Task Performances as a Proxy"
+  authors: Gallés, P., Takáts, K., Hernández-Cabronero, M., Berga, D., Pega, L., Riordan-Chen, L., ... & Marín, J.
+  details: IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 17, 3285-3296.
+  year: 2023
+  url: https://ieeexplore.ieee.org/iel7/4609443/4609444/10356628.pdf
+  highlight: 0
+
 - title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG: a proof-of-concept study"
   authors: De Filippi, E., Schmele, T., Nandi, A., Torres, A. G., & Pereda-Banos, A.
-  details: Authorea Preprints.
+  details: Authorea Preprints, 2023.
+  year: 2023
   url: https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.21789866.v1
   description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
   image: emotional_impact.jpg
@@ -97,12 +153,14 @@
 - title: "Emulating Vector Base Amplitude Panning Using Panningtable Synthesis"
   authors: Schmele, T., & Reppel, N.
   details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
+  year: 2023
   url: https://www.aes.org/e-lib/browse.cfm?elib=22273
   highlight: 0
 
 - title: "Comparison of synthesized Virtual Sound Environments with validated Hearing Aid experiments"
   authors: Sayin Saraç, U.
   details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
+  year: 2023
   url: https://www.aes.org/e-lib/browse.cfm?elib=22271
   highlight: 0
 
@@ -110,6 +168,7 @@
   authors: Redondo, R.
   details: "AV4D: Visual Learning of Sounds in Spaces. ICCV Workshop, 2023."
   description: GANs architectural improvements for temporal coherency on generic sound-to-video generation, including triple sound routing, a multiscale dilated RNN, and a novel recurrent and directional video prediction layer.
+  year: 2023
   url: https://av4d.org/papers/iccv23/p4.pdf
   image: avgan.jpg
   highlight: 1
@@ -117,6 +176,7 @@
 - title: "Creating navigable auralisations using RIR convolution: Impact of grid density and panning method on perceived source stability"
   authors: De Muynke, J., Poirier-Quinot, D., & Katz, B.F.G.
   details: Proceedings of the AES Conference on Spatial and Immersive Audio, 2023.
+  year: 2023
   url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
   description: Assessment of the impact of various interpolation parameters on perceived auditory source stability under various auralisation conditions.
   image: RIR_interpolation.jpg
@@ -125,6 +185,7 @@
 - title: "An Objective Evaluation of Hearing AIDS and DNN-Based Binaural Speech Enhancement in Complex Acoustic Scenes"
   authors: Gusó, E., Luberadzka, J., Baig, M., Sayin, U., & Serra, X.
   details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA) (pp. 1-5), 2023.
+  year: 2023
   url: https://ieeexplore.ieee.org/abstract/document/10248112
   description: The performance of five high-end commercially available Hearing Aid (HA) devices are compared to DNN-based speech enhancement algorithms in complex acoustic environments, in which the latter outperforms the HA algorithms in terms of noise suppression and objective intelligibility metrics.
   image: hearing_aids.jpg
@@ -133,51 +194,59 @@
 - title: "Sound spectrum modulation generated by circularly moving sound sources"
   authors: Schmele, T., & Garriga, A.
   details: Audio Engineering Society Convention 154, 2023.
+  year: 2023
   url: https://www.aes.org/e-lib/browse.cfm?elib=22126
   highlight: 0
 
-- title: "Spatial Matrix Synthesis"
-  authors: Schmele, T., & Garriga, A.
-  details: Journal of the Audio Engineering Society, 2023.
-  url:
-  highlight: 0
 
 # 2022
+
+- title: "IQUAFLOW: A new framework to measure image quality."
+  authors: Gallés, P., Takats, K., Hernández-Cabronero, M., Berga, D., Pega, L., Riordan-Chen, L., ... & Marín, J.
+  details: "arXiv preprint arXiv:2210.13269."
+  year: 2022
+  url: https://arxiv.org/pdf/2210.13269
+  highlight: 0
 
 - title: "Comparisons between VBAP and WFS using Spatial Sound Synthesis"
   authors: Schmele, T., & Lopez, J. J.
   details: In Audio Engineering Society Convention 153. Audio Engineering Society, 2022.
+  year: 2022
   url: https://www.aes.org/e-lib/browse.cfm?elib=21951
   highlight: 0
 
 - title: "Use of synthesized higher order ambisonics impulse responses to generate virtual sound environments for hearing aids research"
   authors: Sayin Sarac, U.
   details: Journal of Hearing Science, 12(1), 2022.
+  year: 2022
   url: https://openurl.ebsco.com/EPDB%3Agcd%3A8%3A19275560/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A156438170&crl=c
   highlight: 0
-
 
 - title: "On loss functions and evaluation metrics for music source separation."
   authors: Gusó, E., Pons, J., Pascual, S., & Serrà, J.
   details: In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (pp. 306-310).
+  year: 2022
   url: https://arxiv.org/pdf/2202.07968
   highlight: 0
 
 - title: "Preliminary analysis of vocal ensemble performances in real-time historical auralizations of the Palais des Papes"
   authors: De Muynke, J., Eley, N., Ferrando, J., & Katz, B.F.G.
   details: Proceedings of the 2nd Symposium; The Acoustics of Ancient Theaters, 6-8 July 2022, Verona, Italy
+  year: 2022
   url: https://www.researchgate.net/publication/363713153_Preliminary_analysis_of_vocal_ensemble_performances_in_real-time_historical_auralizations_of_the_Palais_des_Papes
   highlight: 0
 
 - title: "Spatially Oriented Format for Acoustics 2.1: Introduction and Recent Advances"
   authors: Majdak, P., Zotter, F., Brinkmann, F., De Muynke, J., Mihocic, M., & Noisternig, M.
   details: Journal of the Audio Engineering Society, vol. 70, no 7/8, pp. 565--584, 2022.
+  year: 2022
   url: https://www.aes.org/e-lib/browse.cfm?elib=21824
   highlight: 0
 
 - title: "Ears of the past, an inquiry into the sonic memory of the acoustics of Notre-Dame before the fire of 2019"
   authors: De Muynke, J., Baltazar, M., Monferran, M., Voisenat, C., & Katz, B.F.G.
   details: Journal of Cultural Heritage, vol. 56, pp. 130--137, 2022.
+  year: 2022
   url: https://www.sciencedirect.com/science/article/pii/S1296207422001455?via%3Dihub
   highlight: 0
 
@@ -186,12 +255,14 @@
 - title: "Exploring Hate Speech Detection in Multimodal Publications"
   authors: Gomez, R., Gibert, J., Gomez, L., & Karatzas, D.
   details: arXiv preprint arXiv:1910.03814, 2020.
+  year: 2020
   url: https://arxiv.org/pdf/1910.03814
   highlight: 0
 
 - title: "ARSI: An Aerial Robot for Sewer Inspection"
   authors: F. Chataigner, P. Cavestany, M. Soler, C. R.,Jesús Pablo Gonzalez, C. Bosch, J. Gibert, A. Torrente, R. Gomez and D. Serrano.
   details: "Advances in Robotics Research: From Lab to Market (pp. 249-274), Springer, 2020."
+  year: 2020
   url: https://eurecat.org/es/portfolio-items/aerial-robot-for-sewer-inspection/
   highlight: 1
   description: The Autonomous Robot for Sewer Inspection (ARSI), a robotic system designed to make the work of inspection brigades safer and more efficient.
@@ -200,43 +271,56 @@
 
 # 2019
 
+- title: "Responsive geographical information systems for spatio-temporal analysis of mobile networks in Barcelona"
+  authors: Sacramento Gutierres, F. R., Torrente, A., & Torrent-Moreno, M.
+  details: "ACE: architecture, city and environment, 14(40), 163-192."
+  year: 2019
+  url: https://revistes.upc.edu/index.php/ACE/article/view/5349/888
+  highlight: 0
+    
 - title: "Artificial Intelligence in the Media and Creative Industries"
   authors: G. Amato, M. Behrmann, F. Bimbot, B. Caramiaux, F. Falchi, A. Garcia, J. Geurts, J. Gibert, G. Gravier, H. Holken, H. Koenitz, S. Lefebvre, A. Liutkus, F. Lotte, A. Perkis, R. Redondo, E. Turrin, T. Viéville, E. Vincent.
   details: New European Media (NEM), White paper, April 2019.
+  year: 2019
   url: https://nem-initiative.org/wp-content/uploads/2018/10/nem-positionpaper-aiinceativeindustry.pdf
   highlight: 0
 
 - title: "Analysis of spherical isotropic noise fields with an A-Format tetrahedral microphone"
   authors: Perez-Lopez, A., & Stefanakis, N.
   details: The Journal of the Acoustical Society of America, 146(4), EL329-EL334, 2019.
+  year: 2019
   url: https://asa.scitation.org/doi/full/10.1121/1.5127736
   highlight: 0
 
 - title: "A hybrid parametric-deep learning approach for sound event localization and detection"
   authors: Pérez-López, A., Fonseca, E., & Serra, X.
   details:  ArXiv preprint arXiv:1908.10133, 2019.
+  year: 2019
   url: https://arxiv.org/pdf/1908.10133
   highlight: 0
 
 - title: "Self-Supervised Learning from Web Data for Multimodal Retrieval"
   authors: Gomez, R., Gomez, L., Gibert, J., & Karatzas, D.
   details: Multimodal Scene Understanding (pp. 279-306). Academic Press, 2019.
+  year: 2019
   url: https://arxiv.org/pdf/1901.02004
   highlight: 0
 
 - title: "Controllable Image-Based Transfer of Flow Phenomena"
   authors: Bosch, C., & Patow, G.
   details: Computer Graphics Forum (Vol. 38, No. 1, pp. 274-285), Feb 2019.
+  year: 2019
   url: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13530
   highlight: 0
 
 - title: "Selective Style Transfer for Text"
   authors: Gomez, R., Biten, A. F., Gomez, L., Gibert, J., Rusiñol, M., & Karatzas, D.
   details: ArXiv preprint arXiv:1906.01466, 2019.
+  year: 2019
   url: https://arxiv.org/pdf/1906.01466
   highlight: 1
-  image: styletransfer.jpg
   description: This paper explores on two propossed architectures the possibilities of image style transfer applied to text maintaining the original transcriptions.
+  image: styletransfer.jpg
 
 
 # 2018
@@ -244,60 +328,63 @@
 - title: "Controlling the apparent sourcesize in ambisonics using decorrelation filters"
   authors: Schmele, T., & Sayin, U.
   details: AES International Conference on Spatial Reproduction-Aesthetics and Science. Audio Engineering Society, 2018.
+  year: 2018
   url: https://binci.eu/wp-content/uploads/2018/09/AES2018_Controlling_The_Apparent_Source_Size_In_Ambisonics_Paper.pdf
   highlight: 0
 
 - title: "Psychophysiological Methods for Quality of Experience Research in Virtual Reality Systems and Applications"
   authors: M. Barreda-Ángeles, R. Redondo-Tejedor, A. Pereda-Baños.
   details:  MMTC Communications - Frontiers (IEEE), Vol. 13, No. 1, January 2018.
+  year: 2018
   url: https://www.researchgate.net/profile/Miguel_Barreda-Angeles/publication/324602759_Psychophysiological_Methods_for_Quality_of_Experience_Research_in_Virtual_Reality_Systems_and_Applications/links/5ad87f24458515c60f58f7ef/Psychophysiological-Methods-for-Quality-of-Experience-Research-in-Virtual-Reality-Systems-and-Applications.pdf
   highlight: 0
 
 - title: "Learning from #Barcelona Instagram data what Locals and Tourists post about its Neighbourhoods"
   authors: Gomez, R., Gomez, L., Gibert, J., & Karatzas, D.
   details: Proceedings of the European Conference on Computer Vision (ECCV), 2018.
+  year: 2018
   url: http://openaccess.thecvf.com/content_ECCVW_2018/papers/11134/Gomez_Learning_from_Barcelona_Instagram_data_what_Locals_and_Tourists_post_ECCVW_2018_paper.pdf
   highlight: 0
 
 - title: "Urban weathering: Interactive rendering of polluted cities"
   authors: Muñoz-Pandiella, I., Bosch, C., Mérillou, N., Patow, G., Mérillou, S., & Pueyo, X.
   details: IEEE transactions on visualization and computer graphics, 24(12), 3239-3252, 2018.
+  year: 2018
   url:
   highlight: 0
 
 - title: "Sound-Space Choreography"
   authors: Erruz, G., & Schmele, T.
   details: "Audio Engineering Society Conference: 2018 AES International Conference on Spatial Reproduction-Aesthetics and Science. Audio Engineering Society. July 2018."
+  year: 2018
   url: https://binci.eu/wp-content/uploads/2018/09/sound-space-choreography.pdf
   highlight: 0
 
 - title: "Learning to learn from web data through deep semantic embeddings"
   authors: Gomez, R., Gomez, L., Gibert, J., & Karatzas, D.
   details: Proceedings of the European Conference on Computer Vision (ECCV), 2018.
+  year: 2018
   url: http://openaccess.thecvf.com/content_ECCVW_2018/papers/11134/Gomez_Learning_to_Learn_from_Web_Data_through_Deep_Semantic_Embeddings_ECCVW_2018_paper.pdf
   highlight: 0
 
 - title: "Ambiscaper: A Tool for Automatic Generation and Annotation of Reverberant Ambisonics Sound Scenes"
   authors: Perez-Lopez, A.
   details: 16th IEEE International Workshop on Acoustic Signal Enhancement (IWAENC) (pp. 1-9), September 2018.
+  year: 2018
   url:
-  highlight: 0
-
-- title: "Controlling the apparent sourcesize in ambisonics using decorrelation filters"
-  authors: Schmele, T., & Sayin, U.
-  details: AES International Conference on Spatial Reproduction-Aesthetics and Science, Audio Engineering Society Conference, July 2018.
-  url: https://binci.eu/wp-content/uploads/2018/09/AES2018_Controlling_The_Apparent_Source_Size_In_Ambisonics_Paper.pdf
   highlight: 0
 
 - title: "Ambisonics Directional Room Impulse Response as a new Convention of the Spatially Oriented Format for Acoustics"
   authors: Pérez-López, A., & De Muynke, J.
   details: AES 144th Convention, May 2018.
+  year: 2018
   url: https://www.researchgate.net/publication/327987244_Ambisonics_Directional_Room_Impulse_Response_as_a_new_Convention_of_the_Spatially_Oriented_Format_for_Acoustics
   highlight: 0
 
 - title: "Tools for the production of spatial audio within BINCI"
   authors: Kruh-Elendt, A., Fiebig, A., Sottek, R., & De Muynke, J.
   details: DAGA 2018.
+  year: 2018
   url: https://www.researchgate.net/publication/336739126_Tools_for_the_production_of_spatial_audio_within_BINCI
   highlight: 0
 
@@ -307,23 +394,27 @@
 - title: "Seamless 3D interaction of virtual and real objects in professional virtual studios"
   authors: Hach, T., Arias, P., Bosch, C., Montesa, J., & Gascó, P.
   details:  SMPTE Motion Imaging Journal, 126(1), 43-56, 2017.
+  year: 2017
   url: https://ieeexplore.ieee.org/document/7847506
   highlight: 0
 
 - title: "Binaural tools for 3D audio production at home"
   authors: Garriga, A., Fuenmayor, M. E., & Caballero, M.
   details:  Proc. NEM Summit, 2017.
+  year: 2017
   url: https://binci.eu/wp-content/uploads/2017/11/Nem-summit17-STTSC_BinauralTools_Abstract_final_version_v2.pdf
   highlight: 0
 
 - title: "Towards Semi-Automatic Scaling Detection on Flat Stones"
   authors: Muñoz-Pandiella, I., Akoglu, K., Bosch, C., & Rushmeier, H. E.
   details:  GHC (pp. 49-58), September 2017.
+  year: 2017
   url: https://www.researchgate.net/profile/Kiraz_Goeze_Akoglu/publication/320358564_Towards_Semi-Automatic_Scaling_Detection_on_Flat_Stones/links/59e0101c4585153716015d9d/Towards-Semi-Automatic-Scaling-Detection-on-Flat-Stones.pdf
   highlight: 0
 
 - title: "Real‐Time Solar Exposure Simulation in Complex Cities"
   authors: Muñoz‐Pandiella, I., Bosch, C., Mérillou, N., Pueyo, X., & Mérillou, S.
   details: Computer Graphics Forum (Vol. 36, No. 8, pp. 554-566), December 2017.
+  year: 2017
   url: https://dugi-doc.udg.edu/bitstream/handle/10256/14508/027367.pdf?sequence=1
   highlight: 0
