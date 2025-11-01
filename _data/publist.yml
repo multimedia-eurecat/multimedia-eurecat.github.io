@@ -13,7 +13,7 @@
 
 - title: "Differentiating Sensations of Sound Envelopment in Spatial Sound Synthesis Approaches: an Explorative Study"
   authors: Schmele, T., De Filippi, E.
-  details: 159th Convention of the Audio Engineering Society, Long Beach, CA, USA, October 23-25. 
+  details: 159th Convention of the Audio Engineering Society, Long Beach, CA, USA, October 23-25, 2025.
   year: 2025
   url: 
   highlight: 0
@@ -27,7 +27,7 @@
 
 - title: "Using Virtual Reality to Raise Awareness of Communication Challenges Faced by Individuals with Hearing Loss"
   authors: Luberadzka, J., Gusó, E., Sayin, U., & Garriga, A.
-  details: IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW) (pp. 1640-1641).
+  details: IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW) (pp. 1640-1641), 2025.
   year: 2025
   url: https://ieeexplore.ieee.org/abstract/document/10972720/
   highlight: 0
@@ -35,14 +35,15 @@
 - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
   authors: De Muynke, J., Ferrando, J., & Katz, B.F.G.
   details: Journal of Sound Studies, 2025.
-  year: 2025
+  year: 2025  
   url: https://www.tandfonline.com/doi/full/10.1080/20551940.2025.2459454
   image: DiM_PRISM.jpg
   highlight: 1
+  description: The study reconstructs the acoustics of the Great Chapel at the Palais des Papes to examine how its changing architecture influenced 14th-century Ars Nova choral performance. Through real-time virtual auralisation, singers experienced historically accurate acoustics, offering new insights into the interplay between medieval music and its performance spaces.  
 
 - title: "Audio technology for improving social interaction in extended reality"
   authors: J. Luberadzka, E. Gusó Muñoz, U. Sayin, and A. Garriga
-  details: Front. Virtual Real., Sec. Technologies for VR, Volume 5 - 2024, 23 January 2025
+  details: Front. Virtual Real., Sec. Technologies for VR, Volume 5 - 2024, 23 January 2025.
   year: 2025
   url: https://doi.org/10.3389/frvir.2024.1442774
   highlight: 0
@@ -63,7 +64,7 @@
 
 - title: "Reconstructing acoustic heritage: Methods and tools for interdisciplinary research and audio-augmented experiences"
   authors: De Muynke, J.
-  details: PhD dissertation, Sorbonne Université.
+  details: PhD dissertation, Sorbonne Université, 2025.
   year: 2025
   url: https://theses.hal.science/tel-05319073
   highlight: 0
@@ -77,57 +78,58 @@
 
 - title: "Schmele-Spherical Glitch Study"
   authors: Schmele, T.
-  details: In Speculative Sound Synthesis Symposium.
+  details: In Speculative Sound Synthesis Symposium, 2024.
   year: 2024
   url: https://speculativesoundsynthesis.iem.sh/symposium/docs/proceedings/schmele/
   highlight: 0
 
 - title: "Effect of interpolation artifacts on perceived stability of nearby sources in a navigable reverberant virtual environment"
   authors: De Muynke, J., Poirier-Quinot, D., & Katz, B.F.G.
-  details: Journal of the Audio Engineering Society.
+  details: Journal of the Audio Engineering Society, 2024.
   year: 2024
   url: https://aes2.org/publications/elibrary-page/?id=22770
   image: RIR_interpolation.jpg
+  description: The study explores how interpolation between spatial Room Impulse Responses affects the perceived stability of sound sources in navigable reverberant virtual environments. Using third-order Ambisonic RIR convolution with MagLS binaural decoding, VR listening tests inform the design of realistic spatial audio for immersive experiences such as virtual museum visits.
   highlight: 1
 
 - title: "Whispers of the Past at Notre-Dame: a geo-localised immersive walk through the sonic memory of Notre-Dame de Paris cathedral"
   authors: Peichert, S., De Muynke, J., & Katz, B.F.G
-  details:  Résonances Gothiques, Collegium Musicae.
+  details:  Résonances Gothiques, Collegium Musicae, 2024.
   year: 2024
   url: https://zenodo.org/records/14163355
   highlight: 0
 
 - title: "Characterization of Synthetic Lung Nodules in Conditional Latent Diffusion of Chest CT Scans"
   authors: Marí Molas, R., Subías-Beltrán, P., Pitarch Abaigar, C., Galofré Cardo, M., & Redondo Tejedor, R.
-  details: In Artificial Intelligence Research and Development (pp. 44-51). IOS Press.
+  details: In Artificial Intelligence Research and Development (pp. 44-51). IOS Press, 2024.
   year: 2024
   url: https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240408
   highlight: 0
 
 - title: "The Past Has Ears at Notre-Dame: Acoustic digital twins for research and narration"
   authors: Katz, B.F.G., Cros C., Peichert, S., De Muynke, J.
-  details: Digital Applications in Archaeology and Cultural Heritage.
+  details: Digital Applications in Archaeology and Cultural Heritage. 2024.
   year: 2024
   url: https://www.sciencedirect.com/science/article/abs/pii/S2212054824000547?via%3Dihub
   highlight: 0
 
 - title: "Interpretation of a medieval vocal repertoire in the reconstructed acoustics of the Great Chapel of the Palais des Papes"
   authors: Ferrando, J. & De Muynke, J.
-  details: "Historical Resonances: Space, Senses and Early Music, Brill Fink, The Netherlands."
+  details: "Historical Resonances: Space, Senses and Early Music, Brill Fink, The Netherlands, 2024."
   year: 2024
   url: https://hal.science/hal-04928924v1/document
   highlight: 0
 
 - title: "HeSoAN : un projet archéoacoustique"
   authors: Ferrando, J., De Muynke, J., Katz, B.F.G.
-  details: Résonances Gothiques, Collegium Musicae.
+  details: Résonances Gothiques, Collegium Musicae, 2024.
   year: 2024
   url: https://hal.science/hal-04817835
   highlight: 0
 
 - title: "Spatial Matrix Synthesis"
   authors: Schmele, T., & Garriga, A.
-  details: Journal of the Audio Engineering Society, 72(4), 193-210.
+  details: Journal of the Audio Engineering Society, 72(4), 193-210, 2024.
   year: 2024
   url: https://www.aes.org/tmpFiles/elib/20251031/22390.pdf
   highlight: 0
@@ -136,7 +138,7 @@
 
 - title: "A New Framework for Evaluating Image Quality Including Deep Learning Task Performances as a Proxy"
   authors: Gallés, P., Takáts, K., Hernández-Cabronero, M., Berga, D., Pega, L., Riordan-Chen, L., ... & Marín, J.
-  details: IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 17, 3285-3296.
+  details: IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 17, 3285-3296, 2023.
   year: 2023
   url: https://ieeexplore.ieee.org/iel7/4609443/4609444/10356628.pdf
   highlight: 0
@@ -146,8 +148,8 @@
   details: Authorea Preprints, 2023.
   year: 2023
   url: https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.21789866.v1
-  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
   image: emotional_impact.jpg
+  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
   highlight: 1
 
 - title: "Emulating Vector Base Amplitude Panning Using Panningtable Synthesis"
