@@ -141,7 +141,9 @@
   details: Journal of the Audio Engineering Society, 72(4), 193-210, 2024.
   year: 2024
   url: https://www.aes.org/tmpFiles/elib/20251031/22390.pdf
-  highlight: 0
+  image: spatial_matrix_synthesis.png
+  description: Definition of a method to synthesize new sounds using only spatial transformation matrices in 2D and 3D audio space.
+  highlight: 1
 
   # 2023
 
