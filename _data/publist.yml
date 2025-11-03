@@ -15,8 +15,17 @@
   authors: Schmele, T., De Filippi, E.
   details: 159th Convention of the Audio Engineering Society, Long Beach, CA, USA, October 23-25, 2025.
   year: 2025
-  url: 
+  url: https://aes2.org/publications/elibrary-page/?id=23095
   highlight: 0
+
+- title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG"
+  authors: De Filippi, E., Schmele, T., Nandi, A., Pereda-Banos, A. % Torres, A. G.
+  details: Music and Sound Generation in the AI Era, Springer Nature, 2023.
+  year: 2025
+  url: https://link.springer.com/chapter/10.1007/978-3-032-02042-0_4
+  image: emotional_impact.jpg
+  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
+  highlight: 1
 
 - title: "S-EO: A Large-Scale Dataset for Geometry-Aware Shadow Detection in Remote Sensing Applications"
   authors: Masquil, E., Marí, R., Ehret, T., Meinhardt-Llopis, E., Musé, P., & Facciolo, G.
@@ -143,14 +152,14 @@
   url: https://ieeexplore.ieee.org/iel7/4609443/4609444/10356628.pdf
   highlight: 0
 
-- title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG: a proof-of-concept study"
+- title: " in Music Using Machine Learning and EEG: a proof-of-concept study"
   authors: De Filippi, E., Schmele, T., Nandi, A., Torres, A. G., & Pereda-Banos, A.
   details: Authorea Preprints, 2023.
   year: 2023
   url: https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.21789866.v1
-  image: emotional_impact.jpg
-  description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
-  highlight: 1
+  # image: emotional_impact.jpg
+  # description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
+  # highlight: 1
 
 - title: "Emulating Vector Base Amplitude Panning Using Panningtable Synthesis"
   authors: Schmele, T., & Reppel, N.
