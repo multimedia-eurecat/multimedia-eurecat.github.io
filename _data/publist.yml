@@ -10,6 +10,23 @@
 #   news2: See also <a href="http://www.quantumuniverse.nl/een-isolerende-supergeleider"> quantum universe </a> (in dutch), <a href="https://phys.org/news/2018-10-mysterious-insulating-phenomenon-superconductor.html"> Phys.org </a>, <a href="https://www.universiteitleiden.nl/en/news/2018/10/insulating-phenomenon-in-superconductor"> Leiden University news</a>, <a href="http://iop.uva.nl/content/news/2018/10/noise-helps-physicists-discover-insulating-phenomenon-in-superconductor.html"> UvA news<a>.
 
 # 2025
+- title: "MB-RIRs: a Synthetic Room Impulse Response Dataset with Frequency-Dependent Absorption Coefficients"
+  authors: Guso, E., Luberadzka, J., Sayin, U. & Serra, X.
+  details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA 2025)
+  year: 2025
+  url: https://doi.org/10.48550/arXiv.2507.09750
+  image: mbrirs.png
+  description: We open-source a synthetic reverberation dataset that improves the performance of data-driven speech models. We show that Multi-Band (MB) absorption coefficients on shoebox-based synthetic RIRs lead to better performance in DNN-based speech enhancement compared to using single-band (SB) absorption coefficients. We additionally study implementing source and receiver directivities.
+  highlight: 1
+
+- title: "Conditioned Wave-U-Net for Acoustic Matching of Speech in Shared XR Environments"
+  authors: Luberadzka, J., Guso, E. & Sayin, U.
+  details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA 2025)
+  year: 2025
+  url: https://joaluba.github.io/CWUNET-demo/
+  image: cwunet.png
+  description: We propose a model for acoutic style transfer from speech signals. The reverberation (r1) of a speech signal (s1) is transformed into s1r2 by Film-conditioning a U-net with another reverberant speech signal s2r2. Our model outperforms two baselines and performas on par with a semi-oracle case.
+  highlight: 1
 
 - title: "Differentiating Sensations of Sound Envelopment in Spatial Sound Synthesis Approaches: an Explorative Study"
   authors: Schmele, T. & De Filippi, E.
