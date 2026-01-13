@@ -10,6 +10,14 @@
 #   news2: See also <a href="http://www.quantumuniverse.nl/een-isolerende-supergeleider"> quantum universe </a> (in dutch), <a href="https://phys.org/news/2018-10-mysterious-insulating-phenomenon-superconductor.html"> Phys.org </a>, <a href="https://www.universiteitleiden.nl/en/news/2018/10/insulating-phenomenon-in-superconductor"> Leiden University news</a>, <a href="http://iop.uva.nl/content/news/2018/10/noise-helps-physicists-discover-insulating-phenomenon-in-superconductor.html"> UvA news<a>.
 
 # 2025
+
+- title: "LAND: Lung and Nodule Diffusion for 3D Chest CT Synthesis with Anatomical Guidance"
+  authors: Oliveras, A., Marí, R., Redondo, R., Guardià, O., Tost, A., Nagarajan, B., Migliorelli, C., Ribas, V., & Radeva, P.
+  details: Medical Imaging meets EurIPS: MedEurIPS 2025 (EurIPS Workshops)
+  year: 2025
+  url: https://arxiv.org/abs/2510.18446
+  highlight: 0
+
 - title: "MB-RIRs: a Synthetic Room Impulse Response Dataset with Frequency-Dependent Absorption Coefficients"
   authors: Guso, E., Luberadzka, J., Sayin, U. & Serra, X.
   details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA 2025)

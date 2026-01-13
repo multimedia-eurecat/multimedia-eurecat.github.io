@@ -54,9 +54,10 @@
   role: Senior Researcher
   info: At Eurecat since 2024
   email: roger.mari@eurecat.org
-  number_educ: 2
-  education1: MSc Computer Vision at <a href="http://www.cvc.uab.es">CVC</a>.
-  education2: PhD Applied Mathematics at <a href="https://ens-paris-saclay.fr">ENS-Paris-Saclay</a>.
+  number_educ: 3
+  education1: BSc Audiovisual Systems Engineering at <a href="https://www.upf.edu/">UPF</a>.
+  education2: MSc in Computer Vision at <a href="http://www.cvc.uab.es">CVC</a>.
+  education3: PhD in Applied Mathematics at <a href="https://ens-paris-saclay.fr">ENS-Paris-Saclay</a>.
 
 - name: Julien De Muynke
   photo: julien.jpg
