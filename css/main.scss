@@ -129,19 +129,25 @@ firstp {
 
 
 /* Carousel */
-
-.carousel {
-    border-radius: 12px;
+// Fixed border-radious by making the carousel styles more specific to Home’s carousel, so they don’t get overridden after Bootstrap initializes it.
+#homeid #carousel.carousel {
+    border-radius: 6px;
+    max-width: 800px;
+    width: 100%;
     margin-bottom: 40px;
     margin-top: 30px;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     overflow: hidden;
 }
 
-.carousel img {
-    border-radius: 12px;
+#homeid #carousel .carousel-inner,
+#homeid #carousel .item,
+#homeid #carousel .item > img,
+#homeid #carousel .item > a > img,
+#homeid #carousel img {
+    border-radius: 6px;
 }
 
 /* Beyond this point re-used from https://github.com/gombru/gombru.github.io/blob/master/css/main.css */
