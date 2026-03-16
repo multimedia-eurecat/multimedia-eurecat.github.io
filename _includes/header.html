@@ -15,11 +15,11 @@
   	</div>
 	<div class="collapse navbar-collapse" id="navbar-collapse-1">
 	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/projects">Projects</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/blog">Blog</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/" {% if page.url == "/" %}class="active-nav"{% endif %}>Home</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/team" {% if page.url contains "/team" %}class="active-nav"{% endif %}>Team</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/projects" {% if page.url contains "/projects" %}class="active-nav"{% endif %}>Projects</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/publications" {% if page.url contains "/publications" %}class="active-nav"{% endif %}>Publications</a></li>
+		<li><a href="{{ site.url }}{{ site.baseurl }}/blog" {% if page.url contains "/blog" %}class="active-nav"{% endif %}>Blog</a></li>
 	  </ul>
 	</div>
   </div>

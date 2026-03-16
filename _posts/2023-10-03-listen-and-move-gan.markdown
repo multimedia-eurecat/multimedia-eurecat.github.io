@@ -92,7 +92,7 @@ Baseline (MfS) vs full model sound robustness. FID averaged over 500 audio clips
 <img src="/assets/posts/listen-and-move-gan/avgan_video_frames_examples.jpg" alt="Teaser" style="text-align:center;width:100%"/><br>
 Examples of consecutive frames synthesized by our full-model at 256x256 resolution and 20fps fed with validation audio samples of the videos.
 {: .figurecaption}
-</div>
+
 
 # Additional synthetic video footage
 
@@ -109,13 +109,12 @@ Examples of consecutive frames synthesized by our full-model at 256x256 resoluti
 <video width="235" height="235" controls>
   <source src="/assets/posts/listen-and-move-gan/vids/195149__flcellogrl__cello-c2chromatic-scale-12Tup_0090000.mp4" type="video/mp4">
 </video>
-<i>
-   J.S. Bach - Cello Suite Nº6    
-Pau Casals - El cant dels ocells    
-Nirvana - Come as you are       
-Ascending scale     <br>
-  (original audio track)                                          (different excerpt, lower res)
-</i>
+<span style="display: inline-block; margin-right: 30px;">J.S. Bach - Cello Suite Nº6</span>
+<span style="display: inline-block; margin-right: 30px;">Pau Casals - El cant dels ocells</span>
+<span style="display: inline-block; margin-right: 80px;">Nirvana - Come as you are</span>
+<span style="display: inline-block; margin-right: 45px;">Ascending scale</span>
+<span style="display: inline-block; margin-right: 300px;">(original audio track)</span>
+<span style="display: inline-block; margin-right: 200px;">(different excerpt, lower res)</span>
 </div>
 
 <br>
@@ -140,16 +139,14 @@ Ascending scale     <br>
 <video width="128" height="128" controls>
   <source src="/assets/posts/listen-and-move-gan/vids/MEAD_W33_left_60_Excerpt_0070000.mp4" type="video/mp4">
 </video>
-<i>
-Once I saw - A.I.Levin    
-Drums     
-MEAD M31       
-El cant dels ocells   
-Trombone    
-MEAD W33   <br>
-(original sound sources)                       
-(replaced sounds)  
-</i>
+<span style="display: inline-block; margin-right: 30px;">Once I saw - A.I.Levin</span>
+<span style="display: inline-block; margin-right: 60px;">Drums</span>
+<span style="display: inline-block; margin-right: 80px;">MEAD M31</span>
+<span style="display: inline-block; margin-right: 30px;">El cant dels ocells</span>
+<span style="display: inline-block; margin-right: 35px;">Trombone</span>
+<span style="display: inline-block; margin-right: 50px;">MEAD W33</span>
+<span style="display: inline-block; margin-right: 300px;">(original sound sources)</span>
+<span style="display: inline-block; margin-right: 20px;">(replaced sounds)</span>
 </div>
 
 <br>
@@ -172,15 +169,13 @@ MEAD W33   <br>
 <video width="128" height="128" controls>
   <source src="/assets/posts/listen-and-move-gan/vids/Forest_Once_I_Saw_CUT_Excerpt_0070000.mp4" type="video/mp4">
 </video>
-<i>
-  Trombone ([SubURMP](https://labsites.rochester.edu/air/projects/URMP.html))    
-[Relaxing ocean](https://www.youtube.com/watch?v=vPhg6sc1Mk4)  
-El cant dels ocells     
-[Green forest](https://www.google.com/search?client=safari&rls=en&q=Green_Forest_River_Flowing_in_Rainy_Weather&ie=UTF-8&oe=UTF-8)    
-Once I saw     
-<br>
-     (original sound)                (original sound) 
-</i>
+<span style="display: inline-block; margin-right: 35px;">Trombone ([SubURMP](https://labsites.rochester.edu/air/projects/URMP.html))</span>
+<span style="display: inline-block; margin-right: 20px;">[Relaxing ocean](https://www.youtube.com/watch?v=vPhg6sc1Mk4)</span>
+<span style="display: inline-block; margin-right: 65px;">El cant dels ocells</span>
+<span style="display: inline-block; margin-right: 10px;">[Green forest](https://www.google.com/search?client=safari&rls=en&q=Green_Forest_River_Flowing_in_Rainy_Weather&ie=UTF-8&oe=UTF-8)  </span>
+<span style="display: inline-block; margin-right: 10px;">Once I saw  </span>
+<span style="display: inline-block; margin-right: 380px;">(original sound)</span>
+<span style="display: inline-block; margin-right: 125px;">(original sound)</span>
 </div>
 
 # Discussion

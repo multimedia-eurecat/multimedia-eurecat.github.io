@@ -7,7 +7,7 @@ permalink: /publications/
 ---
 
 
-# Publications
+<!-- # Publications -->
 
 ## Highlights
 
@@ -24,12 +24,11 @@ permalink: /publications/
 <div class="col-sm-6 clearfix">
  <div class="well">
   <pubtit><a href="{{ publi.url }}">{{ publi.title }}</a></pubtit>
+  <p>{{ publi.authors }}</p>
   <img src="{{ site.url }}{{ site.baseurl }}/assets/publications/{{ publi.image }}" class="img-responsive" width="200em" style="float: left" />
   <p>{{ publi.description }}</p>
-  <br>
-  <p><em>{{ publi.authors }}</em></p>
-  <p>{{ publi.details }}</p>
-  <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
+  <p><em>{{ publi.details }}</em></p>
+  <p class="text-news"><strong> {{ publi.news1 }}</strong></p>
   <p> {{ publi.news2 }}</p>
  </div>
 </div>
@@ -48,8 +47,7 @@ permalink: /publications/
 </div>
 {% endif %}
 
-<p> &nbsp; </p>
-
+<!-- <p> &nbsp; </p> -->
 
 ## Full List
 
@@ -62,7 +60,8 @@ permalink: /publications/
     <li>
       <a href="{{ publi.url }}">{{ publi.title }}</a><br/>
       <em>{{ publi.authors }}</em><br/>
-      {{ publi.details }}
+      {{ publi.details }}<br/>
+      <strong>{{ publi.news1 }}</strong>
     </li>
   {% endfor %}
   </ul>

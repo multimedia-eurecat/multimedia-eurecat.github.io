@@ -6,8 +6,10 @@ sitemap: false
 permalink: /
 ---
 
-The Multimedia Technologies Unit (MTU) at [Eurecat](https://www.eurecat.org) has three main research groups for *audio processing*, *image processing*, and *interactive visualization*. Check out our open source code in [Github-MTU](https://github.com/multimedia-eurecat).
+<br />
+<div class="intro-section">
 
+<h1> Multimedia Technologies Unit </h1>
 
 <div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover" >
     <!-- Menu -->
@@ -18,19 +20,17 @@ The Multimedia Technologies Unit (MTU) at [Eurecat](https://www.eurecat.org) has
         <li data-target="#carousel" data-slide-to="3"></li>
         <li data-target="#carousel" data-slide-to="4"></li>
         <li data-target="#carousel" data-slide-to="5"></li>
-        <li data-target="#carousel" data-slide-to="6"></li>
+        <!-- <li data-target="#carousel" data-slide-to="6"></li> -->
     </ol>
 
     <!-- Items -->
     <div class="carousel-inner" markdown="0">
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/audio3D_study.jpg" alt="Slide 1"/></div>
-        <div class="item active"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/mini_estadi_3Drecons.jpg" alt="Slide 2"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/natural_matting_autopost.jpg" alt="Slide 3"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/inpainting_3flex.jpg" alt="Slide 4"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/logo_detection.jpg" alt="Slide 5"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/multimodal_retrieval.jpg" alt="Slide 6"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/face_object_3Drecons.jpg" alt="Slide 7"/></div>
-        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/audio3D_marquee.jpg" alt="Slide 8"/></div>
+        <div class="item active"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/audio3D_study.jpg" alt="Slide 1"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/MexECON_avatar.jpg" alt="Slide 2"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/face_object_3Drecons.jpg" alt="Slide 3"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/guestXR.jpg" alt="Slide 4"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/shinynerf.jpg" alt="Slide 5"/></div>
+        <div class="item"><img src="{{ site.url }}{{ site.baseurl }}/assets/slider/eo_maps_to_image.jpg" alt="Slide 6"/></div>
     </div>
   <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -43,16 +43,64 @@ The Multimedia Technologies Unit (MTU) at [Eurecat](https://www.eurecat.org) has
 </div>
 
 
-## Audio processing 
+The Multimedia Technologies Unit at [Eurecat](https://www.eurecat.org) conducts applied research and innovation in advanced multimedia technologies, combining audio, computer vision, artificial intelligence, and immersive interaction. Our work bridges scientific research and real-world deployment through participation in European, national, and industrial R&D projects, as well as through a strong record of scientific publications and technology transfer.
 
-From 2009 to 2012, in the context of the 2020 3D Media project (ICT-2007-1) Eurecat’s audio research group developed the 3D audio technology that offered a truly immersive experience. This technology engineered the start-up ImmSound, one of the world pioneering companies in bringing 3D audio to cinema, which has been recently acquired by Dolby Laboratories. The audio group is willing to repeat the successful experience focusing in new research lines in the field of developing software/hardware solutions for 3D music production. 
+The unit is organized around three main applied research areas through the **Audio**, **Image**, and **Visualization Teams**. 
+Together, these teams contribute to Eurecat's strategic research directions in areas such as multimodal generative AI, 3D digitization and digital twins, advanced spatial audio technologies, XR enhanced with AI, and affective computing and sentiment analysis.
 
-## Image processing 
+[Explore our open-source developments on Github](https://github.com/multimedia-eurecat)
 
-The image processing group focuses on computer vision technologies for image, video, and 3D multi-view content. In particular, the group has extensive experience in: object and feature detection, object segmentation and tracking in videos, natural video alpha-matting, image and video (2D and 3D) inpainting, depth estimation, depth processing and enhancement, 3D reconstruction from multiples views, and novel view synthesis. The latest research of the group has been focusing on extending computer vision algorithms into GPU programming and to solve problems under deep learning paradigms. 
+</div>
 
-## Interactive Visualization
 
-The Laboratory of Virtual Visualization in Eurecat’s Multimedia Technologies Unit focuses its activity on immersive and interactive data representation, to improve the understanding of complex information, and adding value to the context of the heterogeneous data sources involved on mixing geolocated data, Industrial and Digital assets through optimal User Experience interfaces. A wide array of outputs and devices (Smart glasses, holograms, desktop, etc) are always involved with the objective of facilitating the adoption of state of the art interaction technology. 
+<div class="team-card">
+
+**[3D Audio Laboratory](https://labs.eurecat.org/en/laboratory/3d-audio-laboratory/)** — Discover our 3D audio lab and services for creating immersive sound experiences in XR, media production, and spatial computing.
+
+</div>
+
+---
+<!-- ## Audio Team -->
+
+<div class="team-card">
+
+The <strong>Audio Team</strong> develops technologies for spatial audio, immersive listening, perceptual audio enhancement, and intelligent audio analysis and generation. The audio team has a long trajectory in immersive sound technologies as pioneers in 3D audio and founders of the spin-off ImmSound, later acquired by Dolby Laboratories. Building on this foundation, this team continues advancing research in 3D spatial audio, virtual acoustic environments, sound scene simulation, and audio technologies for immersive and extended reality experiences. Recent work also integrates machine learning and multimodal AI into audio technologies, addressing areas such as hearing-related applications, XR communication, acoustic heritage reconstruction, and immersive media production.
+
+</div>
+
+
+<!-- ## Image Team -->
+
+<div class="team-card">
+
+The <strong>Image Team</strong> focuses on computer vision and AI methods for understanding, generating, and reconstructing visual content. Leveraged by Neural Radiance Fields (NeRFs), latent diffusion models, large vision models, its expertise spans image and video analysis, 3D reconstruction and avatars, forecasting generative models, and multimodal affective computing. These technologies support applications in domains such as healthcare, cultural heritage, media production, and industrial environments.
+
+</div>
+
+<!-- ## Visualization Team -->
+
+<div class="team-card">
+
+The <strong>Visualization Team</strong> focuses on immersive and interactive technologies for understanding and exploring complex information. This team develops advanced solutions that combine extended reality (XR), visual analytics, and digital twins. The visualization team builds upon interactive technologies to integrate geolocated information, industrial data, and digital assets into intuitive and immersive interfaces. Solutions are designed for a wide range of platforms, including XR headsets, smart glasses, holographic displays, and desktop environments, always with the goal of improving user experience and decision-making through advanced visualization and interaction technologies.
+
+</div>
+
+---
+
+<div class="research-section">
+<strong>Research with Impact</strong> - Across its three teams, the Multimedia Technologies Unit connects long-term research with practical deployment through collaborative projects, scientific publications, and technology transfer. Our recent activity reflects a clear strategic commitment to:
+
+* *Multimodal generative AI* for video, audio, text, and cross-modal content
+* *3D digitization* including visual and acoustic digital twins and avatars
+* *Advanced audio technologies* for 3D spatialization and perceptual enhancement
+* *Advanced immersive interaction* combining XR and AI
+* *Affective computing and sentiment analysis*
+
+This combination of applied research, experimentation, and innovation positions MTU as a multidisciplinary hub for next-generation multimedia technologies.
+
+</div>
+
+
+
 
 <br>

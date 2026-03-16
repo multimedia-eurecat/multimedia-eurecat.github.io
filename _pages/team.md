@@ -7,13 +7,12 @@ permalink: /team/
 ---
 
 
- We periodically look for new Master and PhD students to join the team, such as the Vicente Lopez call.  
- See the [application form](https://eurecat.talentclue.com/en/node/31197277/12623479) and other [openings](https://eurecat.org/eurecat/treballa-amb-nosaltres/).
+ We are always looking for talented Master's and PhD students to join our research teams. Interested in multimedia technologies and innovative research? Check out our [open positions](https://eurecat.org/eurecat/treballa-amb-nosaltres/) or contact us directly!
 
 <!-- Jump to [staff](#staff), [master and bachelor students](#master-and-bachelor-students), [alumni](#alumni), [administrative support](#administrative-support), [lab visitors](#lab-visitors). -->
 
 
-# Group Members
+## Unit Members
 
 <!-- In alphabetical order. -->
 

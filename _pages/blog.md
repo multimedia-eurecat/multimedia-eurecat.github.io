@@ -6,10 +6,10 @@ permalink: /blog/
 sitemap: false
 ---
 
-# Blog
+<!-- # Blog -->
 
 <div class="blog">
-  
+  <br />
   <ul class="posts">
     {% for post in site.posts %}
     <li>

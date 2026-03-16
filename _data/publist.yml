@@ -1,3 +1,4 @@
+# Example:
 # - title: "Charge trapping and super-Poissonian noise centres in a cuprate superconductor"
 #   authors: KM Bastiaans* & D Cho*, T Benschop, I Battisti, Y Huang, MS Golden, Q Dong, Y Jin, J Zaanen, MP Allan
 #   details:  Nature Physics 14, 1183 (2018)
@@ -8,6 +9,17 @@
 #   description: brief assert description.
 #   news1: <a href="https://aip.scitation.org/doi/10.1063/1.5043267">Instrument details in Rev. Sci. Instrum. 89, 093709 (2018)</a>
 #   news2: See also <a href="http://www.quantumuniverse.nl/een-isolerende-supergeleider"> quantum universe </a> (in dutch), <a href="https://phys.org/news/2018-10-mysterious-insulating-phenomenon-superconductor.html"> Phys.org </a>, <a href="https://www.universiteitleiden.nl/en/news/2018/10/insulating-phenomenon-in-superconductor"> Leiden University news</a>, <a href="http://iop.uva.nl/content/news/2018/10/noise-helps-physicists-discover-insulating-phenomenon-in-superconductor.html"> UvA news<a>.
+
+# 2026
+
+- title: "ShinyNeRF: Digitizing Anisotropic Appearance in Neural Radiance Fields"
+  authors: Barreiro, A., Marí, R., Redondo, R., Haro, G. & Bosch, C.
+  details: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences (pp. 33-40), 2026.
+  year: 2026
+  url: https://isprs-archives.copernicus.org/articles/XLVIII-2-W12-2026/33/2026/
+  description: A physically-based NeRF variant that jointly estimates geometry and anisotropic specular parameters from multi-view images.
+  news1: Best paper award at ISPRS 2026 ✨
+  highlight: 0
 
 # 2025
 
@@ -33,7 +45,7 @@
   year: 2025
   url: https://joaluba.github.io/CWUNET-demo/
   image: cwunet.png
-  description: We propose a model for acoutic style transfer from speech signals. The reverberation (r1) of a speech signal (s1) is transformed into s1r2 by Film-conditioning a U-net with another reverberant speech signal s2r2. Our model outperforms two baselines and performas on par with a semi-oracle case.
+  description: A model for acoustic style transfer in speech. The reverberation (r1) of a speech signal (s1) is transformed into s1r2 by Film-conditioning a U-net with another reverberant speech signal s2r2. Our model outperforms two baselines and performs on par with a semi-oracle case.
   highlight: 1
 
 - title: "Differentiating Sensations of Sound Envelopment in Spatial Sound Synthesis Approaches: an Explorative Study"
@@ -54,7 +66,7 @@
 
 - title: "S-EO: A Large-Scale Dataset for Geometry-Aware Shadow Detection in Remote Sensing Applications"
   authors: Masquil, E., Marí, R., Ehret, T., Meinhardt-Llopis, E., Musé, P., & Facciolo, G.
-  details: 2025 IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW 2025).
+  details: IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW 2025).
   year: 2025
   url: https://openaccess.thecvf.com/content/CVPR2025W/EarthVision/papers/Masquil_S-EO_A_Large-Scale_Dataset_for_Geometry-Aware_Shadow_Detection_in_Remote_CVPRW_2025_paper.pdf
   highlight: 0
@@ -86,7 +98,7 @@
   authors: Barreiro, A. and Marí, R. and Redondo, R. and Haro, G. and Bosch, C. and Berga, D.
   details: Image Processing On Line, 2025.
   year: 2025
-  url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000506
+  url: https://www.ipol.im/pub/art/2025/562/
   highlight: 0
 
 - title: "Latent Diffusion Approaches for Conditional Generation of Aerial Imagery: A Study"
@@ -169,6 +181,37 @@
   image: spatial_matrix_synthesis.png
   description: Definition of a method to synthesize new sounds using only spatial transformation matrices in 2D and 3D audio space.
   highlight: 1
+
+
+
+  # 2025
+
+- title: "Audio technology for improving social interaction in extended reality"
+  authors: J. Luberadzka, E. Gusó Muñoz, U. Sayin, and A. Garriga
+  details: Front. Virtual Real., Sec. Technologies for VR, Volume 5 - 2024, 23 January 2025
+  url: https://doi.org/10.3389/frvir.2024.1442774
+  highlight: 0
+
+- title: "Specularity in NeRFs: A Comparative Study of Ref-NeRF and NRFF"
+  authors: Barreiro, A. and Marí, R. and Redondo, R. and Haro, G. and Bosch, C. and Berga, D.
+  details: Image Processing On Line, 2025.
+  url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000506
+  highlight: 0
+
+- title: "Latent Diffusion Approaches for Conditional Generation of Aerial Imagery: A Study"
+  authors: Marí, R. and Redondo, R.
+  details: Image Processing On Line, 2025.
+  url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000505
+  highlight: 0
+
+  # 2024
+
+- title: "Characterization of Synthetic Lung Nodules in Conditional Latent Diffusion of Chest CT Scans"
+  authors: Marí Molas, R., Subías-Beltrán, P., Pitarch Abaigar, C., Galofré Cardo, M., & Redondo Tejedor, R.
+  details: In Artificial Intelligence Research and Development (pp. 44-51). IOS Press.
+  url: https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240408
+  highlight: 0
+
 
   # 2023
 
@@ -299,7 +342,7 @@
 
 - title: "ARSI: An Aerial Robot for Sewer Inspection"
   authors: F. Chataigner, P. Cavestany, M. Soler, C. R.,Jesús Pablo Gonzalez, C. Bosch, J. Gibert, A. Torrente, R. Gomez and D. Serrano.
-  details: "Advances in Robotics Research: From Lab to Market (pp. 249-274), Springer, 2020."
+  details: "Advances in Robotics Research: From Lab to Market, Springer, 2020."
   year: 2020
   url: https://eurecat.org/es/portfolio-items/aerial-robot-for-sewer-inspection/
   highlight: 1
@@ -352,12 +395,12 @@
   highlight: 0
 
 - title: "Selective Style Transfer for Text"
-  authors: Gomez, R., Biten, A. F., Gomez, L., Gibert, J., Rusiñol, M., & Karatzas, D.
-  details: ArXiv preprint arXiv:1906.01466, 2019.
+  authors: Gomez, R., Biten, A.F., Gomez, L., Gibert, J., Rusiñol, M., & Karatzas, D.
+  details: IEEE International Conference on Document Analysis and Recognition (ICDAR) (pp. 805-812), 2019.
   year: 2019
   url: https://arxiv.org/pdf/1906.01466
   highlight: 1
-  description: This paper explores on two propossed architectures the possibilities of image style transfer applied to text maintaining the original transcriptions.
+  description: This paper proposses two different architectures for image style transfer applied to text while maintaining the original transcriptions.
   image: styletransfer.jpg
 
 
