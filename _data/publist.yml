@@ -17,9 +17,17 @@
   year: 2026
   url: https://isprs-archives.copernicus.org/articles/XLVIII-2-W12-2026/33/2026/
   description: A physically-based NeRF variant that jointly estimates geometry and anisotropic specular parameters from multi-view images.
-  news: ✨ Best paper award at ISPRS 2026 
+  news: ✨ Best paper award at 3D-ARCH 2026
   website: https://multimedia-eurecat.github.io/ShinyNeRF
   code: https://github.com/multimedia-eurecat/ShinyNeRF
+  highlight: 0
+
+- title: "MExECON: Multi-View Extended Explicit Clothed Humans Optimized via Normal Integration"
+  authors: Ece Ugur, F., Redondo, R., Barreiro, A., Hristov, S. & Marí, R.
+  details: International Conference on Computer Vision Theory and Applications (VISAPP).
+  year: 2026
+  url: https://doi.org/10.5220/0014402400004084
+  code: https://github.com/multimedia-eurecat/MExECON
   highlight: 0
 
 # 2025
