@@ -7,20 +7,8 @@
 #   education2: title description.
 #   education3: title description.
 #
-#   Please, keep alphabetical order!
 
-# - name: Adan Garriga
-#   photo: adan.jpg
-#   role: Director of the MTU
-#   info: At Eurecat since 2015
-#   email: adan.garriga@eurecat.org
-#   number_educ: 4
-#   education1: Professional Piano Degree at <a href="https://www.conservatoriliceu.es/en">LICEO</a>.
-#   education2: BSc in Physics at <a href="https://www.ub.edu/web/ub/en/index.html">UB</a>.
-#   education3: PhD in Physics (Complex Systems) at <a href="http://ubics.ub.edu">UB</a>.
-#   education4: Executive MBA at <a href="https://www.eae.es/landing/executive-mba">EAE</a>.
-
-- name: Rafael Redondo
+- name: Rafael Redondo Tejedor
   photo: RRT2.jpg
   role: Director of the Multimedia Technologies Unit
   info: At Eurecat since 2015
@@ -29,15 +17,6 @@
   education1: BSc Electrical Engineer at <a href="https://www.etsit.upm.es">ETSIT</a>.
   education2: PhD in Computer Vision at <a href="https://www.io.csic.es">IO-CSIC</a>.
   education3: MSc in Sonology at <a href="http://www.esmuc.cat">ESMUC</a> and <a href="https://www.upf.edu/web/mtg">MTG-UPF</a>.
-
-- name: Roger Marí
-  photo: roger_mari.jpg
-  role: Head of the Image Group
-  info: At Eurecat since 2024
-  email: roger.mari@eurecat.org
-  number_educ: 2
-  education1: MSc Computer Vision at <a href="http://www.cvc.uab.es">CVC</a>.
-  education2: PhD Applied Mathematics at <a href="https://ens-paris-saclay.fr">ENS-Paris-Saclay</a>.
 
 - name: Umut Sayin
   photo: umut.jpg
@@ -49,15 +28,24 @@
   education2: MSc in Acoustics at <a href="https://www.en.aau.dk">Aalborg University</a>.
   education3: PhD in Acoustics at <a href="https://www.salleurl.edu/en">La Salle</a>.
 
-- name: Joanna Luberadzka
-  photo: joanna_luberadzka.jpg
-  role: Senior researcher
-  info: At Eurecat since 2022
-  email: joanna.luberadzka@eurecat.org
+- name: Roger Marí Molas
+  photo: roger_mari.jpg
+  role: Head of the Image Group
+  info: At Eurecat since 2024
+  email: roger.mari@eurecat.org
+  number_educ: 2
+  education1: MSc Computer Vision at <a href="http://www.cvc.uab.es">CVC</a>.
+  education2: PhD Applied Mathematics at <a href="https://ens-paris-saclay.fr">ENS-Paris-Saclay</a>.
+
+- name: Antonio Torrente Ortiz
+  photo: Antonio_Torrente.jpg
+  role: Head of the Visualization Group
+  info: At Eurecat since 2015
+  email: toni.torrente@eurecat.org
   number_educ: 3
-  education1: BSc in Acoustics with Sound Engineering at <a href="https://www.put.poznan.pl/en">Poznan University</a>.
-  education2: MSc in Hearing Technology and Audiology at <a href="https://uol.de/en">Oldenburg Univ</a>.
-  education3: PhD in Auditory Signal Processing and Hearing Devices at <a href="https://uol.de/en">Oldenburg Univ</a>.
+  education1: Senior technician in 3D synthetic imaging at <a href="https://www.idep.es/">IDEP Escola Superior de Disseny</a>.
+  education2: MBA at <a href="https://www.obsbusiness.school">OBS Business School</a>.
+  education3: Business Administration at <a href="https://www.uoc.edu/en">Universitat Oberta de Catalunya</a>.
 
 - name: Cynthia Ugwu
   photo: cynthia_photo.jpeg
@@ -69,14 +57,23 @@
   education2: MSc in ICT for Internet and Multimedia at <a href="https://www.unipd.it/">University of Padova</a>.
   education3: PhD in Advanced-Systems Engineering <a href="https://www.unibz.it/">Free University of Bozen-Bolzano</a>.
 
-- name: Stefan Hristov      
-  photo: Stefan_Hristov.jpg
-  role: Researcher
-  info: At Eurecat since 2024
-  email: stefan.hristov@eurecat.org
-  number_educ: 2
-  education1: BSc in Creative Technology at <a href="https://www.utwente.nl/en/">Univesity of Twente</a>.
-  education2: MSc in Intelligent Interactive Systems at <a href="http://www.upf.edu/">UPF</a>.
+- name: Eduard Escolà Piñol
+  photo: Edu.jpg
+  role: Multimedia Technician
+  info: At Eurecat since 2025
+  email: eduard.escola@eurecat.org
+  number_educ: 1
+  education1: Multimedia Applications and Video Games at <a href="https://www.uvic.cat">UVic</a>.
+
+- name: Joanna Luberadzka
+  photo: joanna_luberadzka.jpg
+  role: Senior researcher
+  info: At Eurecat since 2022
+  email: joanna.luberadzka@eurecat.org
+  number_educ: 3
+  education1: BSc in Acoustics with Sound Engineering at <a href="https://www.put.poznan.pl/en">Poznan University</a>.
+  education2: MSc in Hearing Technology and Audiology at <a href="https://uol.de/en">Oldenburg Univ</a>.
+  education3: PhD in Auditory Signal Processing and Hearing Devices at <a href="https://uol.de/en">Oldenburg Univ</a>.
 
 - name: Julien De Muynke
   photo: julien.jpg
@@ -87,6 +84,31 @@
   education1: MSc Electrical Engineer at <a href="https://www.ensea.fr/fr">ENSEA</a>.
   education2: MSc Signal Processing and Acoustics at <a href="https://www.en.aau.dk/education/master/signal-processing-and-acoustics">Aalborg University</a>.
   education3: PhD in Heritage Acoustics and VR Audio, <a href="https://www.sorbonne-universite.fr/en">Sorbonne University</a>.
+
+- name: Marina Urpí i Agustí
+  photo: Marina_Urpi.jpg
+  role: Multimedia Technician
+  info: At Eurecat since 2022
+  email: marina.urpi@eurecat.org
+  number_educ: 1
+  education1: Multimedia Applications and Video Games at <a href="https://www.uvic.cat">UVic</a>.
+ 
+- name: Oscar Serrano Carmona
+  photo: oscar_serrano.jpg
+  role: Advanced Multimedia Technician
+  info: At Eurecat since 2015
+  email: oscar.serrano@eurecat.org
+  number_educ: 1
+  education1: BSc in Computer Engineering at <a href="https://www.upf.edu/en/">UPF</a>.
+
+- name: Stefan Hristov      
+  photo: Stefan_Hristov.jpg
+  role: Researcher
+  info: At Eurecat since 2024
+  email: stefan.hristov@eurecat.org
+  number_educ: 2
+  education1: BSc in Creative Technology at <a href="https://www.utwente.nl/en/">Univesity of Twente</a>.
+  education2: MSc in Intelligent Interactive Systems at <a href="http://www.upf.edu/">UPF</a>.
 
 - name: Timothy Schmele
   photo: bild_leger.jpg
@@ -103,6 +125,19 @@
   role: Audio Lab Technician
   info: At Eurecat since 2026
   email: toni.farran@eurecat.org
+
+
+# - name: Adan Garriga
+#   photo: adan.jpg
+#   role: Director of the MTU
+#   info: At Eurecat since 2015
+#   email: adan.garriga@eurecat.org
+#   number_educ: 4
+#   education1: Professional Piano Degree at <a href="https://www.conservatoriliceu.es/en">LICEO</a>.
+#   education2: BSc in Physics at <a href="https://www.ub.edu/web/ub/en/index.html">UB</a>.
+#   education3: PhD in Physics (Complex Systems) at <a href="http://ubics.ub.edu">UB</a>.
+#   education4: Executive MBA at <a href="https://www.eae.es/landing/executive-mba">EAE</a>.
+
 
 # - name: Daniel van Sabben
 #   photo: danielvansabben.jpg
