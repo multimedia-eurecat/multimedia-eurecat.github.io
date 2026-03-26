@@ -17,13 +17,6 @@ permalink: /publications/
           <pubtit><a href="{{ publi.url }}">{{ publi.title }}</a></pubtit>
           <p>{{ publi.authors }}</p>
           <img src="{{ site.url }}{{ site.baseurl }}/assets/publications/{{ publi.image }}" class="img-responsive" width="200em" style="float: left" />
-          {% if publi.topics %}
-          <div class="publication-topics">
-            {% for topic in publi.topics %}
-            <button type="button" class="publication-topic" data-topic-chip="{{ topic | escape }}">{{ topic }}</button>
-            {% endfor %}
-          </div>
-          {% endif %}
           <p>{{ publi.description }}</p>
           <p><em>{{ publi.details }}</em></p>
           {% if publi.website %} · <a class="pub-small-link" href="{{ publi.website }}">project page</a>{% endif %}
