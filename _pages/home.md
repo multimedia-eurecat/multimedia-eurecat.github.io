@@ -43,16 +43,27 @@ permalink: /
 </div>
 
 
-The Multimedia Technologies Unit at [Eurecat](https://www.eurecat.org) conducts applied research and innovation in advanced multimedia technologies, combining audio, computer vision, artificial intelligence, and immersive interaction. Our work bridges scientific research and real-world deployment through participation in European, national, and industrial R&D projects, as well as through a strong record of scientific publications and technology transfer.
+<strong>Research with Impact</strong> - The Multimedia Technologies Unit at [Eurecat](https://www.eurecat.org) conducts applied research and innovation in advanced multimedia technologies, combining audio, computer vision, artificial intelligence, and immersive interaction. Our work bridges log-term scientific research and real-world deployment through participation in European, national, and industrial R&D projects, as well as through a strong record of scientific publications and technology transfer.
 
-The unit is organized around three main applied research areas through the **Audio**, **Image**, and **Visualization Teams**. 
-Together, these teams contribute to Eurecat's strategic research directions in areas such as multimodal generative AI, 3D digitization and digital twins, advanced spatial audio technologies, XR enhanced with AI, and affective computing and sentiment analysis.
+Across the **Audio**, **Image**, and **Visualization Teams**, our recent activity reflects a clear strategic commitment to:
+
+* *Multimodal Generative AI*
+* *Audio & Visual 3D Digitization*
+* *Spatial 3D Audio Technologies*
+* *Advanced XR+AI Immersive Interaction*
+* *Affective Computing and Sentiment Analysis*
+
+This combination of applied research, experimentation, and innovation positions MTU as a multidisciplinary hub for next-generation multimedia technologies.
 
 [Explore our open-source developments on Github](https://github.com/multimedia-eurecat)
-
 </div>
 
 
+<div class="research-section">
+ We are always looking for talented Master's and PhD students to join our research teams. Interested in multimedia technologies and innovative research? Check out our [open positions](https://eurecat.org/eurecat/treballa-amb-nosaltres/) or contact us directly!
+</div>
+
+ 
 <div class="team-card">
 
 **[3D Audio Laboratory](https://labs.eurecat.org/en/laboratory/3d-audio-laboratory/)** — Discover our 3D audio lab and services for creating immersive sound experiences in XR, media production, and spatial computing.
@@ -84,23 +95,6 @@ The <strong>Image Team</strong> focuses on computer vision and AI methods for un
 The <strong>Visualization Team</strong> focuses on immersive and interactive technologies for understanding and exploring complex information. This team develops advanced solutions that combine extended reality (XR), visual analytics, and digital twins. The visualization team builds upon interactive technologies to integrate geolocated information, industrial data, and digital assets into intuitive and immersive interfaces. Solutions are designed for a wide range of platforms, including XR headsets, smart glasses, holographic displays, and desktop environments, always with the goal of improving user experience and decision-making through advanced visualization and interaction technologies.
 
 </div>
-
----
-
-<div class="research-section">
-<strong>Research with Impact</strong> - Across its three teams, the Multimedia Technologies Unit connects long-term research with practical deployment through collaborative projects, scientific publications, and technology transfer. Our recent activity reflects a clear strategic commitment to:
-
-* *Multimodal generative AI* for video, audio, text, and cross-modal content
-* *3D digitization* including visual and acoustic digital twins and avatars
-* *Advanced audio technologies* for 3D spatialization and perceptual enhancement
-* *Advanced immersive interaction* combining XR and AI
-* *Affective computing and sentiment analysis*
-
-This combination of applied research, experimentation, and innovation positions MTU as a multidisciplinary hub for next-generation multimedia technologies.
-
-</div>
-
-
 
 
 <br>

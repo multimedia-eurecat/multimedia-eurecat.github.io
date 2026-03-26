@@ -6,8 +6,7 @@ sitemap: false
 permalink: /team/
 ---
 
-
- We are always looking for talented Master's and PhD students to join our research teams. Interested in multimedia technologies and innovative research? Check out our [open positions](https://eurecat.org/eurecat/treballa-amb-nosaltres/) or contact us directly!
+We are always looking for talented Master's and PhD students to join our research teams. Interested in multimedia technologies and innovative research? Check out our [open positions](https://eurecat.org/eurecat/treballa-amb-nosaltres/) or contact us directly!
 
 <!-- Jump to [staff](#staff), [master and bachelor students](#master-and-bachelor-students), [alumni](#alumni), [administrative support](#administrative-support), [lab visitors](#lab-visitors). -->
 
