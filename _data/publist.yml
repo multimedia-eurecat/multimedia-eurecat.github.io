@@ -4,10 +4,34 @@
 #   details:  Nature Physics 14, 1183 (2018)
 #   year: 2018
 #   url: https://www.nature.com/articles/s41567-018-0300-z
+#   topics:
+#     - Computer Vision
+#     - Generative AI and Diffusion Models
 #   highlight: 0          **** fields bellow will be rendered only if highlight 1 ***
 #   image: Pub_BCl.png (located at ./assets/publications)
 #   description: brief assert description.
 #   news: <a href="https://aip.scitation.org/doi/10.1063/1.5043267">Instrument details in Rev. Sci. Instrum. 89, 093709 (2018)</a>
+
+# Suggested publication topics:
+# - Audio and Acoustics
+# - Spatial Audio
+# - Speech and Hearing
+# - XR and Immersive Media
+# - Acoustic Heritage and Auralisation
+# - Computer Vision
+# - 3D Reconstruction
+#Avatars
+# - Neural Rendering
+# - Generative AI and Diffusion Models
+# - Remote Sensing and Earth Observation
+# - Medical Imaging
+# - Multimodal AI
+# - Affective Computing and EEG
+# - Visualization and Digital Twins
+# - Graphics and Simulation
+# - Cultural Heritage
+# - Datasets and Benchmarks
+# - Human-Computer Interaction
 
 # 2026
 
@@ -16,6 +40,10 @@
   details: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences (pp. 33-40), 2026.
   year: 2026
   url: https://isprs-archives.copernicus.org/articles/XLVIII-2-W12-2026/33/2026/
+  topics:
+    - Computer Vision
+    - Neural Rendering
+    - 3D Reconstruction
   description: A physically-based NeRF variant that jointly estimates geometry and anisotropic specular parameters from multi-view images.
   news: ✨ Best paper award at 3D-ARCH 2026
   website: https://multimedia-eurecat.github.io/ShinyNeRF
@@ -27,6 +55,10 @@
   details: International Conference on Computer Vision Theory and Applications (VISAPP).
   year: 2026
   url: https://doi.org/10.5220/0014402400004084
+  topics:
+    - Computer Vision
+    - 3D Reconstruction
+    - Avatars
   code: https://github.com/multimedia-eurecat/MExECON
   highlight: 0
 
@@ -37,6 +69,9 @@
   details: "Medical Imaging meets EurIPS: MedEurIPS 2025 (EurIPS Workshops)"
   year: 2025
   url: https://arxiv.org/abs/2510.18446
+  topics:
+    - Medical Imaging
+    - Generative AI and Diffusion Models
   highlight: 0
 
 - title: "MB-RIRs: a Synthetic Room Impulse Response Dataset with Frequency-Dependent Absorption Coefficients"
@@ -44,6 +79,10 @@
   details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA 2025)
   year: 2025
   url: https://doi.org/10.48550/arXiv.2507.09750
+  topics:
+    - Audio and Acoustics
+    - Speech and Hearing
+    - Datasets and Benchmarks
   image: mbrirs.png
   description: We open-source a synthetic reverberation dataset that improves the performance of data-driven speech models. We show that Multi-Band (MB) absorption coefficients on shoebox-based synthetic RIRs lead to better performance in DNN-based speech enhancement compared to using single-band (SB) absorption coefficients. We additionally study implementing source and receiver directivities.
   code: https://github.com/enricguso/guso_waspaa25
@@ -54,6 +93,10 @@
   details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA 2025)
   year: 2025
   url: https://joaluba.github.io/CWUNET-demo/
+  topics:
+    - Audio and Acoustics
+    - Speech and Hearing
+    - XR and Immersive Media
   image: cwunet.png
   description: A model for acoustic style transfer in speech. The reverberation (r1) of a speech signal (s1) is transformed into s1r2 by Film-conditioning a U-net with another reverberant speech signal s2r2. Our model outperforms two baselines and performs on par with a semi-oracle case.
   website: https://joaluba.github.io/CWUNET-demo/
@@ -65,6 +108,9 @@
   details: 159th Convention of the Audio Engineering Society, Long Beach, CA, USA, October 23-25, 2025.
   year: 2025
   url: https://aes2.org/publications/elibrary-page/?id=23095
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG"
@@ -72,6 +118,9 @@
   details: Music and Sound Generation in the AI Era, Springer Nature, 2023.
   year: 2025
   url: https://link.springer.com/chapter/10.1007/978-3-032-02042-0_4
+  topics:
+    - Audio and Acoustics
+    - Affective Computing and EEG
   image: emotional_impact.jpg
   description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
   highlight: 1
@@ -81,6 +130,10 @@
   details: IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops (CVPRW 2025).
   year: 2025
   url: https://openaccess.thecvf.com/content/CVPR2025W/EarthVision/papers/Masquil_S-EO_A_Large-Scale_Dataset_for_Geometry-Aware_Shadow_Detection_in_Remote_CVPRW_2025_paper.pdf
+  topics:
+    - Computer Vision
+    - Remote Sensing and Earth Observation
+    - Datasets and Benchmarks
   highlight: 0
 
 - title: "Using Virtual Reality to Raise Awareness of Communication Challenges Faced by Individuals with Hearing Loss"
@@ -88,6 +141,10 @@
   details: IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW) (pp. 1640-1641), 2025.
   year: 2025
   url: https://ieeexplore.ieee.org/abstract/document/10972720/
+  topics:
+    - XR and Immersive Media
+    - Speech and Hearing
+    - Human-Computer Interaction
   highlight: 0
 
 - title: "A Study on Interpretation of Medieval Vocal Repertoire through Auralisation: An Acoustic Reconstruction of the Great Chapel of the Palais des Papes"
@@ -95,6 +152,10 @@
   details: Journal of Sound Studies, 2025.
   year: 2025  
   url: https://www.tandfonline.com/doi/full/10.1080/20551940.2025.2459454
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - Audio and Acoustics
   image: DiM_PRISM.jpg
   highlight: 1
   description: The study reconstructs the acoustics of the Great Chapel at the Palais des Papes to examine how its changing architecture influenced 14th-century Ars Nova choral performance. Through real-time virtual auralisation, singers experienced historically accurate acoustics, offering new insights into the interplay between medieval music and its performance spaces.  
@@ -104,6 +165,10 @@
   details: Front. Virtual Real., Sec. Technologies for VR, Volume 5 - 2024, 23 January 2025.
   year: 2025
   url: https://doi.org/10.3389/frvir.2024.1442774
+  topics:
+    - XR and Immersive Media
+    - Speech and Hearing
+    - Audio and Acoustics
   highlight: 0
 
 - title: "Specularity in NeRFs: A Comparative Study of Ref-NeRF and NRFF"
@@ -111,6 +176,10 @@
   details: Image Processing On Line, 2025.
   year: 2025
   url: https://www.ipol.im/pub/art/2025/562/
+  topics:
+    - Computer Vision
+    - Neural Rendering
+    - 3D Reconstruction
   highlight: 0
 
 - title: "Latent Diffusion Approaches for Conditional Generation of Aerial Imagery: A Study"
@@ -118,6 +187,10 @@
   details: Image Processing On Line, 2025.
   year: 2025
   url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000505
+  topics:
+    - Computer Vision
+    - Generative AI and Diffusion Models
+    - Remote Sensing and Earth Observation
   highlight: 0
 
 - title: "Reconstructing acoustic heritage: Methods and tools for interdisciplinary research and audio-augmented experiences"
@@ -125,20 +198,22 @@
   details: PhD dissertation, Sorbonne Université, 2025.
   year: 2025
   url: https://theses.hal.science/tel-05319073
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - Audio and Acoustics
   highlight: 0
 
 # 2024
-
-# - title: "Acoustic coherence in extended reality: challenges and strategies"
-#   authors: Sayin Saraç, U.
-#   details: "EMRN Conference: A Metaverse for the good (submitted)"
-#   highlight: 0
 
 - title: "Schmele-Spherical Glitch Study"
   authors: Schmele, T.
   details: In Speculative Sound Synthesis Symposium, 2024.
   year: 2024
   url: https://speculativesoundsynthesis.iem.sh/symposium/docs/proceedings/schmele/
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Effect of interpolation artifacts on perceived stability of nearby sources in a navigable reverberant virtual environment"
@@ -146,6 +221,10 @@
   details: Journal of the Audio Engineering Society, 2024.
   year: 2024
   url: https://aes2.org/publications/elibrary-page/?id=22770
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
+    - XR and Immersive Media
   image: RIR_interpolation.jpg
   description: The study explores how interpolation between spatial Room Impulse Responses affects the perceived stability of sound sources in navigable reverberant virtual environments. Using third-order Ambisonic RIR convolution with MagLS binaural decoding, VR listening tests inform the design of realistic spatial audio for immersive experiences such as virtual museum visits.
   highlight: 1
@@ -155,6 +234,10 @@
   details:  Résonances Gothiques, Collegium Musicae, 2024.
   year: 2024
   url: https://zenodo.org/records/14163355
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - XR and Immersive Media
   highlight: 0
 
 - title: "Characterization of Synthetic Lung Nodules in Conditional Latent Diffusion of Chest CT Scans"
@@ -162,6 +245,9 @@
   details: In Artificial Intelligence Research and Development (pp. 44-51). IOS Press, 2024.
   year: 2024
   url: https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240408
+  topics:
+    - Medical Imaging
+    - Generative AI and Diffusion Models
   code: https://github.com/multimedia-eurecat/LatentDiffusion-2DChestCT-CCIA24
   highlight: 0
 
@@ -170,6 +256,10 @@
   details: Digital Applications in Archaeology and Cultural Heritage. 2024.
   year: 2024
   url: https://www.sciencedirect.com/science/article/abs/pii/S2212054824000547?via%3Dihub
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - Visualization and Digital Twins
   highlight: 0
 
 - title: "Interpretation of a medieval vocal repertoire in the reconstructed acoustics of the Great Chapel of the Palais des Papes"
@@ -177,13 +267,20 @@
   details: "Historical Resonances: Space, Senses and Early Music, Brill Fink, The Netherlands, 2024."
   year: 2024
   url: https://hal.science/hal-04928924v1/document
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - Audio and Acoustics
   highlight: 0
 
-- title: "HeSoAN : un projet archéoacoustique"
+- title: "HeSoAN: un projet archéoacoustique"
   authors: Ferrando, J., De Muynke, J., Katz, B.F.G.
   details: Résonances Gothiques, Collegium Musicae, 2024.
   year: 2024
   url: https://hal.science/hal-04817835
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
   highlight: 0
 
 - title: "Spatial Matrix Synthesis"
@@ -191,40 +288,12 @@
   details: Journal of the Audio Engineering Society, 72(4), 193-210, 2024.
   year: 2024
   url: https://www.aes.org/tmpFiles/elib/20251031/22390.pdf
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   image: spatial_matrix_synthesis.png
   description: Definition of a method to synthesize new sounds using only spatial transformation matrices in 2D and 3D audio space.
   highlight: 1
-
-
-
-  # 2025
-
-- title: "Audio technology for improving social interaction in extended reality"
-  authors: J. Luberadzka, E. Gusó Muñoz, U. Sayin, and A. Garriga
-  details: Front. Virtual Real., Sec. Technologies for VR, Volume 5 - 2024, 23 January 2025
-  url: https://doi.org/10.3389/frvir.2024.1442774
-  highlight: 0
-
-- title: "Specularity in NeRFs: A Comparative Study of Ref-NeRF and NRFF"
-  authors: Barreiro, A. and Marí, R. and Redondo, R. and Haro, G. and Bosch, C. and Berga, D.
-  details: Image Processing On Line, 2025.
-  url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000506
-  highlight: 0
-
-- title: "Latent Diffusion Approaches for Conditional Generation of Aerial Imagery: A Study"
-  authors: Marí, R. and Redondo, R.
-  details: Image Processing On Line, 2025.
-  url: https://ipolcore.ipol.im/demo/clientApp/demo.html?id=77777000505
-  highlight: 0
-
-  # 2024
-
-- title: "Characterization of Synthetic Lung Nodules in Conditional Latent Diffusion of Chest CT Scans"
-  authors: Marí Molas, R., Subías-Beltrán, P., Pitarch Abaigar, C., Galofré Cardo, M., & Redondo Tejedor, R.
-  details: In Artificial Intelligence Research and Development (pp. 44-51). IOS Press.
-  url: https://ebooks.iospress.nl/pdf/doi/10.3233/FAIA240408
-  highlight: 0
-
 
   # 2023
 
@@ -233,13 +302,21 @@
   details: IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing, 17, 3285-3296, 2023.
   year: 2023
   url: https://ieeexplore.ieee.org/iel7/4609443/4609444/10356628.pdf
+  topics:
+    - Computer Vision
+    - Remote Sensing and Earth Observation
+    - Datasets and Benchmarks
   highlight: 0
 
-- title: " in Music Using Machine Learning and EEG: a proof-of-concept study"
+- title: "Emotional Impact of Source Localization in Music Using Machine Learning and EEG: a proof-of-concept study"
   authors: De Filippi, E., Schmele, T., Nandi, A., Torres, A. G., & Pereda-Banos, A.
   details: Authorea Preprints, 2023.
   year: 2023
   url: https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.21789866.v1
+  topics:
+    - Audio and Acoustics
+    - Affective Computing and EEG
+    - Multimodal AI
   # image: emotional_impact.jpg
   # description: Machine learning methods were optimized on spectral EGG features according to four music source positions and valence type in a subject-wise manner, finding that EEG correlates with four source locations, specially when a negative emotional valence is played outside of the listener's field of view.
   # highlight: 1
@@ -249,6 +326,9 @@
   details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
   year: 2023
   url: https://www.aes.org/e-lib/browse.cfm?elib=22273
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Comparison of synthesized Virtual Sound Environments with validated Hearing Aid experiments"
@@ -256,6 +336,10 @@
   details: In Audio Engineering Society Convention 155. Audio Engineering Society, 2023.
   year: 2023
   url: https://www.aes.org/e-lib/browse.cfm?elib=22271
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
+    - Speech and Hearing
   highlight: 0
 
 - title: "Listen and Move: Improving GANs Coherency in Agnostic Sound-to-Video Generation"
@@ -264,6 +348,9 @@
   description: GANs architectural improvements for temporal coherency on generic sound-to-video generation, including triple sound routing, a multiscale dilated RNN, and a novel recurrent and directional video prediction layer.
   year: 2023
   url: https://av4d.org/papers/iccv23/p4.pdf
+  topics:
+    - Generative AI and Diffusion Models
+    - Multimodal AI
   image: avgan.jpg
   highlight: 1
 
@@ -272,6 +359,10 @@
   details: Proceedings of the AES Conference on Spatial and Immersive Audio, 2023.
   year: 2023
   url: https://secure.aes.org/forum/pubs/conferences/?elib=22169
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
+    - XR and Immersive Media
   description: Assessment of the impact of various interpolation parameters on perceived auditory source stability under various auralisation conditions.
   image: RIR_interpolation.jpg
   highlight: 0
@@ -281,6 +372,9 @@
   details: IEEE Workshop on Applications of Signal Processing to Audio and Acoustics (WASPAA) (pp. 1-5), 2023.
   year: 2023
   url: https://ieeexplore.ieee.org/abstract/document/10248112
+  topics:
+    - Audio and Acoustics
+    - Speech and Hearing
   description: The performance of five high-end commercially available Hearing Aid (HA) devices are compared to DNN-based speech enhancement algorithms in complex acoustic environments, in which the latter outperforms the HA algorithms in terms of noise suppression and objective intelligibility metrics.
   image: hearing_aids.jpg
   code: https://github.com/enricguso/guso_waspaa23
@@ -291,6 +385,9 @@
   details: Audio Engineering Society Convention 154, 2023.
   year: 2023
   url: https://www.aes.org/e-lib/browse.cfm?elib=22126
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 
@@ -301,6 +398,9 @@
   details: "arXiv preprint arXiv:2210.13269."
   year: 2022
   url: https://arxiv.org/pdf/2210.13269
+  topics:
+    - Computer Vision
+    - Datasets and Benchmarks
   highlight: 0
 
 - title: "Comparisons between VBAP and WFS using Spatial Sound Synthesis"
@@ -308,6 +408,9 @@
   details: In Audio Engineering Society Convention 153. Audio Engineering Society, 2022.
   year: 2022
   url: https://www.aes.org/e-lib/browse.cfm?elib=21951
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Use of synthesized higher order ambisonics impulse responses to generate virtual sound environments for hearing aids research"
@@ -315,6 +418,10 @@
   details: Journal of Hearing Science, 12(1), 2022.
   year: 2022
   url: https://openurl.ebsco.com/EPDB%3Agcd%3A8%3A19275560/detailv2?sid=ebsco%3Aplink%3Ascholar&id=ebsco%3Agcd%3A156438170&crl=c
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
+    - Speech and Hearing
   highlight: 0
 
 - title: "On loss functions and evaluation metrics for music source separation."
@@ -322,6 +429,8 @@
   details: In ICASSP 2022-2022 IEEE International Conference on Acoustics, Speech and Signal Processing (pp. 306-310).
   year: 2022
   url: https://arxiv.org/pdf/2202.07968
+  topics:
+    - Audio and Acoustics
   highlight: 0
 
 - title: "Preliminary analysis of vocal ensemble performances in real-time historical auralizations of the Palais des Papes"
@@ -329,6 +438,10 @@
   details: Proceedings of the 2nd Symposium; The Acoustics of Ancient Theaters, 6-8 July 2022, Verona, Italy
   year: 2022
   url: https://www.researchgate.net/publication/363713153_Preliminary_analysis_of_vocal_ensemble_performances_in_real-time_historical_auralizations_of_the_Palais_des_Papes
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - Audio and Acoustics
   highlight: 0
 
 - title: "Spatially Oriented Format for Acoustics 2.1: Introduction and Recent Advances"
@@ -336,6 +449,9 @@
   details: Journal of the Audio Engineering Society, vol. 70, no 7/8, pp. 565--584, 2022.
   year: 2022
   url: https://www.aes.org/e-lib/browse.cfm?elib=21824
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Ears of the past, an inquiry into the sonic memory of the acoustics of Notre-Dame before the fire of 2019"
@@ -343,6 +459,9 @@
   details: Journal of Cultural Heritage, vol. 56, pp. 130--137, 2022.
   year: 2022
   url: https://www.sciencedirect.com/science/article/pii/S1296207422001455?via%3Dihub
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
   highlight: 0
 
 # 2020
@@ -352,13 +471,20 @@
   details: arXiv preprint arXiv:1910.03814, 2020.
   year: 2020
   url: https://arxiv.org/pdf/1910.03814
+  topics:
+    - Multimodal AI
+    - Computer Vision
   highlight: 0
 
 - title: "ARSI: An Aerial Robot for Sewer Inspection"
-  authors: F. Chataigner, P. Cavestany, M. Soler, C. R.,Jesús Pablo Gonzalez, C. Bosch, J. Gibert, A. Torrente, R. Gomez and D. Serrano.
+  authors: F. Chataigner, P. Cavestany, M. Soler, C. R., J. P. Gonzalez, C. Bosch, J. Gibert, A. Torrente, R. Gomez and D. Serrano.
   details: "Advances in Robotics Research: From Lab to Market, Springer, 2020."
   year: 2020
   url: https://eurecat.org/es/portfolio-items/aerial-robot-for-sewer-inspection/
+  topics:
+    - Computer Vision
+    - 3D Reconstruction
+    - Graphics and Simulation
   highlight: 1
   description: The Autonomous Robot for Sewer Inspection (ARSI), a robotic system designed to make the work of inspection brigades safer and more efficient.
   image: arsi.jpg
@@ -371,6 +497,8 @@
   details: "ACE: architecture, city and environment, 14(40), 163-192."
   year: 2019
   url: https://revistes.upc.edu/index.php/ACE/article/view/5349/888
+  topics:
+    - Visualization and Digital Twins
   highlight: 0
     
 - title: "Artificial Intelligence in the Media and Creative Industries"
@@ -378,6 +506,8 @@
   details: New European Media (NEM), White paper, April 2019.
   year: 2019
   url: https://nem-initiative.org/wp-content/uploads/2018/10/nem-positionpaper-aiinceativeindustry.pdf
+  topics:
+    - Multimodal AI
   highlight: 0
 
 - title: "Analysis of spherical isotropic noise fields with an A-Format tetrahedral microphone"
@@ -385,6 +515,9 @@
   details: The Journal of the Acoustical Society of America, 146(4), EL329-EL334, 2019.
   year: 2019
   url: https://asa.scitation.org/doi/full/10.1121/1.5127736
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "A hybrid parametric-deep learning approach for sound event localization and detection"
@@ -392,6 +525,9 @@
   details:  ArXiv preprint arXiv:1908.10133, 2019.
   year: 2019
   url: https://arxiv.org/pdf/1908.10133
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Self-Supervised Learning from Web Data for Multimodal Retrieval"
@@ -399,6 +535,9 @@
   details: Multimodal Scene Understanding (pp. 279-306). Academic Press, 2019.
   year: 2019
   url: https://arxiv.org/pdf/1901.02004
+  topics:
+    - Computer Vision
+    - Multimodal AI
   highlight: 0
 
 - title: "Controllable Image-Based Transfer of Flow Phenomena"
@@ -406,6 +545,9 @@
   details: Computer Graphics Forum (Vol. 38, No. 1, pp. 274-285), Feb 2019.
   year: 2019
   url: https://onlinelibrary.wiley.com/doi/pdf/10.1111/cgf.13530
+  topics:
+    - Computer Vision
+    - Graphics and Simulation
   highlight: 0
 
 - title: "Selective Style Transfer for Text"
@@ -413,6 +555,9 @@
   details: IEEE International Conference on Document Analysis and Recognition (ICDAR) (pp. 805-812), 2019.
   year: 2019
   url: https://arxiv.org/pdf/1906.01466
+  topics:
+    - Computer Vision
+    - Multimodal AI
   highlight: 1
   description: This paper proposses two different architectures for image style transfer applied to text while maintaining the original transcriptions.
   image: styletransfer.jpg
@@ -425,6 +570,9 @@
   details: AES International Conference on Spatial Reproduction-Aesthetics and Science. Audio Engineering Society, 2018.
   year: 2018
   url: https://binci.eu/wp-content/uploads/2018/09/AES2018_Controlling_The_Apparent_Source_Size_In_Ambisonics_Paper.pdf
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Psychophysiological Methods for Quality of Experience Research in Virtual Reality Systems and Applications"
@@ -432,6 +580,10 @@
   details:  MMTC Communications - Frontiers (IEEE), Vol. 13, No. 1, January 2018.
   year: 2018
   url: https://www.researchgate.net/profile/Miguel_Barreda-Angeles/publication/324602759_Psychophysiological_Methods_for_Quality_of_Experience_Research_in_Virtual_Reality_Systems_and_Applications/links/5ad87f24458515c60f58f7ef/Psychophysiological-Methods-for-Quality-of-Experience-Research-in-Virtual-Reality-Systems-and-Applications.pdf
+  topics:
+    - XR and Immersive Media
+    - Affective Computing and EEG
+    - Human-Computer Interaction
   highlight: 0
 
 - title: "Learning from #Barcelona Instagram data what Locals and Tourists post about its Neighbourhoods"
@@ -439,6 +591,9 @@
   details: Proceedings of the European Conference on Computer Vision (ECCV), 2018.
   year: 2018
   url: http://openaccess.thecvf.com/content_ECCVW_2018/papers/11134/Gomez_Learning_from_Barcelona_Instagram_data_what_Locals_and_Tourists_post_ECCVW_2018_paper.pdf
+  topics:
+    - Computer Vision
+    - Multimodal AI
   highlight: 0
 
 - title: "Urban weathering: Interactive rendering of polluted cities"
@@ -446,6 +601,9 @@
   details: IEEE transactions on visualization and computer graphics, 24(12), 3239-3252, 2018.
   year: 2018
   url:
+  topics:
+    - Graphics and Simulation
+    - Visualization and Digital Twins
   highlight: 0
 
 - title: "Sound-Space Choreography"
@@ -453,6 +611,9 @@
   details: "Audio Engineering Society Conference: 2018 AES International Conference on Spatial Reproduction-Aesthetics and Science. Audio Engineering Society. July 2018."
   year: 2018
   url: https://binci.eu/wp-content/uploads/2018/09/sound-space-choreography.pdf
+  topics:
+    - Spatial Audio
+    - XR and Immersive Media
   highlight: 0
 
 - title: "Learning to learn from web data through deep semantic embeddings"
@@ -460,6 +621,9 @@
   details: Proceedings of the European Conference on Computer Vision (ECCV), 2018.
   year: 2018
   url: http://openaccess.thecvf.com/content_ECCVW_2018/papers/11134/Gomez_Learning_to_Learn_from_Web_Data_through_Deep_Semantic_Embeddings_ECCVW_2018_paper.pdf
+  topics:
+    - Computer Vision
+    - Multimodal AI
   highlight: 0
 
 - title: "Ambiscaper: A Tool for Automatic Generation and Annotation of Reverberant Ambisonics Sound Scenes"
@@ -467,6 +631,10 @@
   details: 16th IEEE International Workshop on Acoustic Signal Enhancement (IWAENC) (pp. 1-9), September 2018.
   year: 2018
   url:
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
+    - Datasets and Benchmarks
   highlight: 0
 
 - title: "Ambisonics Directional Room Impulse Response as a new Convention of the Spatially Oriented Format for Acoustics"
@@ -474,6 +642,9 @@
   details: AES 144th Convention, May 2018.
   year: 2018
   url: https://www.researchgate.net/publication/327987244_Ambisonics_Directional_Room_Impulse_Response_as_a_new_Convention_of_the_Spatially_Oriented_Format_for_Acoustics
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Tools for the production of spatial audio within BINCI"
@@ -481,6 +652,10 @@
   details: DAGA 2018.
   year: 2018
   url: https://www.researchgate.net/publication/336739126_Tools_for_the_production_of_spatial_audio_within_BINCI
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
+    - XR and Immersive Media
   highlight: 0
 
 
@@ -491,6 +666,9 @@
   details:  SMPTE Motion Imaging Journal, 126(1), 43-56, 2017.
   year: 2017
   url: https://ieeexplore.ieee.org/document/7847506
+  topics:
+    - XR and Immersive Media
+    - Human-Computer Interaction
   highlight: 0
 
 - title: "Binaural tools for 3D audio production at home"
@@ -498,6 +676,9 @@
   details:  Proc. NEM Summit, 2017.
   year: 2017
   url: https://binci.eu/wp-content/uploads/2017/11/Nem-summit17-STTSC_BinauralTools_Abstract_final_version_v2.pdf
+  topics:
+    - Audio and Acoustics
+    - Spatial Audio
   highlight: 0
 
 - title: "Towards Semi-Automatic Scaling Detection on Flat Stones"
@@ -505,6 +686,9 @@
   details:  GHC (pp. 49-58), September 2017.
   year: 2017
   url: https://www.researchgate.net/profile/Kiraz_Goeze_Akoglu/publication/320358564_Towards_Semi-Automatic_Scaling_Detection_on_Flat_Stones/links/59e0101c4585153716015d9d/Towards-Semi-Automatic-Scaling-Detection-on-Flat-Stones.pdf
+  topics:
+    - Computer Vision
+    - Cultural Heritage
   highlight: 0
 
 - title: "Real‐Time Solar Exposure Simulation in Complex Cities"
@@ -512,4 +696,7 @@
   details: Computer Graphics Forum (Vol. 36, No. 8, pp. 554-566), December 2017.
   year: 2017
   url: https://dugi-doc.udg.edu/bitstream/handle/10256/14508/027367.pdf?sequence=1
+  topics:
+    - Graphics and Simulation
+    - Visualization and Digital Twins
   highlight: 0

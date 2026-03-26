@@ -47,7 +47,7 @@ permalink: /
 
 Across the **Audio**, **Image**, and **Visualization Teams**, our recent activity reflects a clear strategic commitment to:
 
-* *Multimodal Generative AI*
+* *Multimodal AI*
 * *Audio & Visual 3D Digitization*
 * *Spatial 3D Audio Technologies*
 * *Advanced XR+AI Immersive Interaction*
