@@ -35,6 +35,20 @@
 
 # 2026
 
+- title: "CrowdioSet and PaRIRset: Two Datasets Towards Live Music Source Separation"
+  authors: Guso, E. & Serra, X.
+  details: Proceedings of the 27th International Society for Music Information Retrieval Conference (ISMIR 2026)
+  year: 2026
+  url: https://enricguso.github.io/crowdioset_parirset/
+  topics:
+    - Audio and Acoustics
+    - Datasets and Benchmarks
+  image: crowdioset_parirset.png
+  description: We introduce CrowdioSet, a noise dataset of real crowd ambiences and synthetic sing-alongs for training music source separation models on live recordings, and PaRIRset, a stereo room impulse response dataset captured with a microphone array across 40 professional concert venues with PA systems. Together they improve music source separation on live recordings over training on studio data alone, in both objective and subjective evaluations.
+  website: https://enricguso.github.io/crowdioset_parirset/
+  code: https://github.com/enricguso/guso_ismir26
+  highlight: 1
+
 - title: "ShinyNeRF: Digitizing Anisotropic Appearance in Neural Radiance Fields"
   authors: Barreiro, A., Marí, R., Redondo, R., Haro, G. & Bosch, C.
   details: The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences (pp. 33-40), 2026.
