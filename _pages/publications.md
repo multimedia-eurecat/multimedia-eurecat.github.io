@@ -21,7 +21,8 @@ permalink: /publications/
           <p><em>{{ publi.details }}</em></p>
           {% if publi.website %} · <a class="pub-small-link" href="{{ publi.website }}">project page</a>{% endif %}
           {% if publi.code %} · <a class="pub-small-link"  href="{{ publi.code }}">code</a>{% endif %}
-          {% if publi.website or publi.code %} · <br/> {% endif %}
+          {% if publi.presentation %} · <a class="pub-small-link"  href="{{ publi.presentation }}">presentation</a>{% endif %}
+          {% if publi.website or publi.code or publi.presentation %} · <br/> {% endif %}
           {% if publi.news %} <strong>{{ publi.news }}</strong>{% endif %}
         </div>
       </div>
@@ -55,7 +56,8 @@ permalink: /publications/
             {{ publi.details }}<br/>
             {% if publi.website %} · <a class="pub-small-link" href="{{ publi.website }}">project page</a>{% endif %}
             {% if publi.code %} · <a class="pub-small-link"  href="{{ publi.code }}">code</a>{% endif %}
-            {% if publi.website or publi.code %} · <br/>{% endif %}
+            {% if publi.presentation %} · <a class="pub-small-link"  href="{{ publi.presentation }}">presentation</a>{% endif %}
+            {% if publi.website or publi.code or publi.presentation %} · <br/>{% endif %}
             {% if publi.news %} <strong>{{ publi.news }}</strong>{% endif %}
             {% if publi.topics %}
             <div class="publication-topics">

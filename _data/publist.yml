@@ -35,6 +35,21 @@
 
 # 2026
 
+- title: "An AI Voice Agent for Speech Communication Assessment "
+  authors: Luberadzka, J. & Sayin, U.
+  details: Proceedings of the 7th Virtual Conference on Computational Audiology (VCCA) 
+  year: 2026
+  url: https://computationalaudiology.com/an-ai-voice-agent-for-speech-communication-assessment/
+  topics:
+    - AI Voice Agents
+    - Speech and Hearing
+  image: voiceagent.png
+  description: We use an AI voice agant as a conversation partner in a controlled acoustic environment and we develop an objective conversation-based marker of speech communication performance. 
+  news: ✨ Best Podium Presentation award at VCCA 2026
+  presentation: https://www.youtube.com/watch?v=lmwNZDrQZcM
+  code: https://github.com/joaluba/chataid-web-test
+  highlight: 0
+
 - title: "CrowdioSet and PaRIRset: Two Datasets Towards Live Music Source Separation"
   authors: Guso, E. & Serra, X.
   details: Proceedings of the 27th International Society for Music Information Retrieval Conference (ISMIR 2026)
