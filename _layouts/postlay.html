@@ -5,17 +5,20 @@ layout: default
 <div id="blog" class="col-sm-12">
 
   <header class="post-header">
+    <span class="post-kicker">Research notes</span>
     <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <p class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.author %}<span>{{ page.author }}</span>{% endif %}{% if page.meta %}<span>{{ page.meta }}</span>{% endif %}</p>
   </header>
 
   <article class="post-content">
   {{ content }}
   </article>
 
+  <a class="post-back-link" href="{{ site.baseurl }}/blog/"><span aria-hidden="true">←</span> All research notes</a>
+
   <!-- mathjax -->
   {% if page.mathjax %}
   <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   {% endif %}
 
-</div>  
+</div>

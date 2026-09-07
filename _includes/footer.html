@@ -1,26 +1,35 @@
-<div id="footer" class="panel">
-  <div class="panel-footer">
-	<div class="container-fluid">
-	  <div class="row">
-		<div class="col-sm-4">
-			<a href="https://www.eurecat.org/">
-			<img src="{{ site.url }}{{ site.baseurl }}/assets/logos/eurecat-baseHOME_logo_75.png" alt="Eurecat Logo" style="height:30px;"></a><br/>
-	 		Technological Research Center of Catalunya<br/>
-		</div>
-		<div class="col-sm-4">
-			<p><br/>
-			   	Phone (+34) 932 381 400<br/>
-			   	<a href="https://goo.gl/maps/TLxgasGSUQ2Dezs76" align="right">Carrer de Bilbao, 72, 08005 Barcelona.</a>
-			  	Multimedia Tecnologies Unit &copy 2019.<br/>
-			</p>
-		</div>
-		<div class="col-sm-4">
-			<p><br/><br/><br/><a href="{{ site.url }}{{ site.baseurl }}/aboutwebsite.html">About</a> this site.</p>
-		</div>
-	  </div>
-	</div>
+<footer id="footer" class="site-footer">
+  <div class="container-fluid">
+    <div class="site-footer-grid">
+      <div class="site-footer-intro">
+        <a class="site-footer-logo" href="https://www.eurecat.org/" aria-label="Eurecat website">
+          <img src="{{ site.url }}{{ site.baseurl }}/assets/logos/eurecat-baseHOME_logo_75.png" alt="Eurecat">
+        </a>
+        <span class="site-footer-unit">Multimedia Technologies Unit</span>
+        <p>Applied research in computer vision, audio, artificial intelligence and immersive interaction.</p>
+      </div>
+
+      <nav class="site-footer-links" aria-label="Footer navigation">
+        <span class="site-footer-heading">Explore</span>
+        <a href="{{ site.url }}{{ site.baseurl }}/team">Team</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/projects">Projects</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a>
+        <a href="{{ site.url }}{{ site.baseurl }}/blog">Blog</a>
+      </nav>
+
+      <div class="site-footer-contact">
+        <span class="site-footer-heading">Barcelona</span>
+        <a href="https://goo.gl/maps/TLxgasGSUQ2Dezs76">Carrer de Bilbao, 72<br>08005 Barcelona</a>
+        <a href="tel:+34932381400">+34 932 381 400</a>
+      </div>
+    </div>
+
+    <div class="site-footer-bottom">
+      <span>&copy; {{ 'now' | date: '%Y' }} Eurecat · Multimedia Technologies Unit</span>
+      <a href="{{ site.url }}{{ site.baseurl }}/aboutwebsite.html">About this site</a>
+    </div>
   </div>
-</div>
+</footer>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.min.js"></script>

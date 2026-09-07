@@ -1,26 +1,30 @@
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-default navbar-fixed-top site-navbar" aria-label="Primary navigation">
   <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
 
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	  </button>
-	  <a href="https://www.eurecat.org/">
-	  <img src="{{ site.url }}{{ site.baseurl }}/assets/logos/eurecat-baseHOME_logo_75.png" alt="Eurecat Logo" style="float:left;height:20px;">
-	  </a>
-      <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/" style="margin-left: 10px;">Multimedia Technologies Unit</a>
-  	</div>
-	<div class="collapse navbar-collapse" id="navbar-collapse-1">
-	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="{{ site.url }}{{ site.baseurl }}/" {% if page.url == "/" %}class="active-nav"{% endif %}>Home</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/team" {% if page.url contains "/team" %}class="active-nav"{% endif %}>Team</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/projects" {% if page.url contains "/projects" %}class="active-nav"{% endif %}>Projects</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/publications" {% if page.url contains "/publications" %}class="active-nav"{% endif %}>Publications</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/blog" {% if page.url contains "/blog" %}class="active-nav"{% endif %}>Blog</a></li>
-	  </ul>
-	</div>
+      <div class="site-identity">
+        <a class="navbar-eurecat" href="https://www.eurecat.org/" aria-label="Eurecat website">
+          <img src="{{ site.url }}{{ site.baseurl }}/assets/logos/eurecat-baseHOME_logo_75.png" alt="Eurecat">
+        </a>
+        <span class="site-identity-divider" aria-hidden="true"></span>
+        <span class="navbar-brand">Multimedia Technologies Unit</span>
+      </div>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ site.url }}{{ site.baseurl }}/" {% if page.url == "/" %}class="active-nav" aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/team" {% if page.url contains "/team" %}class="active-nav" aria-current="page"{% endif %}>Team</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/projects" {% if page.url contains "/projects" %}class="active-nav" aria-current="page"{% endif %}>Projects</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/publications" {% if page.url contains "/publications" %}class="active-nav" aria-current="page"{% endif %}>Publications</a></li>
+        <li><a href="{{ site.url }}{{ site.baseurl }}/blog" {% if page.url contains "/blog" %}class="active-nav" aria-current="page"{% endif %}>Blog</a></li>
+      </ul>
+    </div>
   </div>
-</div>
+</nav>

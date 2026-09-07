@@ -97,24 +97,24 @@ Examples of consecutive frames synthesized by our full-model at 256x256 resoluti
 # Additional synthetic video footage
 
 <div style="text-align: center;">
-<video width="235" height="235" controls>
+<video width="220" height="220" controls>
   <source src="/assets/posts/listen-and-move-gan/vids/seyeon_jung-JSBach_cello_suite_No6_10s_0100000_Gn-is512-sl16-fs20-cl0.1.mp4" type="video/mp4">
 </video>
-<video width="235" height="235" controls>
+<video width="220" height="220" controls>
   <source src="/assets/posts/listen-and-move-gan/vids/pau_casals-el_cant_dels_ocells_0100000_Gn-is512-sl16-fs20-cl0.1.mp4" type="video/mp4">
 </video>
-<video width="235" height="235" controls>
+<video width="220" height="220" controls>
   <source src="/assets/posts/listen-and-move-gan/vids/nirvana-come_as_you_are_0080000_Gn-is512-sl16-fs20-cl0.1.mp4" type="video/mp4">
 </video>
-<video width="235" height="235" controls>
+<video width="220" height="220" controls>
   <source src="/assets/posts/listen-and-move-gan/vids/195149__flcellogrl__cello-c2chromatic-scale-12Tup_0090000.mp4" type="video/mp4">
 </video>
 <span style="display: inline-block; margin-right: 30px;">J.S. Bach - Cello Suite Nº6</span>
-<span style="display: inline-block; margin-right: 30px;">Pau Casals - El cant dels ocells</span>
-<span style="display: inline-block; margin-right: 80px;">Nirvana - Come as you are</span>
-<span style="display: inline-block; margin-right: 45px;">Ascending scale</span>
-<span style="display: inline-block; margin-right: 300px;">(original audio track)</span>
-<span style="display: inline-block; margin-right: 200px;">(different excerpt, lower res)</span>
+<span style="display: inline-block; margin-right: 25px;">Pau Casals - El cant dels ocells</span>
+<span style="display: inline-block; margin-right: 50px;">Nirvana - Come as you are</span>
+<span style="display: inline-block; margin-right: 55px;">Ascending scale</span><br>
+<span style="display: inline-block; margin-right: 220px;">(original audio track)</span>
+<span style="display: inline-block; margin-right: 250px;">(different excerpt, lower res)</span>
 </div>
 
 <br>

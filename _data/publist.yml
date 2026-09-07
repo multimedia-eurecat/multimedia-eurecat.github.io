@@ -73,23 +73,26 @@
     - Computer Vision
     - Neural Rendering
     - 3D Reconstruction
+  image: shinynerf.jpg
   description: A physically-based NeRF variant that jointly estimates geometry and anisotropic specular parameters from multi-view images.
   news: ✨ Best paper award at 3D-ARCH 2026
   website: https://multimedia-eurecat.github.io/ShinyNeRF
   code: https://github.com/multimedia-eurecat/ShinyNeRF
-  highlight: 0
+  highlight: 1
 
 - title: "MExECON: Multi-View Extended Explicit Clothed Humans Optimized via Normal Integration"
   authors: Ece Ugur, F., Redondo, R., Barreiro, A., Hristov, S. & Marí, R.
-  details: International Conference on Computer Vision Theory and Applications (VISAPP).
+  details: International Conference on Computer Vision Theory and Applications (VISAPP 2026).
   year: 2026
   url: https://doi.org/10.5220/0014402400004084
   topics:
     - Computer Vision
     - 3D Reconstruction
     - Avatars
+  image: mexecon.jpg
+  description: MExECON reconstructs clothed human avatars from sparse RGB images. It extends the single-view ECON method to an arbitrary number of viewpoints, improving geometry and pose estimation without retraining.
   code: https://github.com/multimedia-eurecat/MExECON
-  highlight: 0
+  highlight: 1
 
 # 2025
 
@@ -514,7 +517,7 @@
     - Computer Vision
     - 3D Reconstruction
     - Graphics and Simulation
-  highlight: 1
+  highlight: 0
   description: The Autonomous Robot for Sewer Inspection (ARSI), a robotic system designed to make the work of inspection brigades safer and more efficient.
   image: arsi.jpg
 
@@ -587,7 +590,7 @@
   topics:
     - Computer Vision
     - Multimodal AI
-  highlight: 1
+  highlight: 0
   description: This paper proposses two different architectures for image style transfer applied to text while maintaining the original transcriptions.
   image: styletransfer.jpg
 
