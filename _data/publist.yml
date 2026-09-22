@@ -96,6 +96,18 @@
 
 # 2025
 
+- title: "Perceptual Evaluation of Deep Learning-Based Speech Enhancement For Hearing Aids"
+  authors: Guso, E., Luberadzka, J., Sayin, U. & Baig. M.
+  details: "ForumAcusticum EuroNoise 2025"
+  year: 2025
+  url: https://dael.euracoustics.org/confs/fa2025/data/articles/000677.pdf
+  topics:
+    - Speech Enhancement
+    - Speech and Hearing
+  highlight: 0
+
+
+
 - title: "LAND: Lung and Nodule Diffusion for 3D Chest CT Synthesis with Anatomical Guidance"
   authors: Oliveras, A., Marí, R., Redondo, R., Guardià, O., Tost, A., Nagarajan, B., Migliorelli, C., Ribas, V., & Radeva, P.
   details: "Medical Imaging meets EurIPS: MedEurIPS 2025 (EurIPS Workshops)"
