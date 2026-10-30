@@ -2,6 +2,7 @@
 #   title: "Project title"
 #   image: image.png (located at ./assets/projects)
 #   description: Write a description here.
+#   contribution: Brief description of the Multimedia Technologies Unit's contribution.
 #   date: 2015-2018
 #   ref: Funders, and other project reference descriptors.
 #   url: https://www.domain.org/projectsite
@@ -9,17 +10,64 @@
 
 # Projects
 
+# Sources: https://cordis.europa.eu/project/id/101307206
+- name: ABIGAIL4D
+  image: abigail4d_logo.png
+  title: Advancing Breast cancer Individualised Generative AI for Longitudinal Outcomes.
+  description: ABIGAIL4D develops a prototype 4D generative AI system to model the evolution of early breast cancer and support personalised treatment decisions. It combines longitudinal imaging, pathology, genomics and clinical data to forecast tumour response, survival and toxicity, and to compare alternative treatment strategies through explainable AI agents with quantified uncertainty.
+  contribution: Generative models for medical image synthesis and prediction to support diagnosis and prognosis.
+  ref: Horizon Europe, EIC Pathfinder Challenges, GA No. 101307206 (Coordinator Eurecat).
+  date: 2026-2031
+  url: https://cordis.europa.eu/project/id/101307206
+
+# Sources: https://eurecat.org/en/portfolio-items/tecsol-frut/
+# https://www.akisplataforma.es/en/node/112039
+- name: TECSOL-FRUT
+  image: tecsol_frut_logo.png
+  title: Intelligent agrivoltaics for resilient fruit farming.
+  description: TECSOL-FRUT develops and validates agrivoltaic systems that combine fruit production with solar electricity generation. Field sensors, satellite imagery, weather data and predictive models feed a digital twin to assess crop conditions and energy performance, helping farms reduce heat and water stress and adapt to climate change.
+  contribution: 3D digital model for representing the agrivoltaic installation and analysing its operation within the digital twin.
+  ref: Supra-regional AEI-Agri Operational Group, CAP 2023-2027, project reference REGAGE25e00048201589.
+  date: 2026-2029
+  url: https://eurecat.org/en/portfolio-items/tecsol-frut/
+
+# Sources: https://eurecat.org/en/portfolio-items/shift2zero/
+# https://cordis.europa.eu/project/id/101192375
+- name: SHIFT2ZERO
+  image: shift2zero_logo.png
+  title: Shifting to zero-emission logistics with right-sized, mission-focused N1 eLCVs.
+  description: SHIFT2ZERO develops electric light commercial vehicle concepts tailored to urban logistics. The project combines vehicle design with modular cargo solutions, energy management and logistics innovations, validating the concepts in real operating conditions to improve efficiency, safety and usability.
+  contribution: Immersive visualisation using virtual and extended reality, including interfaces that help users plan cargo distribution for different vehicle configurations.
+  ref: HORIZON-CL5-2024-D5-01-06, GA No. 101192375 (Coordinator Eurecat).
+  date: 2025-2028
+  url: https://shift2zero-project.eu
+
+# Sources: https://eurecat.org/en/portfolio-items/agribot/
+# https://cordis.europa.eu/project/id/101183158
+- name: AGRIBOT
+  image: agribot_logo.png
+  title: Harnessing Robotics, XR/AR, and 5G for a New Era of Safe, Sustainable, and Smart Agriculture.
+  description: AGRIBOT combines agricultural robotics, augmented and extended reality, and 5G connectivity to improve working conditions and reduce the environmental impact of farming. Its pilots address tasks such as crop monitoring, spraying, harvesting and pruning, while helping farmers acquire the skills to work with robotic systems.
+  contribution: XR technology for farmer training and robot monitoring and control, working with Eurecat's Robotics and Automation Unit to support interaction with agricultural robots.
+  ref: HORIZON-CL6-2024-GOVERNANCE-01-7, GA No. 101183158.
+  date: 2024-2028
+  url: https://agribot-project.eu
+
+# Source: https://eurecat.org/en/portfolio-items/phase-iv-ai/
 - name: PHASE IV AI
   title: Privacy Compliant Health Data As A Service For AI Development.
   description: Artificial intelligence (AI) enables data-driven innovations in health care. AI systems, which process vast amounts of data quickly and in detail, show promise both as a tool for preventive health care and clinical decision-making. However, the distributed storage and limited access to health data form a barrier to innovation, as developing trustworthy AI systems requires large datasets for training and validation. Furthermore, the availability of anonymous datasets would increase the adoption of AI-powered tools by supporting health technology assessments and education. Secure, privacy compliant data utilization is key for unlocking the full potential of AI and data analytics. In this proposal, we will advance the current state-of-the-art data synthesis methods towards a more generalized approach of synthetic data generation. We will also develop metrics for testing and validation, as well as protocols that enable synthetic data generation without access to real-world data (through multi-party computation).
+  contribution: 3D chest CT synthetic generation and nodule progression forecasting, to support AI-based tools development and patient privacy compliance.
   ref: HORIZON-HLTH-2022-IND-13, GA No 101095384.
   image: phase_iv_ai_logo.png
   date: 2023-2026
   url: https://www.phase4ai-project.eu
 
+# Source: https://eurecat.org/en/portfolio-items/indux-r/
 - name: INDUX-R
   title: Transforming European Industrial Ecosystems through eXtended Reality enhanced with human-centric Al and secure, 5G-enabled loT.
   description: This project envisions a human-centric XR ecosystem that will transform European industrial sectors by empowering humans and creating innovate XR products and services of significant added value. It targets for concrete scientific breakthroughs integrated in technological enablers that will be applied in use cases driven from real-life needs while having the potential to be replicated in several other applications. These breakthroughs are focused on core XR technologies, namely, digitisation and creation of XR assets, realistic animation, light-field HMDs, XR media streaming and egocentric perception. To address challenges that multi-user XR applications pose, INDUX-R will implement a highly scalable, zero-touch 5G architecture and a secure, interoperable IoT network that can accommodate fluctuating demands and  minimize waste of resources. see the latest updates.
+  contribution: Development of XR technologies for Industry 5.0, including acoustic digitisation of spaces and 3D avatars for virtual omniconferencing, and avatar creation for immersive training of medical professionals.
   ref: HORIZON-CL4-2023-HUMAN-01-CNECT, GA No. 101135556.
   image: indux_r_logo.jpg
   date: 2023-2026

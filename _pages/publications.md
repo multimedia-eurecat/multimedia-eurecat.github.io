@@ -66,7 +66,7 @@ permalink: /publications/
         <ul class="publications-full-list">
         {% for publi in year_group.items %}
           <li class="publication-entry" data-topics="{{ publi.topics | join: '|' | escape }}">
-            <h4 class="publication-list-title"><a href="{{ publi.url }}">{{ publi.title }}</a></h4>
+            <h4 class="publication-list-title">{% if publi.url %}<a href="{{ publi.url }}">{{ publi.title }}</a>{% else %}{{ publi.title }}{% endif %}</h4>
             <p class="publication-list-authors">{{ publi.authors }}</p>
             <p class="publication-list-details">{{ publi.details }}</p>
             {% if publi.website or publi.code or publi.presentation %}

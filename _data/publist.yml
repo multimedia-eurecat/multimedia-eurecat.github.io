@@ -33,7 +33,119 @@
 # - Datasets and Benchmarks
 # - Human-Computer Interaction
 
+# 2027
+
+- title: "MUMINS: Metadata-conditioned Uncertainty-aware Medical Image Next-state Synthesis"
+  authors: Oliveras, A., Marí, R., Redondo, R., Guardià-Olivella, O., Ugwu, C. I., Tost, A., Nagarajan, B., Migliorelli, C., Ribas, V., & Radeva, P.
+  details: IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2027).
+  year: 2027
+  url: https://arxiv.org/abs/2609.17169
+  topics:
+    - Medical Imaging
+    - Generative AI and Diffusion Models
+  website: https://aolivtous.github.io/publications/mumins.html
+  code: https://github.com/aolivtous/MUMINS
+  highlight: 0
+
 # 2026
+
+- title: "Preserving Heritage Acoustics: A EuropeanaTech Perspective"
+  authors: De Muynke, J., Foteinou, A., Callery, E., Cousins, J., Isaac, A., Jordan, P., Katz, B. F. G., Markus, G., Murphy, D., Sagic, A., & Heikki U.
+  details: Proceedings of the 3rd Symposium on the Acoustics of Ancient Theatres, Cartagena, Spain, October 25–28, 2026.
+  year: 2026
+  url:
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - Audio and Acoustics
+  highlight: 0
+
+- title: "From Continental Benchmarks to Local Short-Range NDVI Forecasting"
+  authors: Ugwu, C. I. & Marí, R.
+  details: British Machine Vision Conference Workshops (BMVC Workshops 2026).
+  year: 2026
+  url: https://github.com/multimedia-eurecat/short-range-ndvi-forecasting
+  topics:
+    - Computer Vision
+    - Remote Sensing and Earth Observation
+  code: https://github.com/multimedia-eurecat/short-range-ndvi-forecasting
+  highlight: 0
+
+- title: "SeasonStereo: Robust Dense Stereo Matching for Multi-Date Satellite Imagery via Generative AI"
+  authors: Díaz Laureano, Á., Marí, R., Masquil, E., Arias, P., & Facciolo, G.
+  details: TerraBytes II, European Conference on Computer Vision Workshops (ECCV Workshops 2026).
+  year: 2026
+  url: https://arxiv.org/abs/2607.27139
+  topics:
+    - Computer Vision
+    - 3D Reconstruction
+    - Remote Sensing and Earth Observation
+    - Generative AI and Diffusion Models
+  website: https://multimedia-eurecat.github.io/SeasonStereo
+  code: https://github.com/multimedia-eurecat/SeasonStereo
+  highlight: 0
+
+- title: "Robust Satellite RPC Refinement via Bundle Adjustment with Season-Invariant Correspondences"
+  authors: Marí, R., Masquil, E., Bou, X., Ehret, T., & Facciolo, G.
+  details: TerraBytes II, European Conference on Computer Vision Workshops (ECCV Workshops 2026).
+  year: 2026
+  news: ✨ Best Poster Award at TerraBytes II, ECCV Workshops 2026
+  url: https://arxiv.org/abs/2607.26973
+  topics:
+    - Computer Vision
+    - 3D Reconstruction
+    - Remote Sensing and Earth Observation
+  website: https://centreborelli.github.io/sat-bundleadjust/v2/
+  code: https://github.com/centreborelli/sat-bundleadjust
+  highlight: 0
+
+- title: "Multimodal Emotion Recognition in Conversations via Class-Wise Adaptive Modality Fusion and Affective Geometry"
+  authors: Marín, O., Marí, R., Haro, G., & Redondo, R.
+  details: Affective Behavior Analysis in-the-wild (ABAW), European Conference on Computer Vision Workshops (ECCV Workshops 2026).
+  year: 2026
+  url: https://arxiv.org/abs/2609.09924
+  topics:
+    - Multimodal AI
+    - Affective Computing and EEG
+  code: https://github.com/multimedia-eurecat/classwise-multimodal-ERC
+  highlight: 0
+
+- title: "Diachronic Stereo Matching for Multi-Date Satellite Imagery"
+  authors: Masquil, E., Savant Aira, L., Marí, R., Ehret, T., Musé, P., & Facciolo, G.
+  details: ISPRS Annals of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XI-2-2026, 483–492, 2026.
+  year: 2026
+  url: https://doi.org/10.5194/isprs-annals-XI-2-2026-483-2026
+  topics:
+    - Computer Vision
+    - 3D Reconstruction
+    - Remote Sensing and Earth Observation
+    - Datasets and Benchmarks
+  website: https://centreborelli.github.io/diachronic-stereo
+  code: https://github.com/emasquil/diachronicstereo
+  highlight: 0
+
+- title: "Anatomically Guided Latent Diffusion for High-Resolution 3D Chest CT Synthesis"
+  authors: Oliveras, A., Marí, R., Redondo, R., Guardià, O., Ugwu, C. I., Tost, A., Nagarajan, B., Migliorelli, C., Ribas, V., & Radeva, P.
+  details: Scientific Reports, 2026.
+  year: 2026
+  url: https://doi.org/10.1038/s41598-026-51634-4
+  topics:
+    - Medical Imaging
+    - Generative AI and Diffusion Models
+  website: https://aolivtous.github.io/publications/land.html
+  code: https://github.com/aolivtous/LAND_3DChestCT
+  highlight: 0
+
+- title: "Public Evaluation of Notre-Dame Whispers, a Geolocated Outdoor Audio-Guided Tour of Notre-Dame’s Sonic History"
+  authors: De Muynke, J., Peichert, S., & Katz, B. F. G.
+  details: Heritage, 9(1), 19, 1–23, 2026.
+  year: 2026
+  url: https://doi.org/10.3390/heritage9010019
+  topics:
+    - Acoustic Heritage and Auralisation
+    - Cultural Heritage
+    - Audio and Acoustics
+  highlight: 0
 
 - title: "An AI Voice Agent for Speech Communication Assessment "
   authors: Luberadzka, J. & Sayin, U.

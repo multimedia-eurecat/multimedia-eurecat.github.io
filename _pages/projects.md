@@ -32,6 +32,7 @@ permalink: /projects/
       </header>
 
       <p class="project-description">{{ project.description }}</p>
+      {% if project.contribution %}<p class="project-description"><strong>Our contribution:</strong> {{ project.contribution }}</p>{% endif %}
       {% if project.ref %}<p class="project-reference">{{ project.ref }}</p>{% endif %}
     </div>
   </article>
