@@ -16,6 +16,24 @@ $ bundle exec jekyll serve
 
 Then go to `http://127.0.0.1:4000/` to verify everything renders as expected.
 
+### MacOS instructions
+
+If on MacOS, install Ruby via Homebrew first, then you can use gem to bundle Jekyll
+```
+$ brew install ruby
+
+$ # Use Homebrew’s Ruby and gem executables in this terminal
+$ export PATH="$(brew --prefix ruby)/bin:$PATH"
+$ export PATH="$(ruby -r rubygems -e 'puts Gem.bindir'):$PATH"
+
+$ gem install bundler jekyll
+
+$ # From your Jekyll project directory
+$ bundle install
+$ bundle add logger
+$ bundle exec jekyll serve
+```
+
 ### Important folders to contribute
 
 - `_data`: content lists related to members, projects, publications, news, etc.
