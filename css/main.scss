@@ -1,7 +1,9 @@
 ---
 ---
     
+$grid-float-breakpoint: 992px;
 @import "bootstrap";
+@import "facilities";
 
 img { margin-bottom: 24px; 
      margin-top: 17px; 
@@ -152,7 +154,7 @@ figcaption {
   background: #142f43;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
   body {
     padding-top: 74px;
   }

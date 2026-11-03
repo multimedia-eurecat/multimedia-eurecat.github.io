@@ -41,6 +41,8 @@ $ bundle exec jekyll serve
 - `assets/posts`: put images and other assets for each post inside a folder in this path.
 - `assets/projects`: projects' logos.
 - `assets/slider`: content images of the landing slider.
+- `assets/facilities/studio` and `assets/facilities/installations`: photos for the two Facilities carousels. Studio photos use filename order; installation photos use the fixed order configured in `_pages/facilities.md`. New photos in these folders are included automatically between the configured first and final images.
+- `_pages/facilities.md`: Facilities content, responsive SoundCloud players, and the insertion point for the next widget.
 - `assets/team`: member avatars.
 
 ## Attribution
