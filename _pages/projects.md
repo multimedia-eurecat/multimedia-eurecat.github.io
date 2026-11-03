@@ -6,10 +6,11 @@ sitemap: false
 permalink: /projects/
 ---
 
-<div class="projects-intro" markdown="0">
-  <span>Collaborative R&amp;D</span>
+<header class="page-intro" markdown="0">
+  <span class="page-intro-eyebrow">Collaborative R&amp;D</span>
+  <h1>Projects</h1>
   <p>The Multimedia Technologies Unit participates in research and innovation projects that advance multimedia technologies through collaborations with European partners and industry.</p>
-</div>
+</header>
 
 <div class="projects-list" markdown="0">
 {% for project in site.data.projects %}

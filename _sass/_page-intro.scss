@@ -1,0 +1,35 @@
+.page-intro {
+  margin: 34px 0 54px;
+}
+
+.page-intro-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: #667eea;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-intro h1 {
+  margin: 0 0 15px;
+  color: #142f43;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.page-intro p {
+  margin: 0;
+  color: #536773;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+@media (max-width: 700px) {
+  .page-intro {
+    margin: 24px 0 42px;
+  }
+}

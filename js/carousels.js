@@ -3,7 +3,7 @@
 
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  document.querySelectorAll(".facilities-carousel").forEach(function (carousel) {
+  document.querySelectorAll(".facilities-carousel, #homeid #carousel").forEach(function (carousel) {
     if (carousel.getAttribute("data-shuffle") === "true") {
       var inner = carousel.querySelector(".carousel-inner");
       var slides = Array.from(inner.children);
@@ -28,7 +28,7 @@
 
     var player = window.jQuery(carousel);
     var pauseButton = carousel.querySelector(".facilities-carousel-pause");
-    var title = carousel.getAttribute("aria-label").replace(" photos", "").toLowerCase();
+    var title = (carousel.getAttribute("aria-label") || "Highlights").replace(" photos", "").toLowerCase();
     var paused = reducedMotion.matches;
     var hasFocus = carousel.contains(document.activeElement);
     var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -70,9 +70,11 @@
       } else if (progressFrame === null) {
         progressFrame = window.requestAnimationFrame(advanceProgress);
       }
-      pauseButton.setAttribute("aria-pressed", String(paused));
-      pauseButton.setAttribute("aria-label", (paused ? "Play " : "Pause ") + title + " slideshow");
-      pauseButton.firstElementChild.textContent = paused ? "▶" : "Ⅱ";
+      if (pauseButton) {
+        pauseButton.setAttribute("aria-pressed", String(paused));
+        pauseButton.setAttribute("aria-label", (paused ? "Play " : "Pause ") + title + " slideshow");
+        pauseButton.firstElementChild.textContent = paused ? "▶" : "Ⅱ";
+      }
     }
 
     player.carousel({ interval: false });
@@ -97,10 +99,12 @@
       updatePlayback();
     });
 
-    pauseButton.addEventListener("click", function () {
-      paused = !paused;
-      updatePlayback();
-    });
+    if (pauseButton) {
+      pauseButton.addEventListener("click", function () {
+        paused = !paused;
+        updatePlayback();
+      });
+    }
 
     carousel.addEventListener("focusin", function () {
       hasFocus = true;

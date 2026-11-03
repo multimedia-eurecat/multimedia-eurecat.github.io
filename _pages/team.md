@@ -9,13 +9,13 @@ permalink: /team/
 <div class="team-page" markdown="0">
   <header class="team-page-header">
     <span class="team-page-eyebrow">STAFF</span>
-    <h1>Research & innovation team</h1>
+    <h1>Research & Innovation Team</h1>
     <p>Our multidisciplinary team brings together researchers, engineers, and creative technologists working across audio, image, and visualization.</p>
     <p class="team-recruitment">We welcome Master's and PhD candidates interested in applied multimedia research. See our <a href="https://eurecat.org/eurecat/treballa-amb-nosaltres/">open positions</a> or contact us directly.</p>
   </header>
 
   <section class="team-section" aria-labelledby="current-members-title">
-    <div class="team-section-heading">
+    <div class="section-heading team-section-heading">
       <h2 id="current-members-title">Current members</h2>
       <p>Research, technical, and group leadership staff.</p>
     </div>
@@ -46,7 +46,7 @@ permalink: /team/
   </section>
 
   <section class="team-section" aria-labelledby="students-title">
-    <div class="team-section-heading">
+    <div class="section-heading team-section-heading">
       <h2 id="students-title">PhD and Master's students</h2>
       <p>Researchers completing advanced studies within the unit.</p>
     </div>
@@ -76,7 +76,7 @@ permalink: /team/
   </section>
 
   <section class="team-section team-alumni-section" aria-labelledby="former-staff-title">
-    <div class="team-section-heading">
+    <div class="section-heading team-section-heading">
       <h2 id="former-staff-title">Former staff and students</h2>
       <p>Previous members of the unit and visiting researchers.</p>
     </div>

@@ -7,8 +7,16 @@ permalink: /publications/
 ---
 
 <div markdown="0">
+  <header class="page-intro">
+    <span class="page-intro-eyebrow">Research output</span>
+    <h1>Publications</h1>
+    <p>Scientific publications from the Multimedia Technologies Unit.</p>
+  </header>
+
   <section id="publication-highlights-section">
-    <h2>Highlights</h2>
+    <div class="section-heading publication-section-heading">
+      <h2>Highlights</h2>
+    </div>
     <div class="highlights-grid">
     {% for publi in site.data.publist %}
     {% if publi.highlight == 1 %}
@@ -42,7 +50,9 @@ permalink: /publications/
   </section>
 
   <section id="publication-full-list-section">
-    <h2>Full List</h2>
+    <div class="section-heading publication-section-heading">
+      <h2>Full List</h2>
+    </div>
 
     <div class="publication-toolbar">
       <div class="publication-toolbar-intro">

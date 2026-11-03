@@ -9,12 +9,12 @@ sitemap: false
 <main class="blog-index" markdown="0">
   <header class="blog-index-header">
     <span class="blog-index-eyebrow">Research notes</span>
-    <h1>From the lab</h1>
+    <h1>From the Lab</h1>
     <p>Technical articles, research results, and resources from the Multimedia Technologies Unit.</p>
   </header>
 
   <section class="blog-index-feed" aria-labelledby="blog-articles-title">
-    <div class="blog-index-section-heading">
+    <div class="section-heading blog-index-section-heading">
       <h2 id="blog-articles-title">Latest articles</h2>
       <span>{{ site.posts | size }} articles</span>
     </div>
