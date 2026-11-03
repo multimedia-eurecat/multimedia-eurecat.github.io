@@ -4,7 +4,6 @@
 }
 
 .facilities-header {
-  max-width: 760px;
   margin-bottom: var(--facilities-section-spacing);
 }
 
@@ -42,23 +41,35 @@
   margin: 24px 0 0;
 }
 
+.facilities-description {
+  margin: 28px 0 0;
+  color: #536773;
+  font-size: 16px;
+  line-height: 1.75;
+  text-align: left;
+}
+
 .facilities-section-heading {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 8px 24px;
   margin-bottom: 22px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #dfe3f7;
 }
 
 .facilities-section-heading h2 {
-  position: relative;
   margin: 0;
-  padding-bottom: 15px;
   color: #667eea;
   font-size: clamp(24px, 2.8vw, 30px);
   font-weight: 700;
   line-height: 1.25;
   letter-spacing: -0.025em;
-  border-bottom: 1px solid #dfe3f7;
 }
 
-.facilities-section-heading h2::after {
+.facilities-section-heading::after {
   content: "";
   position: absolute;
   bottom: -1px;
@@ -70,9 +81,12 @@
 }
 
 .facilities-section-heading p {
-  margin: 10px 0 0;
-  color: #536773;
-  font-size: 15px;
+  max-width: 280px;
+  margin: 0;
+  color: #7b8991;
+  font-size: 13px;
+  line-height: 1.45;
+  text-align: right;
 }
 
 .facilities-carousel {
@@ -220,6 +234,12 @@
   background: #67e8f9;
 }
 
+.facilities-audio-note {
+  margin: 0 0 22px;
+  color: #536773;
+  font-size: 15px;
+}
+
 .facilities-audio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
@@ -246,6 +266,17 @@
 
 .facilities-audio-credit a {
   color: #536773;
+}
+
+@media (max-width: 700px) {
+  .facilities-section-heading {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .facilities-section-heading p {
+    max-width: none;
+    text-align: left;
+  }
 }
 
 @media (max-width: 600px) {
