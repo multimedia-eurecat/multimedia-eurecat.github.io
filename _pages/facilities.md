@@ -18,10 +18,11 @@ permalink: /facilities/
       <h2 id="facilities-studio-title">3D Audio Laboratory</h2>
     </div>
     {% include facilities-carousel.html id="studio-carousel" directory="/assets/facilities/studio/" title="Studio" captions=site.data.facilities_captions.studio %}
+    <p class="facilities-description">The Immersive Audio Lab brings together the capabilities of a specialized production studio and an environment for technological experimentation and validation. It is where we develop and produce the content that powers our immersive installations, XR experiences, audiovisual projects and multisensory applications. It also provides the space to design, test and refine each experience, ensuring it is fully optimized before final deployment.</p>
     <div class="lab-card">
       <span class="lab-card-mark" aria-hidden="true">)))</span>
       <div>
-        <span class="home-eyebrow">Featured facility</span>
+        <span class="home-eyebrow">Explore the laboratory</span>
         <h2><a href="https://labs.eurecat.org/en/laboratory/3d-audio-laboratory/">3D Audio Laboratory <span aria-hidden="true">↗</span></a></h2>
         <p>Facilities and services for spatial audio research, XR, media production and perceptual evaluation.</p>
       </div>
