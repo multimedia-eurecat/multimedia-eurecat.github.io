@@ -77,6 +77,38 @@
   object-fit: contain;
 }
 
+.facilities-carousel .carousel-caption {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding: 72px 32px 28px;
+  background: linear-gradient(to top, rgba(3, 12, 23, 0.9), rgba(3, 12, 23, 0));
+  text-align: left;
+  text-shadow: none;
+  pointer-events: none;
+}
+
+.facilities-carousel .carousel-caption > span {
+  display: block;
+  margin-bottom: 7px;
+  color: #67e8f9;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.facilities-carousel .carousel-caption h3 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(22px, 2.5vw, 34px);
+  font-weight: 650;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
 .facilities-carousel-toolbar {
   display: flex;
   align-items: center;
@@ -237,6 +269,10 @@
   .facilities-carousel-toolbar {
     gap: 10px;
     padding: 12px;
+  }
+
+  .facilities-carousel .carousel-caption {
+    padding: 54px 20px 20px;
   }
 }
 

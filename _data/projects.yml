@@ -4,6 +4,7 @@
 #   description: Write a description here.
 #   contribution: Brief description of the Multimedia Technologies Unit's contribution.
 #   date: 2015-2018
+#   end_date: "2018-12-31" (optional exact end date for Current/Completed grouping)
 #   ref: Funders, and other project reference descriptors.
 #   url: https://www.domain.org/projectsite
 
@@ -18,6 +19,7 @@
   contribution: Generative models for medical image synthesis and prediction to support diagnosis and prognosis.
   ref: Horizon Europe, EIC Pathfinder Challenges, GA No. 101307206 (Coordinator Eurecat).
   date: 2026-2031
+  end_date: "2031-01-31"
   url: https://cordis.europa.eu/project/id/101307206
 
 # Sources: https://eurecat.org/en/portfolio-items/tecsol-frut/
@@ -40,6 +42,7 @@
   contribution: Immersive visualisation using virtual and extended reality, including interfaces that help users plan cargo distribution for different vehicle configurations.
   ref: HORIZON-CL5-2024-D5-01-06, GA No. 101192375 (Coordinator Eurecat).
   date: 2025-2028
+  end_date: "2028-06-30"
   url: https://shift2zero-project.eu
 
 # Sources: https://eurecat.org/en/portfolio-items/agribot/
@@ -51,6 +54,7 @@
   contribution: XR technology for farmer training and robot monitoring and control, working with Eurecat's Robotics and Automation Unit to support interaction with agricultural robots.
   ref: HORIZON-CL6-2024-GOVERNANCE-01-7, GA No. 101183158.
   date: 2024-2028
+  end_date: "2028-10-31"
   url: https://agribot-project.eu
 
 # Source: https://eurecat.org/en/portfolio-items/phase-iv-ai/
@@ -61,6 +65,7 @@
   ref: HORIZON-HLTH-2022-IND-13, GA No 101095384.
   image: phase_iv_ai_logo.png
   date: 2023-2026
+  end_date: "2026-12-31"
   url: https://www.phase4ai-project.eu
 
 # Source: https://eurecat.org/en/portfolio-items/indux-r/
@@ -71,6 +76,7 @@
   ref: HORIZON-CL4-2023-HUMAN-01-CNECT, GA No. 101135556.
   image: indux_r_logo.jpg
   date: 2023-2026
+  end_date: "2026-12-31"
   url: https://www.linkedin.com/company/indux-r/posts/?feedView=all
 
 - name: AI4Heritage

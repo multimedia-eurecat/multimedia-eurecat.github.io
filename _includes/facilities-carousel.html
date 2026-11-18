@@ -1,31 +1,13 @@
-{% assign images = site.static_files | where_exp: "file", "file.path contains include.directory" | sort_natural: "name" %}
-{% assign first_image_names = include.first_images | default: "" | split: "|" %}
-{% assign contained_image_names = include.contain_images | default: "" | split: "|" %}
-{% assign last_image_names = include.last_images | default: "" | split: "|" %}
-{% if include.first_images or include.last_images %}
-  {% assign ordered_images = "" | split: "|" %}
-  {% for image_name in first_image_names %}
-    {% assign image = images | where: "name", image_name | first %}
-    {% if image %}{% assign ordered_images = ordered_images | push: image %}{% endif %}
-  {% endfor %}
-  {% for image in images %}
-    {% unless first_image_names contains image.name %}
-      {% unless last_image_names contains image.name %}
-        {% assign ordered_images = ordered_images | push: image %}
-      {% endunless %}
-    {% endunless %}
-  {% endfor %}
-  {% for image_name in last_image_names %}
-    {% assign image = images | where: "name", image_name | first %}
-    {% if image %}{% assign ordered_images = ordered_images | push: image %}{% endif %}
-  {% endfor %}
-  {% assign images = ordered_images %}
-{% endif %}
-<div id="{{ include.id }}" class="carousel slide facilities-carousel"{% if include.shuffle %} data-shuffle="true"{% endif %} data-ride="carousel" data-interval="5000" data-pause="hover" role="region" aria-roledescription="carousel" aria-label="{{ include.title }} photos" tabindex="0">
+{% assign images = include.captions %}
+<div id="{{ include.id }}" class="carousel slide facilities-carousel" data-ride="carousel" data-interval="5000" data-pause="hover" role="region" aria-roledescription="carousel" aria-label="{{ include.title }} photos" tabindex="0">
   <div class="carousel-inner">
     {% for image in images %}
-    <div class="item{% if forloop.first %} active{% endif %}"{% if first_image_names contains image.name %} data-fixed-slide="first"{% elsif last_image_names contains image.name %} data-fixed-slide="last"{% endif %} role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ images.size }}">
-      <img{% if contained_image_names contains image.name %} class="carousel-image-contain"{% endif %} src="{{ image.path | relative_url | uri_escape }}" alt="{{ include.image_alt }} — photo {{ forloop.index }}"{% unless forloop.first %} loading="lazy"{% endunless %} decoding="async">
+    <div class="item{% if forloop.first %} active{% endif %}" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ images.size }}">
+      <img{% if image.fit == "contain" %} class="carousel-image-contain"{% endif %} src="{{ include.directory | append: image.image | relative_url | uri_escape }}" alt="{% if image.eyebrow %}{{ image.eyebrow | escape }}: {% endif %}{{ image.title | escape }}"{% unless forloop.first %} loading="lazy"{% endunless %} decoding="async">
+      <div class="carousel-caption">
+        {% if image.eyebrow %}<span>{{ image.eyebrow | escape }}</span>{% endif %}
+        <h3>{{ image.title | escape }}</h3>
+      </div>
     </div>
     {% endfor %}
   </div>

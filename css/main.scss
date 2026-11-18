@@ -1903,8 +1903,8 @@ a:hover {
 }
 
 /* Projects page styles */
-.projects-list {
-  border-top: 1px solid #dfe5e8;
+.projects-section + .projects-section {
+  margin-top: 54px;
 }
 
 .project-entry {
@@ -1914,7 +1914,18 @@ a:hover {
   padding: 25px 12px;
   margin: 0;
   text-align: left;
-  border-bottom: 1px solid #dfe5e8;
+}
+
+.project-entry + .project-entry {
+  border-top: 1px solid #e4e8ea;
+}
+
+.project-entry:first-child {
+  padding-top: 0;
+}
+
+.project-entry:last-child {
+  padding-bottom: 0;
 }
 
 .project-logo {
@@ -2010,6 +2021,10 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  .projects-section + .projects-section {
+    margin-top: 38px;
+  }
+
   .project-entry {
     grid-template-columns: 88px minmax(0, 1fr);
     gap: 15px;
@@ -2066,9 +2081,16 @@ a:hover {
   max-width: 420px;
 }
 
+.site-footer-identity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .site-footer-logo {
-  display: inline-block;
-  margin-bottom: 25px;
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
 }
 
 .site-footer-logo img {
@@ -2077,10 +2099,23 @@ a:hover {
   height: auto;
   margin: 0;
   border-radius: 0;
-  filter: brightness(1.12) saturate(0.9);
 }
 
-.site-footer-unit,
+.site-footer-identity-divider {
+  flex: 0 0 1px;
+  height: 32px;
+  background: #fff;
+}
+
+.site-footer-unit {
+  min-width: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
 .site-footer-heading {
   display: block;
   color: #67e8f9;
@@ -2093,7 +2128,7 @@ a:hover {
 
 .site-footer-intro p {
   max-width: 390px;
-  margin: 12px 0 0;
+  margin: 18px 0 0;
   color: rgba(255, 255, 255, 0.68);
   font-size: 14px;
   line-height: 1.65;
@@ -2162,6 +2197,18 @@ a:hover {
 
   .site-footer-intro {
     grid-column: 1 / -1;
+  }
+
+  .site-footer-identity {
+    gap: 12px;
+  }
+
+  .site-footer-logo img {
+    width: 104px;
+  }
+
+  .site-footer-unit {
+    font-size: 16px;
   }
 }
 

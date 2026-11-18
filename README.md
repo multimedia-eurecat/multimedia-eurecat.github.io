@@ -37,12 +37,16 @@ $ bundle exec jekyll serve
 ### Important folders to contribute
 
 - `_data`: content lists related to members, projects, publications, news, etc.
+- `_data/projects.yml`: projects are grouped into Current and Completed when the site builds. Set `end_date` for an exact finish date; otherwise, the final year in `date` is treated as ending on 31 December.
 - `_posts`: the markdown posts.
 - `assets/posts`: put images and other assets for each post inside a folder in this path.
 - `assets/projects`: projects' logos.
 - `assets/slider`: content images of the landing slider.
-- `assets/facilities/studio` and `assets/facilities/installations`: photos for the two Facilities carousels. Studio photos use filename order; installation photos use the fixed order configured in `_pages/facilities.md`. New photos in these folders are included automatically between the configured first and final images.
+- `assets/facilities/studio` and `assets/facilities/installations`: photos for the two Facilities carousels.
+- `_data/facilities_captions.yml`: selects and orders the gallery photos by exact filename. Each entry has a white `title` and an optional cyan `eyebrow` label; add `fit: contain` to show an entire image without cropping. Add new photos here to include them in a carousel.
 - `_pages/facilities.md`: Facilities content, responsive SoundCloud players, and the insertion point for the next widget.
+- `_data/facilities_audio.yml`: SoundCloud playlists and player height for Facilities.
+- `assets/facilities/spatial-audio-widget/`: self-contained spatial audio playground embedded below the SoundCloud players. Its JavaScript module loads its own styles and audio dependencies; WAV files are processed in the visitor's browser.
 - `assets/team`: member avatars.
 
 ## Attribution

@@ -12,30 +12,40 @@ permalink: /projects/
   <p>The Multimedia Technologies Unit participates in research and innovation projects that advance multimedia technologies through collaborations with European partners and industry.</p>
 </header>
 
-<div class="projects-list" markdown="0">
+{% assign today = site.time | date: "%Y-%m-%d" %}
+{% assign current_projects = "" | split: "|" %}
+{% assign completed_projects = "" | split: "|" %}
 {% for project in site.data.projects %}
-  <article class="project-entry{% unless project.image %} project-entry-no-image{% endunless %}">
-    {% if project.image %}
-    <div class="project-logo">
-      <img src="{{ site.url }}{{ site.baseurl }}/assets/projects/{{ project.image }}" alt="{{ project.name | escape }} logo" loading="lazy">
-    </div>
-    {% endif %}
-
-    <div class="project-content">
-      <header class="project-header">
-        <div class="project-name-row">
-          <h2 class="project-name">
-            {% if project.url %}<a href="{{ project.url }}">{{ project.name }}</a>{% else %}{{ project.name }}{% endif %}
-          </h2>
-          <span class="project-date">{{ project.date }}</span>
-        </div>
-        {% if project.title %}<p class="project-title">{{ project.title }}</p>{% endif %}
-      </header>
-
-      <p class="project-description">{{ project.description }}</p>
-      {% if project.contribution %}<p class="project-description"><strong>Our contribution:</strong> {{ project.contribution }}</p>{% endif %}
-      {% if project.ref %}<p class="project-reference">{{ project.ref }}</p>{% endif %}
-    </div>
-  </article>
+  {% if project.end_date %}
+    {% assign end_date = project.end_date | date: "%Y-%m-%d" %}
+  {% else %}
+    {% assign end_year = project.date | append: "" | replace: "–", "-" | replace: "—", "-" | split: "-" | last | strip %}
+    {% assign end_date = end_year | append: "-12-31" %}
+  {% endif %}
+  {% if end_date >= today %}
+    {% assign current_projects = current_projects | push: project %}
+  {% else %}
+    {% assign completed_projects = completed_projects | push: project %}
+  {% endif %}
 {% endfor %}
-</div>
+
+{% assign project_sections = "Current|Completed" | split: "|" %}
+{% for section_title in project_sections %}
+  {% if forloop.first %}
+    {% assign projects = current_projects %}
+  {% else %}
+    {% assign projects = completed_projects %}
+  {% endif %}
+  {% assign section_id = section_title | downcase %}
+<section class="projects-section" aria-labelledby="projects-{{ section_id }}-title" markdown="0">
+  <div class="section-heading">
+    <h2 id="projects-{{ section_id }}-title">{{ section_title }}</h2>
+    <span>{{ projects.size }} project{% if projects.size != 1 %}s{% endif %}</span>
+  </div>
+  <div class="projects-list">
+    {% for project in projects %}
+      {% include project-entry.html project=project %}
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}

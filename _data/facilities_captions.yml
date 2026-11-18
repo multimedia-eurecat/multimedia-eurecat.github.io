@@ -1,0 +1,89 @@
+# Slide order follows each list. image is the exact filename in the gallery folder.
+# eyebrow is optional: omit it for a white title only; use fit: contain to avoid cropping.
+studio:
+  - image: Diapositiva1.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: 3D Recording and Post-Production Room
+  - image: Diapositiva2.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: 3D Recording and Post-Production Room
+  - image: Diapositiva3.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: Control Room
+  - image: Diapositiva4.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: Control Room
+  - image: Diapositiva5.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: Control Room
+  - image: Diapositiva6.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: Binaural and Ambisonic Microphones
+  - image: Diapositiva7.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: Ambisonic Microphones
+  - image: Diapositiva8.jpeg
+    eyebrow: 3D Audio Laboratory
+    title: Dodecahedron Omnidirectional Loudspeaker
+
+installations:
+  - image: Diapositiva1.jpeg
+    eyebrow: OVNEW Restaurant
+    title: Immersive Restaurant Exterior
+  - image: Diapositiva2.jpeg
+    eyebrow: OVNEW Restaurant
+    title: Integrated Sound, Lighting and Multimedia Installation
+  - image: Diapositiva3.jpeg
+    eyebrow: OVNEW Restaurant
+    title: Immersive Dining Experience
+  - image: Diapositiva4.jpeg
+    eyebrow: OVNEW Restaurant
+    title: Real-Time Immersive Live Sound and Lighting Environment
+  - image: Diapositiva5.jpeg
+    eyebrow: Sónar Festival, Barcelona
+    title: Zero Gravity Band
+  - image: Diapositiva6.jpeg
+    eyebrow: Sónar Festival, Barcelona
+    title: Zero Gravity Band
+  - image: Diapositiva7.jpeg
+    eyebrow: Sónar Festival, Barcelona
+    title: Zero Gravity Band
+  - image: Diapositiva8.jpeg
+    eyebrow: Metrica Ibiza Recording Studio
+    title: Metrica Control Room
+  - image: Diapositiva9.jpeg
+    eyebrow: Metrica Ibiza Recording Studio
+    title: Metrica Recording and 3D Audio Room
+  - image: Diapositiva10.jpeg
+    eyebrow: The Oracle by Dan Ghenacia
+    title: 3D Sound and Light Installation
+  - image: Diapositiva11.jpeg
+    eyebrow: Montjuïc Castle, Barcelona
+    title: Barcelona Sonor Postcards Exhibition
+  - image: Diapositiva12.jpeg
+    eyebrow: Montjuïc Castle, Barcelona
+    title: Making of the Barcelona Sonor Postcards Exhibition
+  - image: Diapositiva13.jpeg
+    eyebrow: Barcelona Wax Museum
+    title: Immersive Audio, Visual and Haptic Experience
+  - image: Diapositiva14.jpeg
+    eyebrow: Barcelona Wax Museum
+    title: Creating the Immersive Audio, Visual and Haptic Experience
+  - image: Diapositiva15.jpeg
+    eyebrow: Sónar Festival, Barcelona
+    title: Sfëar Immersive Technologies Showcase
+  - image: Diapositiva16.jpeg
+    eyebrow: Mobile World Congress 2023
+    title: 5D Musical Experience
+  - image: Diapositiva17.jpeg
+    eyebrow: Tantarantana Theatre
+    title: Immersive Sound Installation
+  - image: Diapositiva18.jpeg
+    eyebrow: IMS Ibiza, Hard Rock Cafe
+    title: Constructing the Inflatable Immersive Audio Tent
+  - image: Diapositiva19.jpeg
+    eyebrow: IMS Ibiza, Hard Rock Cafe
+    title: Immersive Audio Tent
+  - image: Diapositiva20.jpeg
+    eyebrow: IMS Ibiza, Hard Rock Cafe
+    title: 3D Audio Live Performance
