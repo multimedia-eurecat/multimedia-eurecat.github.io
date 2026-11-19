@@ -30,7 +30,7 @@
     var pauseButton = carousel.querySelector(".facilities-carousel-pause");
     var title = (carousel.getAttribute("aria-label") || "Highlights").replace(" photos", "").toLowerCase();
     var paused = reducedMotion.matches;
-    var hasFocus = carousel.contains(document.activeElement);
+    var hasKeyboardFocus = carousel.contains(document.activeElement) && document.activeElement.matches(":focus-visible");
     var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     var hovered = finePointer.matches && carousel.matches(":hover");
     var isVisible = false;
@@ -60,7 +60,7 @@
     }
 
     function updatePlayback() {
-      var shouldPause = paused || hasFocus || hovered || !isVisible || document.hidden;
+      var shouldPause = paused || hasKeyboardFocus || hovered || !isVisible || document.hidden;
       // One clock drives both the progress fill and automatic slide changes.
       player.carousel("pause");
       if (shouldPause) {
@@ -102,18 +102,33 @@
     if (pauseButton) {
       pauseButton.addEventListener("click", function () {
         paused = !paused;
+        if (!paused) {
+          hasKeyboardFocus = false;
+        }
         updatePlayback();
       });
     }
 
-    carousel.addEventListener("focusin", function () {
-      hasFocus = true;
+    // A mouse click leaves the button focused after the pointer moves away.
+    // Only keyboard focus should keep automatic playback paused.
+    carousel.addEventListener("pointerdown", function () {
+      hasKeyboardFocus = false;
+      updatePlayback();
+    });
+
+    carousel.addEventListener("keydown", function () {
+      hasKeyboardFocus = true;
+      updatePlayback();
+    });
+
+    carousel.addEventListener("focusin", function (event) {
+      hasKeyboardFocus = event.target.matches(":focus-visible");
       updatePlayback();
     });
 
     carousel.addEventListener("focusout", function (event) {
       if (!carousel.contains(event.relatedTarget)) {
-        hasFocus = false;
+        hasKeyboardFocus = false;
         updatePlayback();
       }
     });
