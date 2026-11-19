@@ -37,16 +37,16 @@
   margin-top: var(--facilities-section-spacing);
 }
 
-.facilities-page > .lab-card {
-  margin: var(--facilities-section-spacing) 0 0;
-}
-
 .facilities-description {
   margin: 28px 0 0;
   color: #536773;
   font-size: 16px;
   line-height: 1.75;
   text-align: left;
+}
+
+.facilities-section-heading + .facilities-description {
+  margin-top: 0;
 }
 
 .facilities-carousel {

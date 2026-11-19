@@ -53,14 +53,12 @@ permalink: /facilities/
     <noscript>Enable JavaScript to use the interactive spatial audio widget.</noscript>
   </section>
 
-  <div class="lab-card">
-    <span class="lab-card-mark" aria-hidden="true">)))</span>
-    <div>
-      <span class="home-eyebrow">Explore the laboratory</span>
-      <h2><a href="https://labs.eurecat.org/en/laboratory/3d-audio-laboratory/">3D Audio Laboratory <span aria-hidden="true">↗</span></a></h2>
-      <p>Facilities and services for spatial audio research, XR, media production and perceptual evaluation.</p>
+  <section class="facilities-section" aria-labelledby="capabilities">
+    <div class="section-heading facilities-section-heading">
+      <h2 id="capabilities"><a href="#capabilities">Explore our capabilities</a></h2>
     </div>
-  </div>
+    <p class="facilities-description">For a closer look at our facilities, equipment and immersive audio services, visit the <a href="https://labs.eurecat.org/en/laboratory/3d-audio-laboratory/" target="_blank" rel="noopener noreferrer">3D Audio Laboratory on Eurecat’s official website<span aria-hidden="true">&nbsp;↗</span><span class="sr-only"> (external website, opens in a new tab)</span></a>.</p>
+  </section>
 </main>
 
 <script src="{{ '/js/carousels.js' | relative_url }}" defer></script>

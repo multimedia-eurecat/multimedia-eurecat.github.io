@@ -110,7 +110,7 @@ permalink: /
   <span class="lab-card-mark" aria-hidden="true">)))</span>
   <div>
     <span class="home-eyebrow">Featured facility</span>
-    <h2><a href="{{ '/facilities/' | relative_url }}">3D Audio Laboratory <span aria-hidden="true">→</span></a></h2>
+    <h2><a href="{{ '/facilities/' | relative_url }}">3D Audio Laboratory</a></h2>
     <p>Facilities and services for spatial audio research, XR, media production and perceptual evaluation.</p>
   </div>
 </div>
