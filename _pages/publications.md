@@ -15,7 +15,7 @@ permalink: /publications/
 
   <section id="publication-highlights-section">
     <div class="section-heading publication-section-heading">
-      <h2>Highlights</h2>
+      <h2 id="highlights"><a href="#highlights">Highlights</a></h2>
     </div>
     <div class="highlights-grid">
     {% for publi in site.data.publist %}
@@ -51,7 +51,7 @@ permalink: /publications/
 
   <section id="publication-full-list-section">
     <div class="section-heading publication-section-heading">
-      <h2>Full List</h2>
+      <h2 id="full-list"><a href="#full-list">Full List</a></h2>
     </div>
 
     <div class="publication-toolbar">

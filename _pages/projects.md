@@ -37,9 +37,9 @@ permalink: /projects/
     {% assign projects = completed_projects %}
   {% endif %}
   {% assign section_id = section_title | downcase %}
-<section class="projects-section" aria-labelledby="projects-{{ section_id }}-title" markdown="0">
+<section class="projects-section" aria-labelledby="{{ section_id }}" markdown="0">
   <div class="section-heading">
-    <h2 id="projects-{{ section_id }}-title">{{ section_title }}</h2>
+    <h2 id="{{ section_id }}"><a href="#{{ section_id }}">{{ section_title }}</a></h2>
     <span>{{ projects.size }} project{% if projects.size != 1 %}s{% endif %}</span>
   </div>
   <div class="projects-list">

@@ -14,9 +14,9 @@ permalink: /team/
     <p class="team-recruitment">We welcome Master's and PhD candidates interested in applied multimedia research. See our <a href="https://eurecat.org/eurecat/treballa-amb-nosaltres/">open positions</a> or contact us directly.</p>
   </header>
 
-  <section class="team-section" aria-labelledby="current-members-title">
+  <section class="team-section" aria-labelledby="current-members">
     <div class="section-heading team-section-heading">
-      <h2 id="current-members-title">Current members</h2>
+      <h2 id="current-members"><a href="#current-members">Current members</a></h2>
       <p>Research, technical, and group leadership staff.</p>
     </div>
 
@@ -45,9 +45,9 @@ permalink: /team/
     </div>
   </section>
 
-  <section class="team-section" aria-labelledby="students-title">
+  <section class="team-section" aria-labelledby="students">
     <div class="section-heading team-section-heading">
-      <h2 id="students-title">PhD and Master's students</h2>
+      <h2 id="students"><a href="#students">PhD and Master's students</a></h2>
       <p>Researchers completing advanced studies within the unit.</p>
     </div>
 
@@ -75,9 +75,9 @@ permalink: /team/
     </div>
   </section>
 
-  <section class="team-section team-alumni-section" aria-labelledby="former-staff-title">
+  <section class="team-section team-alumni-section" aria-labelledby="former-staff">
     <div class="section-heading team-section-heading">
-      <h2 id="former-staff-title">Former staff and students</h2>
+      <h2 id="former-staff"><a href="#former-staff">Former staff and students</a></h2>
       <p>Previous members of the unit and visiting researchers.</p>
     </div>
 

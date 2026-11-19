@@ -13,9 +13,9 @@ sitemap: false
     <p>Technical articles, research results, and resources from the Multimedia Technologies Unit.</p>
   </header>
 
-  <section class="blog-index-feed" aria-labelledby="blog-articles-title">
+  <section class="blog-index-feed" aria-labelledby="articles">
     <div class="section-heading blog-index-section-heading">
-      <h2 id="blog-articles-title">Latest articles</h2>
+      <h2 id="articles"><a href="#articles">Latest articles</a></h2>
       <span>{{ site.posts | size }} articles</span>
     </div>
 

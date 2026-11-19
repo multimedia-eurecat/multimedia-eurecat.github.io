@@ -13,25 +13,25 @@ permalink: /facilities/
     <p>Explore our studio and a selection of installations and demos created by the Multimedia Technologies Unit.</p>
   </header>
 
-  <section class="facilities-section" aria-labelledby="facilities-studio-title">
+  <section class="facilities-section" aria-labelledby="studio">
     <div class="section-heading facilities-section-heading">
-      <h2 id="facilities-studio-title">3D Audio Laboratory</h2>
+      <h2 id="studio"><a href="#studio">3D Audio Laboratory</a></h2>
     </div>
     {% include facilities-carousel.html id="studio-carousel" directory="/assets/facilities/studio/" title="Studio" captions=site.data.facilities_captions.studio %}
     <p class="facilities-description">The Immersive Audio Lab brings together the capabilities of a specialized production studio and an environment for technological experimentation and validation. It is where we develop and produce the content that powers our immersive installations, XR experiences, audiovisual projects and multisensory applications. It also provides the space to design, test and refine each experience, ensuring it is fully optimized before final deployment.</p>
   </section>
 
-  <section class="facilities-section" aria-labelledby="facilities-installations-title">
+  <section class="facilities-section" aria-labelledby="installations">
     <div class="section-heading facilities-section-heading">
-      <h2 id="facilities-installations-title">Installations</h2>
+      <h2 id="installations"><a href="#installations">Installations</a></h2>
     </div>
     {% include facilities-carousel.html id="installations-carousel" directory="/assets/facilities/installations/" title="Installations" captions=site.data.facilities_captions.installations %}
     <p class="facilities-description">Eurecat’s multimedia group provides complete services for 3D and spatial audio installations, from concept development and system design to content production, installation, calibration and final testing. Services include immersive multichannel loudspeaker systems, spatial audio recording and mixing, binaural rendering, and software customization tailored to each installation or project. The group also offers acoustic capture of real spaces and acoustic modelling of real and virtual environments for immersive experiences and cultural heritage preservation. Drawing on 20 years of experience and expertise in spatial audio technologies such as Ambisonics and Dolby Atmos, Eurecat develops solutions for cultural spaces, theatres, exhibitions, retail, hospitality and interactive XR environments.</p>
   </section>
 
-  <section class="facilities-section facilities-audio" aria-labelledby="facilities-audio-title">
+  <section class="facilities-section facilities-audio" aria-labelledby="demos">
     <div class="section-heading facilities-section-heading">
-      <h2 id="facilities-audio-title">Spatial Audio Demos</h2>
+      <h2 id="demos"><a href="#demos">Spatial Audio Demos</a></h2>
     </div>
     <p class="facilities-audio-note">Use headphones for all 3D audio listening experiences.</p>
     <div id="facilities-audio-widgets" class="facilities-audio-grid">
@@ -44,9 +44,9 @@ permalink: /facilities/
     </div>
   </section>
 
-  <section class="facilities-section facilities-spatial-audio" aria-labelledby="facilities-spatial-audio-title">
+  <section class="facilities-section facilities-spatial-audio" aria-labelledby="playground">
     <div class="section-heading facilities-section-heading">
-      <h2 id="facilities-spatial-audio-title">Spatial Audio Playground</h2>
+      <h2 id="playground"><a href="#playground">Spatial Audio Playground</a></h2>
     </div>
     <p class="facilities-audio-note">Choose a WAV file, put on headphones, and move the sound source around the listener.</p>
     <spatial-audio-widget></spatial-audio-widget>
