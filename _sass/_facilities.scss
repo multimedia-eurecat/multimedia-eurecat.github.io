@@ -37,8 +37,8 @@
   margin-top: var(--facilities-section-spacing);
 }
 
-.facilities-section > .lab-card {
-  margin: 24px 0 0;
+.facilities-page > .lab-card {
+  margin: var(--facilities-section-spacing) 0 0;
 }
 
 .facilities-description {
