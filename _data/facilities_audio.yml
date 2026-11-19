@@ -1,8 +1,8 @@
 height: 600
 playlists:
-  - title: "Eurecat Wellness (Use Headphones)"
-    playlist_id: "2282946516"
-    permalink: "https://soundcloud.com/user-284259920/sets/eurecat-wellmess-use"
   - title: "Eurecat 3D Audio (Use Headphones)"
     playlist_id: "1502394034"
     permalink: "https://soundcloud.com/user-284259920/sets/eurecat-ise"
+  - title: "Eurecat Wellness (Use Headphones)"
+    playlist_id: "2282946516"
+    permalink: "https://soundcloud.com/user-284259920/sets/eurecat-wellmess-use"
