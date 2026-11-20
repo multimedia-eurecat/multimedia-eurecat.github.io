@@ -298,7 +298,9 @@ export class SceneView {
     canvas.removeEventListener('pointermove', this.transform._onPointerMove);
     if (this._pointerId !== undefined && canvas.hasPointerCapture(this._pointerId)) canvas.releasePointerCapture(this._pointerId);
     this.coordinateSystem = mode;
-    for (const guide of Object.values(this.axisGuides)) guide.visible = mode === 'cartesian';
+    for (const guide of [this.projection, this.projectionLine, ...Object.values(this.axisGuides)]) {
+      guide.visible = mode === 'cartesian';
+    }
     this.transform.enabled = this.transform.visible = mode === 'cartesian';
     this.spherical.setEnabled(mode === 'spherical');
     this.controls.enabled = true;

@@ -2,7 +2,8 @@ import { SceneView } from './scene-view.js';
 import { MAX_DISTANCE, constrainCartesian, constrainSpherical, toCartesian, toSpherical } from './coordinates.js';
 
 const stylesheetURL = new URL('./spatial-audio-widget.css', import.meta.url).href;
-const workletURL = new URL('./binaural-worklet.js', import.meta.url).href;
+const workletURL = new URL('./binaural-worklet.js?v=aachen-mrt40-1', import.meta.url).href;
+const decoderURL = new URL('./decoders/aachen-mrt40.bindec', import.meta.url).href;
 const defaultSampleURL = new URL('./drumloop.wav', import.meta.url).href;
 const initialPosition = { x: 1.5, y: 0.6, z: 1.6 };
 
@@ -330,7 +331,13 @@ export class SpatialAudioWidget extends HTMLElement {
     let pendingNode = null;
     this._enginePromise = (async () => {
       if (!context.audioWorklet) throw new Error('AudioWorklet is unavailable. Use a browser with Web Audio and open the page on localhost or HTTPS.');
-      await context.audioWorklet.addModule(workletURL);
+      const [decoderResponse] = await Promise.all([
+        fetch(decoderURL, { signal: this._events.signal }),
+        context.audioWorklet.addModule(workletURL),
+      ]);
+      if (!decoderResponse.ok) throw new Error('The AACHEN MRT40 binaural decoder could not be loaded. Press play to retry.');
+      const decoder = await decoderResponse.arrayBuffer();
+      if (!decoder.byteLength) throw new Error('The binaural decoder file is empty.');
       if (!this._mounted || generation !== this._generation) return;
       const node = new AudioWorkletNode(context, 'moebius-binaural-processor', {
         numberOfInputs: 1,
@@ -339,6 +346,7 @@ export class SpatialAudioWidget extends HTMLElement {
         channelCount: 1,
         channelCountMode: 'explicit',
         channelInterpretation: 'speakers',
+        processorOptions: { decoder },
       });
       pendingNode = node;
       this._pendingWorklet = node;

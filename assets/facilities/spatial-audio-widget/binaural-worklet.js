@@ -1,4 +1,5 @@
 import createCatArtModule from './vendor/catart.wasm.js';
+import { MAX_DISTANCE } from './coordinates.js';
 
 const BLOCK_SIZE = 128;
 
@@ -6,14 +7,14 @@ const BLOCK_SIZE = 128;
 export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
   static get parameterDescriptors() {
     return [
-      { name: 'x', defaultValue: 0, minValue: -5, maxValue: 5, automationRate: 'k-rate' },
-      { name: 'y', defaultValue: 0, minValue: -5, maxValue: 5, automationRate: 'k-rate' },
-      { name: 'z', defaultValue: 0, minValue: -5, maxValue: 5, automationRate: 'k-rate' },
+      { name: 'x', defaultValue: 0, minValue: -MAX_DISTANCE, maxValue: MAX_DISTANCE, automationRate: 'k-rate' },
+      { name: 'y', defaultValue: 0, minValue: -MAX_DISTANCE, maxValue: MAX_DISTANCE, automationRate: 'k-rate' },
+      { name: 'z', defaultValue: 0, minValue: -MAX_DISTANCE, maxValue: MAX_DISTANCE, automationRate: 'k-rate' },
       { name: 'distance', defaultValue: 0.5, minValue: 0, maxValue: 1, automationRate: 'k-rate' },
     ];
   }
 
-  constructor() {
+  constructor(options = {}) {
     super();
     this._disposed = false;
     this._ready = false;
@@ -28,13 +29,21 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
     try {
       // This build embeds its WASM binary and both decoder assets. Its factory
       // initializes synchronously, as required by the audio worklet constructor.
-      this._module = createCatArtModule({ print() {} });
+      const decoder = options.processorOptions?.decoder;
+      this._module = createCatArtModule({
+        print() {},
+        // Install custom filters before native startup can cache the decoder.
+        preRun: decoder ? [(module) => {
+          module.FS_unlink('/assets/default.bindec');
+          module.FS_createDataFile('/assets', 'default.bindec', new Uint8Array(decoder), true, true, false);
+        }] : [],
+      });
       const module = this._module;
       this._scene = new module.Scene(module.Scene.REAL_TIME, 5, BLOCK_SIZE, sampleRate);
+      this._scene.initDecoder(module.BINAURAL, '/assets/default.bindec');
       this._listenerId = this._scene.createListener();
       this._listenerPosition = new module.Cartesian(0, 0, 0);
       this._scene.updateListenerPosition(this._listenerId, this._listenerPosition);
-      this._scene.initDecoder(module.BINAURAL, '/assets/default.bindec');
       this._scene.initReverbPattern('/assets/default.distpat');
       this._scene.setSceneSize(10);
       this._scene.setDistanceRolloffMode(module.LOGARITHMIC_LPF);
@@ -55,7 +64,7 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
       this._inputView.fill(0);
       this._outputView.fill(0);
       this._ready = true;
-      this.port.postMessage({ type: 'ready' });
+      this.port.postMessage({ type: 'ready', decoderBytes: decoder?.byteLength || 0 });
     } catch (error) {
       this._fail(error);
     }

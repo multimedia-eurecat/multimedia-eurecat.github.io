@@ -472,6 +472,7 @@ try {
   await evaluate(`document.querySelector('spatial-audio-widget').destroy()`);
   assert.ok(requests.includes('/spatial-audio-widget.js'), 'Nested host imports the widget module');
   assert.ok(requests.includes('/drumloop.wav'), 'The default sample resolves relative to the widget module');
+  assert.ok(requests.includes('/decoders/aachen-mrt40.bindec'), 'The Aachen decoder resolves relative to the widget module');
   assert.ok(requests.some((name) => name.includes('binaural') && name.endsWith('.js')), 'Spatial worklet was fetched');
   assert.deepEqual(errors, [], 'Browser console has no errors');
   console.log('PASS: demo mount, mouse dragging, independent instances, zero coordinates, sliders and keyboard, reconnect, invalid WAV handling, WAV decoding, looping binaural playback/pause/resume, volume, processor-failure retry, pending-play cleanup, resizing, nested-page embedding, and no browser errors.');
