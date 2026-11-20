@@ -7,12 +7,16 @@ A contained extraction of the Möbius sphere controls and CatArt binaural render
 From the repository root:
 
 ```sh
-python3 -m http.server 8000 --directory spatial-audio-widget
+python3 -m http.server 8000 --directory assets/facilities/spatial-audio-widget
 ```
 
-Open **http://localhost:8000/**, choose a WAV, then press **Play loop**. Put on headphones and drag the orange sphere's axis handles. The square handles move in a plane; the small center handle moves in the camera plane. Drag the background to orbit the view and scroll to zoom.
+Open **http://localhost:8000/**, put on headphones, then press **Play Loop**. The bundled `drumloop.wav` loads automatically; use the file picker or drop a WAV to replace it. Audio starts only when you press Play. The widget starts in spherical mode: drag a curved handle to change an angle, the straight arrow to change distance, or the orange sphere to change both angles at a fixed distance. Drag the background to orbit the view and scroll to zoom.
 
-Use the sliders for precise positions. When the 3D view is focused, arrow keys move the source along X/Z; Shift + Up/Down changes height. Alt gives smaller steps. **Reset** restores the source position; **Reset view** restores only the camera.
+Use **Spherical / Cartesian** at the top left to switch coordinate systems without moving the source or interrupting playback. Spherical mode (the default) has azimuth (horizontal), elevation (vertical) and distance sliders, curved angular handles on the listener-centred sphere, and a straight radial distance arrow. Dragging the source ball in spherical mode changes azimuth horizontally and elevation vertically while keeping its radius fixed. Faint circles show the angular paths. Camera-relative depth shading keeps the near side saturated and fades the far side into the scene background; solid objects naturally hide handles behind them. These cues follow the camera when orbiting or zooming. Cartesian mode has X/Y/Z sliders and straight axis handles. The reference grid and FRONT/BACK/LEFT/RIGHT labels sit at head height (Y = 0, also zero spherical elevation); TOP/BOTTOM mark the vertical direction. In Cartesian mode, muted X/Z dashed guides connect the source’s projection circle to the grid axes.
+
+Both modes use the same muted red, green and blue palette and base shaft/arrowhead dimensions. Cartesian handles and their hit areas keep fixed world-space dimensions regardless of distance to the listener, so they zoom with the scene and retain the same proportions as the source ball; their interaction targets extend to the tips. Cartesian arrows leave a gap around the source ball and respect solid-object occlusion. The plane handles are removed; dragging the ball still moves it in the viewing plane. Hovering an arrow highlights its dimension in yellow, and the highlight stays on while dragging. Hovering the source sphere in spherical mode highlights both azimuth and elevation. Cartesian arrows and the source sphere show a hand cursor on hover and a grabbing cursor during dragging. Both modes share the same listener-centred reference for camera-relative colour and opacity fading: nearer arrow sections stay saturated while farther sections soften into the background, including during yellow highlighting.
+
+When the 3D view is focused, arrow keys move azimuth/elevation in spherical mode or X/Z in Cartesian mode. Shift + Up/Down changes spherical distance or Cartesian height. Alt gives smaller steps. **Reset** restores the source position; **Reset view** restores only the camera. Azimuth is 0° in front and +90° to the listener's right; elevation is +90° overhead. Distance is bounded to 0–7 m in both modes. Cartesian movement stops at that spherical boundary along the requested path; dragging or changing one axis leaves the other two coordinates unchanged. Cartesian slider ranges expand when needed to represent the same position. At the origin and poles, the last azimuth is retained so dragging outward or away from a pole remains predictable.
 
 Audio processing requires **localhost or HTTPS**. Opening `index.html` directly as a `file://` URL will not work. The browser must support JavaScript modules, Web Audio/AudioWorklet, and WebGL for the 3D view. The sliders and audio remain usable if WebGL is unavailable. Chrome is covered by the included browser smoke test; other browsers have not been verified here.
 
@@ -39,9 +43,14 @@ await customElements.whenDefined('spatial-audio-widget');
 const widget = document.querySelector('spatial-audio-widget');
 
 // Coordinates are metres relative to the fixed listener at the origin.
-// +X = right, +Y = up, +Z = in front. Each axis is limited to [-4, 4].
+// +X = right, +Y = up, +Z = in front. Maximum distance from the listener: 7 m.
 widget.setPosition({ x: 1, y: 0, z: 2 });
 console.log(widget.getPosition()); // Returns a copy.
+
+widget.setCoordinateSystem('spherical'); // Or 'cartesian'.
+widget.setSphericalPosition({ azimuth: 45, elevation: 20, distance: 2.5 });
+console.log(widget.getSphericalPosition()); // Degrees, degrees, metres.
+console.log(widget.coordinateSystem); // Read-only getter.
 
 await widget.loadFile(file); // Browser File, containing a WAV.
 await widget.play();         // Invoke from a user gesture to allow audio.
@@ -61,7 +70,7 @@ console.log(widget.playing, widget.state, widget.audioContext);
 widget.remove(); // Automatically releases its audio and WebGL resources.
 ```
 
-`loadFile()` and `play()` return promises and report errors in the widget as well as through the `audioerror` event. Public getters `playing`, `state`, and `audioContext` are read-only. `destroy()` explicitly releases resources and empties the element; removing and reinserting the element rebuilds an empty widget. Source position and volume are retained, while the WAV must be selected again.
+`loadFile()` and `play()` return promises and report errors in the widget as well as through the `audioerror` event. Public getters `playing`, `state`, and `audioContext` are read-only. Position events include both `detail.position` (Cartesian) and `detail.spherical`; coordinate-mode changes emit `coordinatemodechange`. `destroy()` explicitly releases resources and empties the element; removing and reinserting the element rebuilds the widget and reloads the default drum loop. Source position, coordinate mode and volume are retained. Uploads replace the default sample, including while it is still loading; uploaded files stay in the visitor's browser.
 
 ## Audio path
 
@@ -80,7 +89,11 @@ The public worklet coordinates are +X front, +Y left, +Z up. The visual adapter 
 | `index.html` | Minimal standalone test host. |
 | `spatial-audio-widget.js` | Custom element, UI, WAV decoding, playback, public API. |
 | `spatial-audio-widget.css` | Widget styles, loaded inside its shadow root. |
+| `drumloop.wav` | Default sample, loaded automatically and replaceable with a visitor's WAV. |
 | `scene-view.js` | Independent Three.js scene and controls. |
+| `coordinates.js` | Shared Cartesian/spherical conversions, conventions and limits. |
+| `spherical-controls.js` | Surface-aligned angular handles, radial handle and constrained pointer dragging. |
+| `handle-appearance.js` | Shared handle colours and Cartesian gizmo geometry styling. |
 | `binaural-worklet.js` | New single-source adapter for the copied CatArt engine. |
 | `vendor/` | Unmodified copies of the necessary original libraries/runtime. |
 | `tests/` | Dependency-free DSP and browser smoke checks. |
@@ -92,7 +105,7 @@ The runtime bundle is approximately 8.3 MB before compression; this is the origi
 The DSP integration harness uses the actual copied WASM engine with a simulated worklet environment:
 
 ```sh
-node --experimental-vm-modules spatial-audio-widget/tests/binaural-worklet.test.mjs
+node --experimental-vm-modules assets/facilities/spatial-audio-widget/tests/binaural-worklet.test.mjs
 ```
 
 It verifies directional left/right energy and arrival times, front/back and elevation differences, finite output at the origin and bounds, silence with missing input, heap growth, block-size validation, and disposal at 44.1 and 48 kHz.
@@ -100,7 +113,7 @@ It verifies directional left/right energy and arrival times, front/back and elev
 The browser smoke runner starts its own local static server and launches an installed Chrome via the DevTools Protocol:
 
 ```sh
-node spatial-audio-widget/tests/browser-smoke.mjs
+node assets/facilities/spatial-audio-widget/tests/browser-smoke.mjs
 ```
 
 It needs a recent Node with built-in `WebSocket` (tested with Node 24). It uses the standard macOS Chrome location; set `CHROME_PATH` for other installations. It installs no packages. Its temporary browser profile is created inside `tests/` and removed afterward.

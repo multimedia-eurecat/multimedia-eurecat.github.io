@@ -1,8 +1,11 @@
 import * as THREE from './vendor/three.module.js';
 import { OrbitControls } from './vendor/OrbitControls.js';
 import { TransformControls } from './vendor/TransformControls.js';
+import { SphericalControls } from './spherical-controls.js';
+import { constrainCartesian, constrainSpherical, toCartesian, toSpherical } from './coordinates.js';
+import { styleCartesianHandles, HandleDepthCue, HANDLE_COLOURS } from './handle-appearance.js';
 
-const FLOOR_Y = -1.5;
+const REFERENCE_Y = 0;
 const AXES = ['x', 'y', 'z'];
 
 /** A self-contained visual source position, in metres: +x right, +y up, +z front. */
@@ -11,6 +14,8 @@ export class SceneView {
     this.container = container;
     this.onChange = onChange;
     this.disposed = false;
+    this.coordinateSystem = 'cartesian';
+    this.sphericalPosition = toSpherical(position);
     this.scene = new THREE.Scene();
     this.scene.background = new THREE.Color(0xf3f2ed);
     // Mirror only the displayed X axis. Local source coordinates and emitted
@@ -38,24 +43,27 @@ export class SceneView {
     light.position.set(3, 7, 5);
     this.scene.add(light);
 
-    const floor = new THREE.Mesh(
+    const referencePlane = new THREE.Mesh(
       new THREE.PlaneGeometry(9.6, 9.6),
       new THREE.MeshBasicMaterial({ color: 0xe6e4dc, transparent: true, opacity: 0.35, depthWrite: false, side: THREE.DoubleSide }),
     );
-    floor.rotation.x = -Math.PI / 2;
-    floor.position.y = FLOOR_Y - 0.005;
-    this.content.add(floor);
+    referencePlane.rotation.x = -Math.PI / 2;
+    referencePlane.position.y = REFERENCE_Y - 0.005;
+    this.content.add(referencePlane);
 
     const grid = new THREE.GridHelper(9, 18, 0xbdbab0, 0xd3d0c7);
-    grid.position.y = FLOOR_Y;
+    grid.position.y = REFERENCE_Y;
     grid.material.transparent = true;
     grid.material.opacity = 0.7;
     this.content.add(grid);
     this._addListener();
-    this._addLabel('FRONT', 0, FLOOR_Y + 0.04, 4.65);
-    this._addLabel('BACK', 0, FLOOR_Y + 0.04, -4.65);
-    this._addLabel('LEFT', -4.65, FLOOR_Y + 0.04, 0);
-    this._addLabel('RIGHT', 4.65, FLOOR_Y + 0.04, 0);
+    this._addLabel('FRONT', 0, REFERENCE_Y, 4.65);
+    this._addLabel('BACK', 0, REFERENCE_Y, -4.65);
+    this._addLabel('LEFT', -4.65, REFERENCE_Y, 0);
+    this._addLabel('RIGHT', 4.65, REFERENCE_Y, 0);
+    // Keep the vertical labels inside the default camera framing.
+    this._addLabel('TOP', 0, REFERENCE_Y + 3.5, 0);
+    this._addLabel('BOTTOM', 0, REFERENCE_Y - 3.5, 0);
 
     this.source = new THREE.Mesh(
       new THREE.SphereGeometry(0.16, 32, 24),
@@ -78,6 +86,11 @@ export class SceneView {
     );
     this.projection.rotation.x = -Math.PI / 2;
     this.content.add(this.projection);
+    this.axisGuides = Object.fromEntries(['x', 'z'].map(axis => [axis, new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(), new THREE.Vector3()]),
+      new THREE.LineDashedMaterial({ color: new THREE.Color(HANDLE_COLOURS[axis]).convertSRGBToLinear(), transparent: true, opacity: 0.55, depthWrite: false, dashSize: 0.08, gapSize: 0.06 }),
+    )]));
+    for (const guide of Object.values(this.axisGuides)) this.content.add(guide);
 
     this.controls = new OrbitControls(this.camera, canvas);
     this.controls.enableDamping = false;
@@ -91,25 +104,61 @@ export class SceneView {
     this.transform = new TransformControls(this.camera, canvas);
     this.transform.setMode('translate');
     this.transform.setSpace('world');
-    this.transform.setSize(0.85);
+    this.handleDepthCue = new HandleDepthCue();
+    styleCartesianHandles(this.transform, this.handleDepthCue);
     this.transform.attach(this.source);
-    this._dragChanged = (event) => { this.controls.enabled = !event.value; };
+    this._updateCartesianCursor = () => {
+      if (this.coordinateSystem !== 'cartesian') return;
+      canvas.style.cursor = this.transform.dragging ? 'grabbing' : this.transform.axis ? 'grab' : '';
+    };
+    this._dragChanged = (event) => {
+      this.controls.enabled = !event.value;
+      this._updateCartesianCursor();
+    };
+    this._pointerLeave = () => {
+      if (this.coordinateSystem !== 'cartesian' || this.transform.dragging) return;
+      this.transform.axis = null;
+      canvas.style.cursor = '';
+    };
+    canvas.addEventListener('pointerleave', this._pointerLeave);
     this._objectChanged = () => {
-      this._clampPosition(this.source.position);
+      this._clampPosition(this.source.position, toCartesian(this.sphericalPosition));
+      this.sphericalPosition = toSpherical(this.source.position, this.sphericalPosition);
       this._updateGuides();
       this._draw();
       this._emitPosition();
     };
     this.transform.addEventListener('dragging-changed', this._dragChanged);
+    this.transform.addEventListener('axis-changed', this._updateCartesianCursor);
     this.transform.addEventListener('objectChange', this._objectChanged);
     this.transform.addEventListener('change', this._render);
     // Controls already use world positions; keep them outside the reflection.
     // Their parent-scale handling maps dragging back to local source positions.
     this.scene.add(this.transform);
 
+    this.spherical = new SphericalControls({
+      camera: this.camera, element: canvas, parent: this.content, source: this.source,
+      depthCue: this.handleDepthCue,
+      occluders: this.content.children.filter(object => object.isMesh && object !== this.source && !object.material.transparent),
+      onDragging: dragging => { this.controls.enabled = !dragging; },
+      onChange: position => this._moveSpherical(position),
+      onRender: this._render,
+    });
+
     this._keyDown = (event) => {
       if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
       event.preventDefault();
+      if (this.coordinateSystem === 'spherical') {
+        const next = { ...this.sphericalPosition };
+        const angle = event.altKey ? 0.25 : 2;
+        const distance = event.altKey ? 0.01 : 0.05;
+        if (event.key === 'ArrowLeft') next.azimuth -= angle;
+        if (event.key === 'ArrowRight') next.azimuth += angle;
+        if (event.key === 'ArrowUp') next[event.shiftKey ? 'distance' : 'elevation'] += event.shiftKey ? distance : angle;
+        if (event.key === 'ArrowDown') next[event.shiftKey ? 'distance' : 'elevation'] -= event.shiftKey ? distance : angle;
+        this._moveSpherical(constrainSpherical(next));
+        return;
+      }
       const step = event.altKey ? 0.01 : 0.05;
       if (event.key === 'ArrowLeft') this.source.position.x -= step;
       if (event.key === 'ArrowRight') this.source.position.x += step;
@@ -118,7 +167,7 @@ export class SceneView {
       this._objectChanged();
     };
     canvas.addEventListener('keydown', this._keyDown);
-    this._focusCanvas = () => canvas.focus({ preventScroll: true });
+    this._focusCanvas = event => { this._pointerId = event.pointerId; canvas.focus({ preventScroll: true }); };
     canvas.addEventListener('pointerdown', this._focusCanvas);
 
     // The bundled TransformControls handles pointerup, but not pointercancel.
@@ -135,6 +184,9 @@ export class SceneView {
       if (this.disposed) return;
       const width = Math.max(1, container.clientWidth);
       const height = Math.max(1, container.clientHeight);
+      if (width === this._width && height === this._height) return;
+      this._width = width;
+      this._height = height;
       this.camera.aspect = width / height;
       // Preserve the horizontal field of view when embedded in a narrow column.
       this.camera.fov = THREE.MathUtils.radToDeg(2 * Math.atan(Math.tan(THREE.MathUtils.degToRad(24)) / Math.min(1, this.camera.aspect)));
@@ -142,7 +194,14 @@ export class SceneView {
       this.renderer.setSize(width, height, false);
       this._draw();
     };
-    this.resizeObserver = new ResizeObserver(this._resize);
+    // Canvas sizing can affect flex layout; update it after the observer's delivery.
+    this.resizeObserver = new ResizeObserver(() => {
+      if (this._resizeFrame != null) return;
+      this._resizeFrame = requestAnimationFrame(() => {
+        this._resizeFrame = null;
+        this._resize();
+      });
+    });
     this.resizeObserver.observe(container);
     this.setPosition(position);
     this.resetCamera();
@@ -189,11 +248,9 @@ export class SceneView {
     this.content.add(label);
   }
 
-  _clampPosition(position) {
-    for (const axis of AXES) {
-      const value = Number(position[axis]);
-      position[axis] = Number.isFinite(value) ? THREE.MathUtils.clamp(value, -4, 4) : 0;
-    }
+  _clampPosition(position, previous) {
+    const bounded = constrainCartesian(Object.fromEntries(AXES.map(axis => [axis, Number.isFinite(position[axis]) ? position[axis] : 0])), previous);
+    position.set(bounded.x, bounded.y, bounded.z);
   }
 
   _updateGuides() {
@@ -204,11 +261,21 @@ export class SceneView {
     this.sourceLine.geometry.computeBoundingSphere();
     const projectionVertices = this.projectionLine.geometry.attributes.position;
     projectionVertices.setXYZ(0, x, y, z);
-    projectionVertices.setXYZ(1, x, FLOOR_Y, z);
+    projectionVertices.setXYZ(1, x, REFERENCE_Y, z);
     projectionVertices.needsUpdate = true;
     this.projectionLine.geometry.computeBoundingSphere();
     this.projectionLine.computeLineDistances();
-    this.projection.position.set(x, FLOOR_Y + 0.01, z);
+    const guideY = REFERENCE_Y + 0.01;
+    this.projection.position.set(x, guideY, z);
+    for (const [axis, guide] of Object.entries(this.axisGuides)) {
+      const vertices = guide.geometry.attributes.position;
+      vertices.setXYZ(0, x, guideY, z);
+      vertices.setXYZ(1, axis === 'x' ? 0 : x, guideY, axis === 'z' ? 0 : z);
+      vertices.needsUpdate = true;
+      guide.geometry.computeBoundingSphere();
+      guide.computeLineDistances();
+    }
+    this.spherical?.update(this.sphericalPosition);
   }
 
   _emitPosition() {
@@ -216,15 +283,45 @@ export class SceneView {
     this.onChange?.({ x, y, z });
   }
 
+  _moveSpherical(position) {
+    this.sphericalPosition = { ...position };
+    const point = toCartesian(position);
+    this.source.position.set(point.x, point.y, point.z);
+    this._updateGuides();
+    this._draw();
+    this.onChange?.(point, position);
+  }
+
+  setCoordinateSystem(mode) {
+    const canvas = this.renderer.domElement;
+    this.transform.pointerUp({ button: 0 });
+    canvas.removeEventListener('pointermove', this.transform._onPointerMove);
+    if (this._pointerId !== undefined && canvas.hasPointerCapture(this._pointerId)) canvas.releasePointerCapture(this._pointerId);
+    this.coordinateSystem = mode;
+    for (const guide of Object.values(this.axisGuides)) guide.visible = mode === 'cartesian';
+    this.transform.enabled = this.transform.visible = mode === 'cartesian';
+    this.spherical.setEnabled(mode === 'spherical');
+    this.controls.enabled = true;
+    canvas.setAttribute('aria-label', mode === 'spherical'
+      ? 'Interactive spherical sound source. Drag the curved azimuth and elevation handles or the radial distance arrow. Drag the sphere to change angles at a fixed distance. Arrow keys change angles; Shift and up or down change distance. Drag the background to orbit; scroll to zoom.'
+      : 'Interactive Cartesian sound source. Drag the axis handles to move the orange sphere. Arrow keys move left, right, forward and back; Shift and up or down move vertically. Drag the background to orbit; scroll to zoom.');
+    this._draw();
+  }
+
   _draw() {
-    if (!this.disposed) this.renderer.render(this.scene, this.camera);
+    if (!this.disposed) {
+      // Both modes use the same camera depth measured around the listener.
+      this.spherical?.updateDepthCue();
+      this.renderer.render(this.scene, this.camera);
+    }
   }
 
   /** Update the displayed position without emitting another position change. */
-  setPosition(position) {
+  setPosition(position, spherical) {
     if (this.disposed) return;
     for (const axis of AXES) this.source.position[axis] = position[axis];
     this._clampPosition(this.source.position);
+    this.sphericalPosition = spherical ? { ...spherical } : toSpherical(this.source.position, this.sphericalPosition);
     this._updateGuides();
     this._draw();
   }
@@ -241,13 +338,17 @@ export class SceneView {
     if (this.disposed) return;
     this.disposed = true;
     this.resizeObserver.disconnect();
+    cancelAnimationFrame(this._resizeFrame);
     const canvas = this.renderer.domElement;
     canvas.removeEventListener('keydown', this._keyDown);
     canvas.removeEventListener('pointerdown', this._focusCanvas);
     canvas.removeEventListener('pointercancel', this._cancelDrag);
+    canvas.removeEventListener('pointerleave', this._pointerLeave);
+    this.spherical.dispose();
     this.controls.removeEventListener('change', this._render);
     this.controls.dispose();
     this.transform.removeEventListener('dragging-changed', this._dragChanged);
+    this.transform.removeEventListener('axis-changed', this._updateCartesianCursor);
     this.transform.removeEventListener('objectChange', this._objectChanged);
     this.transform.removeEventListener('change', this._render);
     this.transform.detach();

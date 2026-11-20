@@ -18,6 +18,7 @@ const requests = [];
 const mimeTypes = {
   '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript',
   '.css': 'text/css', '.wasm': 'application/wasm', '.json': 'application/json',
+  '.wav': 'audio/wav',
 };
 const server = createServer(async (request, response) => {
   const pathname = new URL(request.url, 'http://localhost').pathname;
@@ -173,6 +174,68 @@ try {
   assert.equal(await evaluate(`document.querySelector('spatial-audio-widget').shadowRoot.querySelectorAll('input[type="file"]').length`), 1);
   assert.equal(await evaluate(`document.querySelector('spatial-audio-widget').shadowRoot.querySelectorAll('[data-axis]').length`), 3);
 
+  await until(() => evaluate(`document.querySelector('spatial-audio-widget').state === 'ready'`), 'the default drum loop');
+  const defaultAudio = await evaluate(`(() => {
+    const widget = document.querySelector('spatial-audio-widget');
+    return {
+      filename: widget.shadowRoot.querySelector('[data-role="filename"]').textContent,
+      canPlay: !widget.shadowRoot.querySelector('[data-action="play"]').disabled,
+      playing: widget.playing,
+      channels: widget._buffer.numberOfChannels,
+      coordinateSystem: widget.coordinateSystem,
+    };
+  })()`);
+  assert.equal(defaultAudio.filename, 'drumloop.wav', 'The bundled sample is loaded by default');
+  assert.equal(defaultAudio.canPlay, true, 'The sample is ready without an upload');
+  assert.equal(defaultAudio.playing, false, 'Loading the sample does not start playback');
+  assert.equal(defaultAudio.channels, 1, 'The default sample is mixed to mono for spatial rendering');
+  assert.equal(defaultAudio.coordinateSystem, 'spherical', 'The widget starts in spherical mode');
+  await evaluate(`document.querySelector('spatial-audio-widget').play()`);
+  await until(() => evaluate(`document.querySelector('spatial-audio-widget').playing`), 'default sample playback');
+  await evaluate(`document.querySelector('spatial-audio-widget').pause()`);
+
+  await evaluate(`(async () => {
+    window.sphericalChecks = await import('/tests/spherical-checks.js');
+    window.sphericalWidget = document.querySelector('spatial-audio-widget');
+    window.originalSphericalTestPosition = sphericalWidget.getPosition();
+    sphericalChecks.runSphericalChecks(sphericalWidget);
+    sphericalChecks.runCartesianBoundaryChecks(sphericalWidget);
+    sphericalChecks.runDepthCueChecks(sphericalWidget);
+    sphericalChecks.checkMatchingHandleSizes(sphericalWidget);
+  })()`);
+  for (const orbited of [false, true]) {
+    for (const dimension of ['surface', 'azimuth', 'elevation', 'distance']) {
+      await evaluate(`(() => {
+        sphericalWidget.setCoordinateSystem('spherical');
+        sphericalWidget.setSphericalPosition({ azimuth: 35, elevation: 20, distance: 2.5 });
+        const view = sphericalWidget._scene;
+        view.resetCamera();
+        if (${orbited}) { view.camera.position.set(-6, 5, 6); view.controls.update(); }
+      })()`);
+      const start = await evaluate(`sphericalChecks.dragStart(sphericalWidget, '${dimension}')`);
+      const units = dimension === 'distance' ? 0.5 : 12;
+      const dx = dimension === 'surface' ? 42 : start.derivative.x * units;
+      const dy = dimension === 'surface' ? -28 : start.derivative.y * units;
+      await command('Input.dispatchMouseEvent', { type: 'mouseMoved', x: start.x, y: start.y });
+      await evaluate(`sphericalChecks.checkSphericalHighlight(sphericalWidget, '${dimension}')`);
+      await command('Input.dispatchMouseEvent', { type: 'mousePressed', x: start.x, y: start.y, button: 'left', buttons: 1, clickCount: 1 });
+      for (let step = 1; step <= 6; step++) {
+        await command('Input.dispatchMouseEvent', { type: 'mouseMoved', x: start.x + dx * step / 6, y: start.y + dy * step / 6, button: 'left', buttons: 1 });
+      }
+      await command('Input.dispatchMouseEvent', { type: 'mouseReleased', x: start.x + dx, y: start.y + dy, button: 'left', buttons: 0, clickCount: 1 });
+      await evaluate(`sphericalChecks.checkDrag(sphericalWidget, ${JSON.stringify(start.before)}, '${dimension}')`);
+      await evaluate(`sphericalChecks.checkSphericalHighlight(sphericalWidget, null)`);
+    }
+  }
+  await evaluate(`sphericalWidget.setCoordinateSystem('cartesian'); sphericalWidget.setPosition(originalSphericalTestPosition); sphericalWidget._scene.resetCamera()`);
+  for (const axis of ['X', 'Y', 'Z']) {
+    const tip = await evaluate(`sphericalChecks.cartesianHandlePoint(sphericalWidget, '${axis}')`);
+    await command('Input.dispatchMouseEvent', { type: 'mouseMoved', x: tip.x, y: tip.y });
+    assert.equal(await evaluate(`sphericalWidget._scene.transform.axis`), axis, 'Enlarged Cartesian arrow tips remain hittable');
+    assert.equal(await evaluate(`sphericalWidget._scene.renderer.domElement.style.cursor`), 'grab', 'Cartesian handles show the hand cursor');
+  }
+  await command('Input.dispatchMouseEvent', { type: 'mouseMoved', x: 1, y: 1 });
+
   const mirror = await evaluate(`(() => {
     const widget = document.querySelector('spatial-audio-widget');
     const view = widget._scene;
@@ -218,7 +281,7 @@ try {
   assert.deepEqual(mirror.world, { x: -1.25, y: 0.5, z: 1.75 }, 'Only the displayed world X coordinate is mirrored');
   assert.deepEqual(mirror.gizmo, mirror.world, 'Unreflected controls align with the reflected source');
   assert.ok(mirror.cameraOutsideMirror && mirror.controlsOutsideMirror && mirror.guidesShareMirror, 'The camera and controls stay outside the reflected visual content');
-  assert.equal(mirror.labels.length, 4, 'All four direction labels remain present');
+  assert.equal(mirror.labels.length, 6, 'All six direction labels remain present');
   assert.ok(mirror.labels.every((label) => label.sprite && label.textureRepeatX === 1 && label.textureWidth === 512), 'Direction labels retain unflipped billboard text textures');
   assert.ok(mirror.labels[2].local.x < 0 && mirror.labels[2].world.x > 0, 'The original left-label anchor is visually mirrored');
   assert.ok(mirror.labels[3].local.x > 0 && mirror.labels[3].world.x < 0, 'The original right-label anchor is visually mirrored');
@@ -397,6 +460,8 @@ try {
 
   await command('Page.navigate', { url: `${origin}/nested/embedding.html` });
   await ready();
+  await until(() => evaluate(`document.querySelector('spatial-audio-widget').state === 'ready'`), 'the default sample on a nested host');
+  assert.equal(await evaluate(`document.querySelector('spatial-audio-widget').shadowRoot.querySelector('[data-role="filename"]').textContent`), 'drumloop.wav');
   assert.equal(await evaluate(`document.querySelector('spatial-audio-widget').shadowRoot.querySelector('canvas').width > 0`), true);
   await evaluate(`(async () => {
     const widget = document.querySelector('spatial-audio-widget');
@@ -406,6 +471,7 @@ try {
   await until(() => evaluate(`document.querySelector('spatial-audio-widget').playing`), 'playback embedded on a nested page');
   await evaluate(`document.querySelector('spatial-audio-widget').destroy()`);
   assert.ok(requests.includes('/spatial-audio-widget.js'), 'Nested host imports the widget module');
+  assert.ok(requests.includes('/drumloop.wav'), 'The default sample resolves relative to the widget module');
   assert.ok(requests.some((name) => name.includes('binaural') && name.endsWith('.js')), 'Spatial worklet was fetched');
   assert.deepEqual(errors, [], 'Browser console has no errors');
   console.log('PASS: demo mount, mouse dragging, independent instances, zero coordinates, sliders and keyboard, reconnect, invalid WAV handling, WAV decoding, looping binaural playback/pause/resume, volume, processor-failure retry, pending-play cleanup, resizing, nested-page embedding, and no browser errors.');
