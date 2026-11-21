@@ -27,7 +27,7 @@ export function runCartesianBoundaryChecks(widget) {
       const slider = widget.shadowRoot.querySelector(`[data-axis="${axis}"]`);
       slider.min = -MAX_DISTANCE;
       slider.max = MAX_DISTANCE;
-      slider.value = sign * MAX_DISTANCE;
+      slider.value = sign * MAX_DISTANCE * (axis === 'x' ? -1 : 1);
       slider.dispatchEvent(new Event('input', { bubbles: true }));
       check(widget.getPosition(), axis, sign);
       widget.setPosition(initial);

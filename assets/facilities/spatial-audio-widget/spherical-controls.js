@@ -66,11 +66,12 @@ export class SphericalControls {
     const scale = handleScale(distance);
     const normal = vector(toCartesian({ ...position, distance: 1 }));
     const point = vector(toCartesian(position));
-    this._segment('distance', new SurfaceArc(t => point.clone().addScaledVector(normal, (0.24 + t * 0.8) * scale)), scale);
+    // Start shafts inside the ball; depth testing hides the interior portion
+    // and lets every handle meet its surface without a visible gap.
+    this._segment('distance', new SurfaceArc(t => point.clone().addScaledVector(normal, t * 1.04 * scale)), scale);
     if (distance < 0.08) return;
 
     const extent = Math.min(48, 70 * scale / distance);
-    const gap = Math.min(extent * 0.7, 13 * scale / distance);
     const addArc = (key, start, end) => {
       if (end - start < 0.5) return;
       const curve = new SurfaceArc(t => vector(toCartesian({ ...position, [key]: position[key] + start + t * (end - start) })));
@@ -79,11 +80,11 @@ export class SphericalControls {
     };
     if (Math.abs(Math.cos(elevation * Math.PI / 180)) > 0.025) {
       const horizontalExtent = Math.min(65, extent / Math.max(0.3, Math.cos(elevation * Math.PI / 180)));
-      addArc('azimuth', -horizontalExtent, -gap);
-      addArc('azimuth', gap, horizontalExtent);
+      addArc('azimuth', -horizontalExtent, 0);
+      addArc('azimuth', 0, horizontalExtent);
     }
-    addArc('elevation', Math.max(-extent, -90 - elevation), -gap);
-    addArc('elevation', gap, Math.min(extent, 90 - elevation));
+    addArc('elevation', Math.max(-extent, -90 - elevation), 0);
+    addArc('elevation', 0, Math.min(extent, 90 - elevation));
 
     for (const key of ['azimuth', 'elevation']) {
       const points = Array.from({ length: 97 }, (_, index) => vector(toCartesian({ ...position, [key]: position[key] + index * 360 / 96 })));

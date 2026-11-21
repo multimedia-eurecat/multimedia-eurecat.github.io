@@ -38,10 +38,9 @@ async function loadProcessor(sampleRate) {
   return Processor;
 }
 
-function params(x, y, z, distance = 0.5) {
+function params(x, y, z) {
   return {
     x: new Float32Array([x]), y: new Float32Array([y]), z: new Float32Array([z]),
-    distance: new Float32Array([distance]),
   };
 }
 
@@ -95,7 +94,11 @@ for (const rate of [44100, 48000]) {
     const below = renderImpulse(processor, params(0, 0, -1));
     assert.ok(Math.abs(front.energy[0] - back.energy[0]) > 1e-4, 'Front and back use different filters.');
     assert.ok(Math.abs(above.energy[0] - below.energy[0]) > 1e-4, 'Elevation changes the rendered filters.');
+    const further = renderImpulse(processor, params(4, 0, 0));
+    assert.ok(Math.abs(front.energy[0] - further.energy[0]) < 1e-5, 'Native rendering does not add a second distance attenuation curve.');
+    assert.equal(processor._position.x, 2, 'The native directional renderer stays on the reference sphere.');
     renderImpulse(processor, params(0, 0, 0));
+    assert.equal(processor._position.x, 2, 'The origin retains the last valid direction.');
     renderImpulse(processor, params(5, 5, 5));
     renderImpulse(processor, params(0, 7, 0));
 

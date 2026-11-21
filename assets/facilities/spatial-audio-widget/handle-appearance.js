@@ -152,14 +152,15 @@ export function styleCartesianHandles(transform, depthCue) {
     // Cartesian handles keep a fixed size, independent of listener distance.
     const scale = 1;
     const radius = transform.object.geometry.parameters.radius || 0.16;
-    const gap = radius + 0.035;
     for (const { handle, axis, lengthAxis, part } of worldSizedHandles) {
       handle.position.copy(this.worldPosition);
       handle.scale.setScalar(part === 'source' ? radius : scale);
       if (part === 'shaft' || part === 'picker') {
+        // Depth testing hides shafts inside the ball; keep hit areas outside it.
+        const start = part === 'picker' ? radius + 0.035 : 0;
         const end = (CARTESIAN_SHAFT_END + (part === 'picker' ? HANDLE_HEAD_LENGTH + 0.04 : 0)) * scale;
-        handle.position.addScaledVector(axis, (gap + end) / 2);
-        handle.scale[lengthAxis] = end - gap;
+        handle.position.addScaledVector(axis, (start + end) / 2);
+        handle.scale[lengthAxis] = end - start;
       }
     }
     THREE.Object3D.prototype.updateMatrixWorld.call(this, force);

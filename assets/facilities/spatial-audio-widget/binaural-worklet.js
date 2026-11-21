@@ -1,5 +1,6 @@
 import createCatArtModule from './vendor/catart.wasm.js';
 import { MAX_DISTANCE } from './coordinates.js';
+import { REFERENCE_DISTANCE } from './distance-model.js';
 
 const BLOCK_SIZE = 128;
 
@@ -7,10 +8,9 @@ const BLOCK_SIZE = 128;
 export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
   static get parameterDescriptors() {
     return [
-      { name: 'x', defaultValue: 0, minValue: -MAX_DISTANCE, maxValue: MAX_DISTANCE, automationRate: 'k-rate' },
+      { name: 'x', defaultValue: REFERENCE_DISTANCE, minValue: -MAX_DISTANCE, maxValue: MAX_DISTANCE, automationRate: 'k-rate' },
       { name: 'y', defaultValue: 0, minValue: -MAX_DISTANCE, maxValue: MAX_DISTANCE, automationRate: 'k-rate' },
       { name: 'z', defaultValue: 0, minValue: -MAX_DISTANCE, maxValue: MAX_DISTANCE, automationRate: 'k-rate' },
-      { name: 'distance', defaultValue: 0.5, minValue: 0, maxValue: 1, automationRate: 'k-rate' },
     ];
   }
 
@@ -21,7 +21,6 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
     this._inputPointer = 0;
     this._outputPointer = 0;
     this._sourceId = null;
-    this._distance = 0.5;
     this.port.onmessage = (event) => {
       if (event.data && event.data.type === 'dispose') this._dispose();
     };
@@ -47,13 +46,14 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
       this._scene.initReverbPattern('/assets/default.distpat');
       this._scene.setSceneSize(10);
       this._scene.setDistanceRolloffMode(module.LOGARITHMIC_LPF);
-      this._scene.setDistanceAttenuation(this._distance);
+      // Distance level is handled by the widget's explicit 2 m reference model.
+      this._scene.setDistanceAttenuation(0);
       this._scene.setDistanceDryWetRatio(1);
 
       this._sourceId = this._scene.createSoundObject();
       // Public coordinates are +x front, +y left, +z up. The bundled
       // decoder renders positive engine y on the right; process() flips it.
-      this._position = new module.Cartesian(1, 0, 0);
+      this._position = new module.Cartesian(REFERENCE_DISTANCE, 0, 0);
       this._scene.updateSoundObjectPosition(this._sourceId, this._position);
       this._scene.updateSoundObjectReverb(this._sourceId, 0);
 
@@ -126,18 +126,19 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
     }
 
     try {
-      const x = parameters.x[0];
-      const y = -parameters.y[0];
-      const z = parameters.z[0];
+      const radius = Math.hypot(parameters.x[0], parameters.y[0], parameters.z[0]);
+      // Keep the HRTF renderer on the reference sphere so its native distance
+      // processing cannot compound the separate gain curve. At zero, retain
+      // the last direction rather than inventing a new one at the origin.
+      const scale = radius > 1e-8 ? REFERENCE_DISTANCE / radius : 0;
+      const x = scale ? parameters.x[0] * scale : this._position.x;
+      const y = scale ? -parameters.y[0] * scale : this._position.y;
+      const z = scale ? parameters.z[0] * scale : this._position.z;
       if (this._position.x !== x || this._position.y !== y || this._position.z !== z) {
         this._position.x = x;
         this._position.y = y;
         this._position.z = z;
         this._scene.updateSoundObjectPosition(this._sourceId, this._position);
-      }
-      if (this._distance !== parameters.distance[0]) {
-        this._distance = parameters.distance[0];
-        this._scene.setDistanceAttenuation(this._distance);
       }
 
       // Updating position can grow the WASM heap. Rebuild views only when its

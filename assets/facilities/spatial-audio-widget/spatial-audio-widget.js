@@ -1,13 +1,14 @@
 import { SceneView } from './scene-view.js';
 import { MAX_DISTANCE, constrainCartesian, constrainSpherical, toCartesian, toSpherical } from './coordinates.js';
+import { DEFAULT_POSITION, gainForDistance, createOutputLimiter } from './distance-model.js';
 
 const stylesheetURL = new URL('./spatial-audio-widget.css', import.meta.url).href;
-const workletURL = new URL('./binaural-worklet.js?v=aachen-mrt40-1', import.meta.url).href;
+const workletURL = new URL('./binaural-worklet.js?v=aachen-mrt40-distance-1', import.meta.url).href;
 const decoderURL = new URL('./decoders/aachen-mrt40.bindec', import.meta.url).href;
 const defaultSampleURL = new URL('./drumloop.wav', import.meta.url).href;
-const initialPosition = { x: 1.5, y: 0.6, z: 1.6 };
+const initialPosition = DEFAULT_POSITION;
 
-/** Visual axes: +X right, +Y up, +Z in front of the listener. Units: metres. */
+/** Scene/API axes: +x right, +y up, +z front. Controls display Ambisonic axes. */
 export class SpatialAudioWidget extends HTMLElement {
   constructor() {
     super();
@@ -22,6 +23,8 @@ export class SpatialAudioWidget extends HTMLElement {
     this._source = null;
     this._worklet = null;
     this._gain = null;
+    this._distanceGain = null;
+    this._limiter = null;
     this._scene = null;
     this._enginePromise = null;
     this._playPromise = null;
@@ -80,9 +83,9 @@ export class SpatialAudioWidget extends HTMLElement {
           <p class="position-hint" data-role="position-hint">Drag the sphere’s axis handles, or use the sliders. Drag the sphere to change angles at a fixed distance.</p>
           ${['x', 'y', 'z'].map((axis, index) => `
             <label class="axis-row" data-position-row="${index}">
-              <span class="axis-label axis-${axis}">${axis.toUpperCase()}<span>${['Right', 'Up', 'Front'][index]}</span></span>
+              <span class="axis-label axis-${axis}">${['Y', 'Z', 'X'][index]}<span>${['Left / Right', 'Up / Down', 'Front / Back'][index]}</span></span>
               <output data-output="${axis}">0.00 m</output>
-              <input data-axis="${axis}" type="range" min="-4" max="4" step="0.05" value="0" aria-label="${['Left to right', 'Below to above', 'Behind to in front'][index]} position in metres">
+              <input data-axis="${axis}" data-sign="${index === 0 ? -1 : 1}" type="range" min="-4" max="4" step="0.05" value="0" aria-label="${['Y, left/right', 'Z, up/down', 'X, front/back'][index]} position in metres">
             </label>`).join('')}
           <p class="status" data-role="status" role="status" aria-live="polite">Choose a WAV to start listening.</p>
           <p class="headphone-note"><span class="headphone-pulse" aria-hidden="true">◖◗</span> Headphones required</p>
@@ -137,7 +140,7 @@ export class SpatialAudioWidget extends HTMLElement {
     }, { signal });
     this.shadowRoot.querySelectorAll('[data-axis]').forEach((input) => {
       input.addEventListener('input', () => {
-        const change = { [input.dataset.axis]: Number(input.value) };
+        const change = { [input.dataset.axis]: Number(input.value) * Number(input.dataset.sign) };
         if (this._coordinateSystem === 'spherical') this.setSphericalPosition(change);
         else this.setPosition(change);
       }, { signal });
@@ -213,16 +216,17 @@ export class SpatialAudioWidget extends HTMLElement {
       ['elevation', 'EL', 'Elevation', -90, 90, 1, 'Elevation in degrees'],
       ['distance', 'D', 'Distance', 0, MAX_DISTANCE, 0.05, 'Distance from listener in metres'],
     ] : [
-      ['x', 'X', 'Right', -4, 4, 0.05, 'Left to right position in metres'],
-      ['y', 'Y', 'Up', -4, 4, 0.05, 'Below to above position in metres'],
-      ['z', 'Z', 'Front', -4, 4, 0.05, 'Behind to in front position in metres'],
+      ['x', 'Y', 'Left / Right', -4, 4, 0.05, 'Y (ACN 1), left/right position in metres; positive is left', -1],
+      ['y', 'Z', 'Up / Down', -4, 4, 0.05, 'Z (ACN 2), up/down position in metres; positive is up'],
+      ['z', 'X', 'Front / Back', -4, 4, 0.05, 'X (ACN 3), front/back position in metres; positive is front'],
     ];
     this.shadowRoot.querySelectorAll('[data-position-row]').forEach((row, index) => {
-      const [key, label, description, min, max, step, ariaLabel] = coordinates[index];
+      const [key, label, description, min, max, step, ariaLabel, sign = 1] = coordinates[index];
       row.querySelector('.axis-label').innerHTML = `${label}<span>${description}</span>`;
       const input = row.querySelector('input');
       Object.assign(input, { min, max, step });
       input.dataset.axis = key;
+      input.dataset.sign = sign;
       input.setAttribute('aria-label', ariaLabel);
       row.querySelector('output').dataset.output = key;
     });
@@ -243,9 +247,10 @@ export class SpatialAudioWidget extends HTMLElement {
     for (const [axis, value] of Object.entries(values)) {
       const input = this.shadowRoot.querySelector(`[data-axis="${axis}"]`);
       if (!spherical) { input.min = -extent; input.max = extent; }
-      input.value = value;
+      const displayValue = value * Number(input.dataset.sign);
+      input.value = displayValue;
       const angle = spherical && axis !== 'distance';
-      const formatted = `${value > 0 && axis !== 'distance' ? '+' : ''}${value.toFixed(angle ? 1 : 2)}`;
+      const formatted = `${displayValue > 0 && axis !== 'distance' ? '+' : ''}${displayValue.toFixed(angle ? 1 : 2)}`;
       input.setAttribute('aria-valuetext', `${formatted} ${angle ? 'degrees' : 'metres'}`);
       this.shadowRoot.querySelector(`[data-output="${axis}"]`).textContent = `${formatted}${angle ? '°' : ' m'}`;
     }
@@ -372,9 +377,13 @@ export class SpatialAudioWidget extends HTMLElement {
       }
       this._worklet = node;
       this._pendingWorklet = null;
+      this._distanceGain = context.createGain();
+      this._distanceGain.gain.value = gainForDistance(this._sphericalPosition.distance);
       this._gain = context.createGain();
       this._gain.gain.value = this._volume;
-      node.connect(this._gain).connect(context.destination);
+      this._limiter = createOutputLimiter(context);
+      node.connect(this._distanceGain).connect(this._gain).connect(this._limiter.input);
+      this._limiter.output.connect(context.destination);
       node.onprocessorerror = () => {
         this._handleProcessorFailure(node, new Error('The binaural processor stopped. Press play to retry.'));
       };
@@ -392,6 +401,10 @@ export class SpatialAudioWidget extends HTMLElement {
         pendingNode.port.postMessage({ type: 'dispose' });
         pendingNode.port.close();
         pendingNode.disconnect();
+        if (this._worklet === pendingNode) {
+          this._worklet = null;
+          this._disconnectAudioOutput();
+        }
         if (this._pendingWorklet === pendingNode) this._pendingWorklet = null;
       }
       throw error;
@@ -408,10 +421,16 @@ export class SpatialAudioWidget extends HTMLElement {
     node.port.postMessage({ type: 'dispose' });
     node.port.close();
     node.disconnect();
-    this._gain?.disconnect();
+    this._disconnectAudioOutput();
     this._worklet = null;
-    this._gain = null;
     this._showError(error);
+  }
+
+  _disconnectAudioOutput() {
+    for (const key of ['_distanceGain', '_gain', '_limiter']) {
+      this[key]?.disconnect();
+      this[key] = null;
+    }
   }
 
   _syncAudioPosition(immediate = false) {
@@ -426,6 +445,11 @@ export class SpatialAudioWidget extends HTMLElement {
       if (immediate) parameter.setValueAtTime(value, now);
       else parameter.setTargetAtTime(value, now, 0.015);
     }
+    const distanceGain = this._distanceGain.gain;
+    const value = gainForDistance(this._sphericalPosition.distance);
+    distanceGain.cancelScheduledValues(now);
+    if (immediate) distanceGain.setValueAtTime(value, now);
+    else distanceGain.setTargetAtTime(value, now, 0.015);
   }
 
   play() {
@@ -514,7 +538,7 @@ export class SpatialAudioWidget extends HTMLElement {
       node.port.close();
       node.disconnect();
     }
-    this._gain?.disconnect();
+    this._disconnectAudioOutput();
     if (this._context && this._context.state !== 'closed') this._context.close().catch(() => {});
     this._context = null;
     this._worklet = null;

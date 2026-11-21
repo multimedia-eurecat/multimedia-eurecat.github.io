@@ -183,6 +183,8 @@ try {
       playing: widget.playing,
       channels: widget._buffer.numberOfChannels,
       coordinateSystem: widget.coordinateSystem,
+      distance: widget.getSphericalPosition().distance,
+      position: widget.getPosition(),
     };
   })()`);
   assert.equal(defaultAudio.filename, 'drumloop.wav', 'The bundled sample is loaded by default');
@@ -190,8 +192,18 @@ try {
   assert.equal(defaultAudio.playing, false, 'Loading the sample does not start playback');
   assert.equal(defaultAudio.channels, 1, 'The default sample is mixed to mono for spatial rendering');
   assert.equal(defaultAudio.coordinateSystem, 'spherical', 'The widget starts in spherical mode');
+  assert.ok(Math.abs(defaultAudio.distance - 2) < 1e-10, 'The source starts at the 2 m reference distance');
   await evaluate(`document.querySelector('spatial-audio-widget').play()`);
   await until(() => evaluate(`document.querySelector('spatial-audio-widget').playing`), 'default sample playback');
+  assert.ok(Math.abs(await evaluate(`document.querySelector('spatial-audio-widget')._distanceGain.gain.value`) - 1) < 1e-5, 'Reference distance has unity distance gain');
+  for (const distance of [4, 1, 0.01, 0]) {
+    await evaluate(`document.querySelector('spatial-audio-widget').setSphericalPosition({ distance: ${distance} })`);
+    const gain = 2 / Math.max(0.0875, distance);
+    await until(() => evaluate(`Math.abs(document.querySelector('spatial-audio-widget')._distanceGain.gain.value - ${gain}) < 0.01`), 'distance gain with a head-radius floor');
+    assert.ok(Math.abs(await evaluate(`document.querySelector('spatial-audio-widget').getSphericalPosition().distance`) - distance) < 1e-10, 'Visual distance can reach zero');
+  }
+  await evaluate(`document.querySelector('spatial-audio-widget').shadowRoot.querySelector('[data-action="position"]').click()`);
+  assert.deepEqual(await evaluate(`document.querySelector('spatial-audio-widget').getPosition()`), defaultAudio.position, 'Reset restores the original direction at 2 m');
   await evaluate(`document.querySelector('spatial-audio-widget').pause()`);
 
   await evaluate(`(async () => {
@@ -363,8 +375,8 @@ try {
     slider.value = '-2';
     slider.dispatchEvent(new Event('input', { bubbles: true }));
   })()`);
-  assert.equal(await evaluate(`smokeWidgets.first.getPosition().x`), -2, 'Position slider updates the scene state');
-  assert.notEqual(await evaluate(`smokeWidgets.second.getPosition().x`), -2);
+  assert.equal(await evaluate(`smokeWidgets.first.getPosition().x`), 2, 'Negative Ambisonic Y moves right in scene coordinates');
+  assert.notEqual(await evaluate(`smokeWidgets.second.getPosition().x`), 2);
   await evaluate(`smokeWidgets.first.shadowRoot.querySelector('canvas').dispatchEvent(new KeyboardEvent('keydown', { key: 'ArrowUp', shiftKey: true, bubbles: true }))`);
   assert.equal(await evaluate(`smokeWidgets.first.getPosition().y`), 0.05, 'Canvas keyboard controls update the widget state');
   await evaluate(`(() => {

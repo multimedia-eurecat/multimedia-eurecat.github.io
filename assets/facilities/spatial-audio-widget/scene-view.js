@@ -4,13 +4,14 @@ import { TransformControls } from './vendor/TransformControls.js';
 import { SphericalControls } from './spherical-controls.js';
 import { constrainCartesian, constrainSpherical, toCartesian, toSpherical } from './coordinates.js';
 import { styleCartesianHandles, HandleDepthCue, HANDLE_COLOURS } from './handle-appearance.js';
+import { DEFAULT_POSITION } from './distance-model.js';
 
 const REFERENCE_Y = 0;
 const AXES = ['x', 'y', 'z'];
 
 /** A self-contained visual source position, in metres: +x right, +y up, +z front. */
 export class SceneView {
-  constructor(container, { position = { x: 0, y: 0, z: 1.5 }, onChange } = {}) {
+  constructor(container, { position = DEFAULT_POSITION, onChange } = {}) {
     this.container = container;
     this.onChange = onChange;
     this.disposed = false;
