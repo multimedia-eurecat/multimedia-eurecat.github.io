@@ -1,6 +1,6 @@
 import createCatArtModule from './vendor/catart.wasm.js';
 import { MAX_DISTANCE } from './coordinates.js';
-import { REFERENCE_DISTANCE, writeDistanceWeights } from './distance-model.js';
+import { REFERENCE_DISTANCE, CENTER_DELAY_SECONDS, CENTER_GAIN, writeDistanceWeights } from './distance-model.js';
 
 const BLOCK_SIZE = 128;
 
@@ -49,9 +49,14 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
       // one WASM instance; install every asset before native initialization.
       const configs = distanceDecoders || [{ distance: REFERENCE_DISTANCE, decoder }];
       this._distances = configs.map((entry) => entry.distance);
-      this._weights = new Float64Array(configs.length);
-      this._targetWeights = new Float64Array(configs.length);
-      this._weightFrames = new Float64Array(configs.length * BLOCK_SIZE);
+      this._centerFadeDistance = distanceDecoders ? this._distances[0] : 0;
+      this._centerIndex = configs.length;
+      this._weights = new Float64Array(configs.length + 1);
+      this._targetWeights = new Float64Array(configs.length + 1);
+      this._weightFrames = new Float64Array((configs.length + 1) * BLOCK_SIZE);
+      this._centerDelay = new Float32Array(this._centerFadeDistance ? Math.max(1, Math.round(sampleRate * CENTER_DELAY_SECONDS)) : 0);
+      this._centerDelayIndex = 0;
+      this._centerFrames = new Float32Array(BLOCK_SIZE);
       this._weightsInitialized = false;
       this._weightSmoothing = 1 - Math.exp(-1 / (0.015 * sampleRate));
       this._module = createCatArtModule({
@@ -101,6 +106,7 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
         type: 'ready',
         decoderBytes: configs.reduce((total, entry) => total + (entry.decoder?.byteLength || 0), 0),
         distances: distanceDecoders ? this._distances : [],
+        centerFadeDistance: this._centerFadeDistance,
       });
     } catch (error) {
       this._fail(error);
@@ -145,6 +151,8 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
     this._inputView = null;
     this._outputView = null;
     this._heapBuffer = null;
+    this._centerDelay = null;
+    this._centerFrames = null;
   }
 
   _fail(error) {
@@ -167,7 +175,7 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
       const radius = Math.hypot(parameters.x[0], parameters.y[0], parameters.z[0]);
       if (!Number.isFinite(radius)) throw new Error('Source coordinates must be finite.');
       // Native scenes supply direction only. Radius selects the measured
-      // decoders; at the origin retain the last direction and use the nearest.
+      // decoders; retain the last direction at the origin while fading to mono.
       const scale = radius > 1e-8 ? REFERENCE_DISTANCE / radius : 0;
       const x = scale ? parameters.x[0] * scale : this._position.x;
       const y = scale ? -parameters.y[0] * scale : this._position.y;
@@ -185,13 +193,24 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
       const input = inputs[0] && inputs[0][0];
       for (let i = 0; i < BLOCK_SIZE; i++) {
         this._inputView[i] = input && i < input.length ? input[i] : 0;
+        if (this._centerFadeDistance) {
+          this._centerFrames[i] = this._centerDelay[this._centerDelayIndex];
+          this._centerDelay[this._centerDelayIndex] = this._inputView[i];
+          this._centerDelayIndex = (this._centerDelayIndex + 1) % this._centerDelay.length;
+        }
       }
-      writeDistanceWeights(radius, this._distances, this._targetWeights);
-      if (!this._weightsInitialized) {
+      writeDistanceWeights(radius, this._distances, this._targetWeights, this._centerFadeDistance > 0);
+      // Finish inaudibly small residual fades at their exact targets, so the
+      // settled center has precisely identical channels and no HRTF tail.
+      let settled = true;
+      for (let index = 0; index < this._weights.length; index++) {
+        if (Math.abs(this._weights[index] - this._targetWeights[index]) > 1e-7) settled = false;
+      }
+      if (!this._weightsInitialized || settled) {
         this._weights.set(this._targetWeights);
         this._weightsInitialized = true;
       }
-      for (let bank = 0; bank < this._banks.length; bank++) {
+      for (let bank = 0; bank < this._weights.length; bank++) {
         let weight = this._weights[bank];
         for (let frame = 0; frame < BLOCK_SIZE; frame++) {
           weight += this._weightSmoothing * (this._targetWeights[bank] - weight);
@@ -212,6 +231,13 @@ export class MoebiusBinauralProcessor extends AudioWorkletProcessor {
           const weight = this._weightFrames[index * BLOCK_SIZE + frame];
           output[0][frame] += this._outputView[frame * 2] * weight;
           output[1][frame] += this._outputView[frame * 2 + 1] * weight;
+        }
+      }
+      if (this._centerFadeDistance) {
+        for (let frame = 0; frame < BLOCK_SIZE; frame++) {
+          const centered = this._centerFrames[frame] * CENTER_GAIN * this._weightFrames[this._centerIndex * BLOCK_SIZE + frame];
+          output[0][frame] += centered;
+          output[1][frame] += centered;
         }
       }
       return true;

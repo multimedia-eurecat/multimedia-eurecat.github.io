@@ -6,7 +6,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { PLAYBACK_DISTANCES } from '../distance-model.js';
+import { PLAYBACK_DISTANCES, CENTER_DELAY_SECONDS } from '../distance-model.js';
 
 const decoderRoot = fileURLToPath(new URL('../decoders/ku100/', import.meta.url));
 const workletPath = fileURLToPath(new URL('../binaural-worklet.js', import.meta.url));
@@ -151,6 +151,7 @@ for (const sampleRate of [44100, 48000]) {
   assert.equal(processor.port.messages[0]?.type, 'ready');
   assert.equal(processor.port.messages[0].decoderBytes, distanceDecoders.reduce((sum, entry) => sum + entry.decoder.byteLength, 0));
   assert.equal(processor._banks.length, PLAYBACK_DISTANCES.length, 'Only the selected native decoder scenes run');
+  assert.equal(processor.port.messages[0].centerFadeDistance, .5, 'Centered fade starts at the closest HRTF');
   for (let i = 0; i < distanceDecoders.length; i++) {
     const distance = distanceDecoders[i].distance;
     assertResponse(render(processor, [distance, 0, 0]).response, references[activeIndices[i]].front, `Exact ${distance} m endpoint`);
@@ -162,16 +163,45 @@ for (const sampleRate of [44100, 48000]) {
     }
   }
   assertResponse(render(processor, [7, 0, 0]).response, references[activeIndices.at(-1)].front, 'Hold farthest recording beyond 3.25 m');
-  assertResponse(render(processor, [.01, 0, 0]).response, references[activeIndices[0]].front, 'Hold nearest recording below 0.5 m without gain boost');
+  const dryDelaySamples = Math.round(sampleRate * CENTER_DELAY_SECONDS);
+  const centerGain = 0.08912509381337455; // -21 dB amplitude, independently specified.
+  const centeredImpulse = [new Float64Array(4096), new Float64Array(4096)];
+  for (const ear of centeredImpulse) ear[dryDelaySamples] = centerGain;
+  for (const distance of [.375, .25, .125, .01, 0]) {
+    const wet = distance / .5;
+    const expected = centeredImpulse.map((ear, e) => ear.map((value, n) =>
+      value * (1 - wet) + references[activeIndices[0]].front[e][n] * wet));
+    assertResponse(render(processor, [distance, 0, 0]).response, expected, `HRTF/center blend at ${distance} m`);
+  }
   render(processor, [0, 1, 0]);
-  assertResponse(render(processor, [0, 0, 0]).response, references[activeIndices[0]].left, 'At origin retain direction and use nearest recording');
+  assertResponse(render(processor, [0, 0, 0]).response, centeredImpulse, 'The origin is centered regardless of the last direction');
+
+  // With a continuous input, a settled center must be identical in both ears
+  // and preserve the original signal with -21 dB gain and the common short delay.
+  const mono = new Float32Array(128);
+  const stereo = [new Float32Array(128), new Float32Array(128)];
+  const history = [];
+  const origin = { x: new Float32Array([0]), y: new Float32Array([0]), z: new Float32Array([0]) };
+  for (let block = 0; block < 20; block++) {
+    for (let frame = 0; frame < 128; frame++) {
+      mono[frame] = .03 * Math.sin((block * 128 + frame) * .071);
+      history.push(mono[frame]);
+    }
+    assert.equal(processor.process([[mono]], [stereo], origin), true);
+    for (let frame = 0; frame < 128; frame++) {
+      const sample = block * 128 + frame - dryDelaySamples;
+      assert.equal(stereo[0][frame], stereo[1][frame], 'Centered channels are bit-identical');
+      assert.equal(stereo[0][frame], sample >= 0 ? Math.fround(history[sample] * centerGain) : 0, 'The centered signal is attenuated by exactly 21 dB without directional filtering');
+    }
+  }
 
   const input = new Float32Array(128).fill(.05);
   const output = [new Float32Array(128), new Float32Array(128)];
   const processingTimes = [];
   const started = performance.now();
   for (let block = 0; block < 500; block++) {
-    const parameters = { x: new Float32Array([block % 2 ? .5 : 3.25]), y: new Float32Array([0]), z: new Float32Array([0]) };
+    const distances = [.49, .51, 0, .25, .5, 3.25];
+    const parameters = { x: new Float32Array([distances[block % distances.length]]), y: new Float32Array([0]), z: new Float32Array([0]) };
     const processingStart = performance.now();
     const processed = processor.process([[input]], [output], parameters);
     processingTimes.push(performance.now() - processingStart);
@@ -184,7 +214,7 @@ for (const sampleRate of [44100, 48000]) {
     assert.ok(Math.abs(weightSum - 1) < 1e-12, 'Smoothed weights retain unity sum');
     for (const ear of output) assert.ok(ear.every(Number.isFinite));
     // A jump across the full range must ramp its weight over many samples.
-    for (let bank = 0; bank < distanceDecoders.length; bank++) {
+    for (let bank = 0; bank < processor._weights.length; bank++) {
       const frames = processor._weightFrames;
       for (let n = 1; n < 128; n++) {
         assert.ok(Math.abs(frames[bank * 128 + n] - frames[bank * 128 + n - 1]) < .002);
@@ -213,8 +243,9 @@ for (const sampleRate of [44100, 48000]) {
   const processingP95Ms = processingTimes[Math.floor(processingTimes.length * .95)];
   const blockBudgetMs = 128 / sampleRate * 1000;
   report.crossfadeChecks.push({ sampleRate, activeDistances: PLAYBACK_DISTANCES, endpoints: distanceDecoders.length, midpoints: distanceDecoders.length - 1,
+    centerFadeDistance: .5, centeredMixChecks: 5, centeredChannelsIdentical: true, centerGainDb: -21, dryDelaySamples,
     averageBlockMs, processingP95Ms, blockBudgetMs,
     blocksOverBudget: processingTimes.filter((ms) => ms > blockBudgetMs).length });
-  console.log(`PASS ${distanceDecoders.length} distance decoders, ${sampleRate} Hz: exact endpoints, midpoint mixes, range clamping, origin, smooth jumps, unity weights, heap growth, silence, disposal; ${averageBlockMs.toFixed(3)} ms/block, processing p95 ${processingP95Ms.toFixed(3)} ms (budget ${blockBudgetMs.toFixed(3)} ms).`);
+  console.log(`PASS ${distanceDecoders.length} distance decoders, ${sampleRate} Hz: exact endpoints, midpoint mixes, center crossfade, identical centered channels, smooth jumps, unity weights, heap growth, silence, disposal; ${averageBlockMs.toFixed(3)} ms/block, processing p95 ${processingP95Ms.toFixed(3)} ms (budget ${blockBudgetMs.toFixed(3)} ms).`);
 }
 if (process.argv[2]) await writeFile(process.argv[2], JSON.stringify(report, null, 2) + '\n');

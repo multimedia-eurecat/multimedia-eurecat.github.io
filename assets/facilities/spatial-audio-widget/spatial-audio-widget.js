@@ -3,7 +3,7 @@ import { MAX_DISTANCE, constrainCartesian, constrainSpherical, toCartesian, toSp
 import { DEFAULT_POSITION, PLAYBACK_DISTANCES, gainForDistance, createOutputLimiter } from './distance-model.js';
 
 const stylesheetURL = new URL('./spatial-audio-widget.css', import.meta.url).href;
-const workletURL = new URL('./binaural-worklet.js?v=ku100-three-1', import.meta.url).href;
+const workletURL = new URL('./binaural-worklet.js?v=ku100-center-6', import.meta.url).href;
 const decoderManifestURL = new URL('./decoders/ku100/manifest.json', import.meta.url).href;
 const defaultSampleURL = new URL('./drumloop.wav', import.meta.url).href;
 const initialPosition = DEFAULT_POSITION;
@@ -25,6 +25,7 @@ export class SpatialAudioWidget extends HTMLElement {
     this._gain = null;
     this._distanceGain = null;
     this._decoderDistances = [];
+    this._centerFadeDistance = 0;
     this._limiter = null;
     this._scene = null;
     this._enginePromise = null;
@@ -88,7 +89,7 @@ export class SpatialAudioWidget extends HTMLElement {
               <output data-output="${axis}">0.00 m</output>
               <input data-axis="${axis}" data-sign="${index === 0 ? -1 : 1}" type="range" min="-4" max="4" step="0.05" value="0" aria-label="${['Y, left/right', 'Z, up/down', 'X, front/back'][index]} position in metres">
             </label>`).join('')}
-          <p class="distance-note">Blending the 0.50 m, 1.50 m and 3.25 m recordings. Outside this range, the nearest recording is used.</p>
+          <p class="distance-note">Blending the 0.50 m, 1.50 m and 3.25 m recordings. Below 0.50 m, the sound fades to the center of your head.</p>
           <p class="headphone-note"><span class="headphone-pulse" aria-hidden="true">◖◗</span> Headphones required</p>
         </div>
       </section>`;
@@ -363,6 +364,7 @@ export class SpatialAudioWidget extends HTMLElement {
         node.port.onmessage = ({ data }) => {
           if (data.type === 'ready') {
             this._decoderDistances = data.distances;
+            this._centerFadeDistance = data.centerFadeDistance;
             finish();
           }
           if (data.type === 'error') finish(new Error(data.message));
@@ -571,6 +573,7 @@ export class SpatialAudioWidget extends HTMLElement {
     this._worklet = null;
     this._pendingWorklet = null;
     this._decoderDistances = [];
+    this._centerFadeDistance = 0;
     this._gain = null;
     this._buffer = null;
     this._enginePromise = null;

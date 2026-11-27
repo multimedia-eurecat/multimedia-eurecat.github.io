@@ -7,6 +7,11 @@ export const HEAD_RADIUS = 0.0875;
 // Listening-test configuration: closest/farthest near-field plus far-field.
 // The other measured packages remain available in the manifest.
 export const PLAYBACK_DISTANCES = Object.freeze([0.5, 1.5, 3.25]);
+// A shared dry-path delay near the closest decoder's ~24-sample frontal peak
+// at 48 kHz. Both ears use exactly the same delay, preserving a centered image.
+export const CENTER_DELAY_SECONDS = 0.0005;
+export const CENTER_GAIN_DB = -21;
+export const CENTER_GAIN = 10 ** (CENTER_GAIN_DB / 20);
 
 // Start at azimuth 0°, elevation 0°, exactly 2 m from the listener.
 export const DEFAULT_POSITION = Object.freeze({
@@ -20,12 +25,20 @@ export function gainForDistance(distance) {
   return (GAIN_REFERENCE_DISTANCE / Math.max(HEAD_RADIUS, distance)) ** DISTANCE_ROLLOFF_EXPONENT;
 }
 
-/** Linear blend of neighboring measured radii; hold the endpoints outside them.
+/** Linear blend of neighboring measured radii; hold the far endpoint beyond it.
+ * With centerFade enabled, reserve one extra weight after the measured banks
+ * for identical L/R mono, fading in from the closest radius to the origin.
  * Caller supplies ascending distances and scratch storage to avoid audio-thread
  * allocations. Linear weights preserve unity for correlated decoder outputs.
  */
-export function writeDistanceWeights(distance, distances, weights) {
+export function writeDistanceWeights(distance, distances, weights, centerFade = false) {
   weights.fill(0);
+  if (centerFade && distance < distances[0]) {
+    const wet = Math.max(0, distance / distances[0]);
+    weights[0] = wet;
+    weights[distances.length] = 1 - wet;
+    return;
+  }
   if (distance <= distances[0] || distances.length === 1) {
     weights[0] = 1;
     return;

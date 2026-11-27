@@ -225,6 +225,7 @@ try {
   await evaluate(`document.querySelector('spatial-audio-widget').play()`);
   await until(() => evaluate(`document.querySelector('spatial-audio-widget').playing`), 'default sample playback');
   assert.deepEqual(await evaluate(`document.querySelector('spatial-audio-widget')._decoderDistances`), [.5, 1.5, 3.25], 'Only closest/farthest near-field and far-field recordings are installed');
+  assert.equal(await evaluate(`document.querySelector('spatial-audio-widget')._centerFadeDistance`), .5, 'Centered stereo fade starts below the closest HRTF');
   assert.ok(Math.abs(await evaluate(`document.querySelector('spatial-audio-widget')._distanceGain.gain.value`) - Math.SQRT1_2) < 1e-5, 'The initial 2 m position has half-strength attenuation');
   for (const [distance, gain] of [[1, 1], [2, Math.SQRT1_2], [4, .5], [.5, Math.SQRT2], [.25, 2], [.01, 1 / Math.sqrt(.0875)], [0, 1 / Math.sqrt(.0875)], [7, 1 / Math.sqrt(7)]]) {
     await evaluate(`document.querySelector('spatial-audio-widget').setSphericalPosition({ distance: ${distance} })`);

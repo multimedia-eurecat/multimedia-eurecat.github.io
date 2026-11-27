@@ -97,9 +97,11 @@ are baked into them. The widget separately applies a smoothed distance gain of
 `1 / sqrt(max(distance, 0.0875))` after crossfading, with unity at 1 m and
 half the dB change per doubling of distance of a `1 / distance` curve. This is
 followed by the Volume control
-and peak protection. Outside 0.50–3.25 m, the nearest endpoint recording is held; the
-visual controls still span 0–7 m and the separate distance gain follows that
-full range. Cross-distance phase/delay alignment has not
+and peak protection. Beyond 3.25 m, the far-field recording is held. Below 0.50 m, the widget
+fades the nearest HRTF into unfiltered mono duplicated in both ears, reaching
+a fully centered image at zero. The centered path is attenuated by 21 dB, has a shared 0.5 ms delay,
+and uses the same smoothed weights. The visual controls still span 0–7 m and
+the separate distance gain follows that full range. Cross-distance phase/delay alignment has not
 been added, so this version can be assessed directly in listening tests.
 
 The [far-field paper](https://audiogroup.web.th-koeln.de/FILES/AIA-DAGA2013_HRIRs.pdf)
@@ -120,7 +122,8 @@ audio, left/right energy, low-frequency interaural delay, front/back, and
 elevation. The worklet's existing lateral sign correction passes with these
 packages. The crossfade mode additionally matches all three active measured distances
 against their standalone decoders, checks both midpoint mixes sample by sample, and
-checks range clamping, smooth jumps, unity-sum weights, heap growth, silence,
+checks far-end clamping, centered mixes below 0.50 m, identical centered
+channels, smooth jumps, unity-sum weights, heap growth, silence,
 and disposal. These automated checks do not constitute a subjective listening
 test.
 
