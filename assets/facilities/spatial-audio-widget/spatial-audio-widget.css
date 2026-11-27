@@ -21,9 +21,10 @@ button:focus-visible, input:focus-visible, canvas:focus-visible, [data-role="fil
 .coordinate-mode button:hover { color: #394c3d; }
 .scene-label { display: inline-flex; align-items: center; gap: 9px; color: #676e66; font-size: 10px; letter-spacing: .14em; font-weight: 650; }
 .live-dot { width: 6px; height: 6px; border-radius: 50%; background: #6d8476; }
-.quiet-button { background: transparent; border: 0; padding: 4px 0 4px 10px; color: #59645d; font-size: 12px; }
-.quiet-button span { margin-left: 6px; }
-.quiet-button:hover, .text-button:hover { color: #b4642e; }
+.view-reset { flex: 0 0 auto; padding: 9px 13px; border: 1px solid #d8ddd1; border-radius: 8px; background: #e9ece3; color: #394c3d; font-size: 11px; line-height: 1.4; font-weight: 500; }
+.view-reset:hover { background: #fff; box-shadow: 0 1px 4px rgba(42, 58, 42, 0.12); }
+.view-reset:active { background: #e9ece3; }
+.text-button:hover { color: #b4642e; }
 .viewport { flex: 1; min-width: 0; height: 430px; min-height: 350px; position: relative; overflow: hidden; }
 .viewport > canvas { display: block; width: 100%; height: 100%; touch-action: none; }
 .stage-bottom { padding-top: 12px; font-size: 11px; color: #6c726a; flex-wrap: wrap; gap: 14px; }
@@ -32,7 +33,6 @@ button:focus-visible, input:focus-visible, canvas:focus-visible, [data-role="fil
 .controls { padding: 25px 23px 20px; border-left: 1px solid #dcded7; min-width: 0; }
 .control-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .eyebrow { color: #6b746c; font-size: 10px; font-weight: 650; letter-spacing: .12em; }
-.pill { color: #777f75; background: #f1f3ec; border: 1px solid #e7eae0; border-radius: 4px; padding: 2px 6px; font-size: 8px; letter-spacing: .1em; }
 .file-picker { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; position: relative; margin-top: 15px; min-height: 111px; border: 1px dashed #c9cfc2; border-radius: 9px; background: #fafbf7; color: #697960; cursor: pointer; transition: background .15s, border-color .15s; }
 .file-picker:hover, .file-picker.drag-over { background: #f0f3e8; border-color: #758966; }
 .file-picker:focus-within { outline: 3px solid #b0652f; outline-offset: 3px; }
@@ -56,16 +56,16 @@ button:focus-visible, input:focus-visible, canvas:focus-visible, [data-role="fil
 input[type="range"] { accent-color: #78866e; cursor: pointer; height: 16px; margin: 0; }
 .divider { height: 1px; background: #eceee7; margin: 21px 0 18px; }
 .text-button { border: 0; background: transparent; padding: 0; color: #858d7e; text-decoration: underline; text-underline-offset: 3px; font-size: 10px; }
-.position-hint { font-size: 10px; line-height: 1.6; color: #878e81; margin: 8px 0 12px; }
 .axis-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 8px; margin: 10px 0 0; }
 .axis-row input { grid-column: 1 / -1; width: 100%; }
 .axis-label { font-size: 10px; font-weight: 700; }
 .axis-label span { margin-left: 9px; font-weight: 400; color: #7d8578; }
 .axis-x { color: #b36851; }.axis-y { color: #6c8868; }.axis-z { color: #5c7b96; }
 .axis-row output { color: #697363; font-size: 10px; font-variant-numeric: tabular-nums; }
-.status { color: #778170; font-size: 10px; line-height: 1.6; min-height: 32px; margin: 17px 0 8px; }
+.status { color: #778170; font-size: 10px; line-height: 1.6; min-height: 32px; margin: 10px 0 0; }
 .status.error { color: #ad442d; }
-.headphone-note { border-top: 1px solid #eceee7; padding-top: 12px; margin: 0; color: #969d8e; font-size: 9px; text-align: center; }
+.headphone-note { border-top: 1px solid #eceee7; padding-top: 12px; margin: 18px 0 0; color: #969d8e; font-size: 9px; text-align: center; }
+.distance-note { margin: 12px 0 0; color: #778170; font-size: .875rem; line-height: 1.5; }
 .headphone-pulse {
   position: relative;
   display: inline-block;

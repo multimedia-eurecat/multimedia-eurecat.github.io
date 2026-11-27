@@ -1,0 +1,7 @@
+# Tested with Python 3.10. Use Python 3.10-3.12 for these pinned dependencies.
+# spaudiopy 0.2.0 calls scipy.special.sph_harm; do not upgrade SciPy blindly.
+spaudiopy==0.2.0
+numpy==1.26.4
+scipy==1.13.1
+h5py==3.16.0
+soundfile==0.14.0

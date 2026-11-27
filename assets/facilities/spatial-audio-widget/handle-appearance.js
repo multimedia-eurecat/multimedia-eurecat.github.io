@@ -1,11 +1,20 @@
 import * as THREE from './vendor/three.module.js';
+import { MAX_DISTANCE } from './coordinates.js';
 
 export const HANDLE_COLOURS = { x: 0xb36851, y: 0x6c8868, z: 0x5c7b96 };
 export const HANDLE_HIGHLIGHT = 0xffff00;
 export const HANDLE_SHAFT_RADIUS = 0.018;
 export const HANDLE_HEAD_RADIUS = 0.068;
 export const HANDLE_HEAD_LENGTH = 0.17;
-export const handleScale = distance => Math.max(0.55, Math.min(1.4, distance / 2.5));
+export const HANDLE_MIN_SCALE = 0.1;
+export const SPHERICAL_HANDLE_MAX_SCALE = 1.4;
+export const CARTESIAN_HANDLE_MAX_SCALE = 1;
+// Start within the source ball and keep growing throughout the usable range.
+// log1p gives a finite value and slope at zero, with slower growth farther out.
+export function handleScale(distance, maximum = SPHERICAL_HANDLE_MAX_SCALE) {
+  const fraction = Math.log1p(Math.max(0, Math.min(MAX_DISTANCE, distance))) / Math.log1p(MAX_DISTANCE);
+  return HANDLE_MIN_SCALE + (maximum - HANDLE_MIN_SCALE) * fraction;
+}
 const CARTESIAN_SHAFT_END = 1.04;
 
 /** Camera-relative colour and opacity fading, shared by both handle designs. */
@@ -149,8 +158,7 @@ export function styleCartesianHandles(transform, depthCue) {
   gizmo.updateMatrixWorld = function (force) {
     updateMatrixWorld.call(this, force);
     if (this.mode !== 'translate' || !transform.object) return;
-    // Cartesian handles keep a fixed size, independent of listener distance.
-    const scale = 1;
+    const scale = handleScale(transform.object.position.length(), CARTESIAN_HANDLE_MAX_SCALE);
     const radius = transform.object.geometry.parameters.radius || 0.16;
     for (const { handle, axis, lengthAxis, part } of worldSizedHandles) {
       handle.position.copy(this.worldPosition);
@@ -160,7 +168,10 @@ export function styleCartesianHandles(transform, depthCue) {
         const start = part === 'picker' ? radius + 0.035 : 0;
         const end = (CARTESIAN_SHAFT_END + (part === 'picker' ? HANDLE_HEAD_LENGTH + 0.04 : 0)) * scale;
         handle.position.addScaledVector(axis, (start + end) / 2);
-        handle.scale[lengthAxis] = end - start;
+        // At the closest distances the arrows are inside the source sphere.
+        // Hide their external pickers until there is a positive exposed span.
+        if (part === 'picker') handle.visible = handle.visible && end > start;
+        handle.scale[lengthAxis] = Math.max(0, end - start);
       }
     }
     THREE.Object3D.prototype.updateMatrixWorld.call(this, force);

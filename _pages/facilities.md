@@ -49,10 +49,15 @@ permalink: /facilities/
       <h2 id="playground"><a href="#playground">Spatial Audio Playground</a></h2>
     </div>
     <p class="facilities-audio-note">Put on headphones and press <strong><span aria-hidden="true">▶</span> Play Loop</strong> to explore the drum loop. To use your own recording, choose a WAV file or drop it into the upload area.</p>
-    <p class="facilities-audio-note">Choose <strong>Spherical</strong> or <strong>Cartesian</strong> at the top left. In Spherical mode, the curved handles adjust <strong>azimuth</strong> (horizontal) and <strong>elevation</strong> (vertical), while the straight radial arrow adjusts <strong>distance</strong>. Drag the sphere itself left/right and up/down to change its angles while keeping its distance from the listener fixed. In Cartesian mode, drag an axis arrow, drag the orange sphere to move it in the viewing plane, or use the <strong>Y, Z and X sliders</strong>.</p>
-    <p class="facilities-audio-note">Drag the background to orbit the listener and scroll to zoom. <strong>Reset view</strong> restores the camera; <strong>Reset</strong> under Source position restores the sound source. Use <strong>Volume</strong> to adjust the level and <strong>Pause Loop</strong> / <strong>Play Loop</strong> to pause or resume. With the 3D view focused, arrow keys move the source in the selected coordinates. <strong>Shift + ↑/↓</strong> changes distance in Spherical mode or height in Cartesian mode; <strong>Alt</strong> gives finer steps.</p>
     <spatial-audio-widget></spatial-audio-widget>
     <noscript>Enable JavaScript to use the interactive spatial audio widget.</noscript>
+    <details class="facilities-instructions">
+      <summary>Instructions</summary>
+      <div class="facilities-instructions-body">
+        <p class="facilities-audio-note">Choose <strong>Spherical</strong> or <strong>Cartesian</strong> at the top left. In Spherical mode, the curved handles adjust <strong>azimuth</strong> (horizontal) and <strong>elevation</strong> (vertical), while the straight radial arrow adjusts <strong>distance</strong>. The sliders provide the same controls. Drag the sphere itself left/right and up/down to change its angles while keeping its distance from the listener fixed. In Cartesian mode, drag an axis arrow, drag the orange sphere to move it in the viewing plane, or use the <strong>Y, Z and X sliders</strong>.</p>
+        <p class="facilities-audio-note">Drag the background to orbit the listener and scroll to zoom. <strong>Reset view</strong> restores the camera; <strong>Reset</strong> under Source position restores the sound source. Use <strong>Volume</strong> to adjust the level and <strong>Pause Loop</strong> / <strong>Play Loop</strong> to pause or resume. With the 3D view focused, arrow keys move the source in the selected coordinates. <strong>Shift + ↑/↓</strong> changes distance in Spherical mode or height in Cartesian mode; <strong>Alt</strong> gives finer steps.</p>
+      </div>
+    </details>
   </section>
 
   <section class="facilities-section" aria-labelledby="capabilities">

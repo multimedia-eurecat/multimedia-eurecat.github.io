@@ -1,10 +1,10 @@
 import { SceneView } from './scene-view.js';
 import { MAX_DISTANCE, constrainCartesian, constrainSpherical, toCartesian, toSpherical } from './coordinates.js';
-import { DEFAULT_POSITION, gainForDistance, createOutputLimiter } from './distance-model.js';
+import { DEFAULT_POSITION, PLAYBACK_DISTANCES, gainForDistance, createOutputLimiter } from './distance-model.js';
 
 const stylesheetURL = new URL('./spatial-audio-widget.css', import.meta.url).href;
-const workletURL = new URL('./binaural-worklet.js?v=aachen-mrt40-distance-1', import.meta.url).href;
-const decoderURL = new URL('./decoders/aachen-mrt40.bindec', import.meta.url).href;
+const workletURL = new URL('./binaural-worklet.js?v=ku100-three-1', import.meta.url).href;
+const decoderManifestURL = new URL('./decoders/ku100/manifest.json', import.meta.url).href;
 const defaultSampleURL = new URL('./drumloop.wav', import.meta.url).href;
 const initialPosition = DEFAULT_POSITION;
 
@@ -24,6 +24,7 @@ export class SpatialAudioWidget extends HTMLElement {
     this._worklet = null;
     this._gain = null;
     this._distanceGain = null;
+    this._decoderDistances = [];
     this._limiter = null;
     this._scene = null;
     this._enginePromise = null;
@@ -49,7 +50,7 @@ export class SpatialAudioWidget extends HTMLElement {
               <button type="button" data-mode="spherical" aria-pressed="true">Spherical</button>
               <button type="button" data-mode="cartesian" aria-pressed="false">Cartesian</button>
             </div>
-            <button class="quiet-button" data-action="camera" type="button">Reset view <span aria-hidden="true">↗</span></button>
+            <button class="view-reset" data-action="camera" type="button">Reset view</button>
           </div>
           <div class="viewport" data-role="viewport"></div>
           <div class="stage-bottom">
@@ -58,7 +59,8 @@ export class SpatialAudioWidget extends HTMLElement {
           </div>
         </div>
         <div class="controls">
-          <div class="control-heading"><span class="eyebrow">YOUR AUDIO</span><span class="pill">LOOP</span></div>
+          <div class="control-heading"><span class="eyebrow">YOUR AUDIO</span></div>
+          <p class="status" data-role="status" role="status" aria-live="polite">Choose a WAV to start listening.</p>
           <label class="file-picker">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></svg>
             <span class="file-title">Choose a WAV file</span>
@@ -80,14 +82,13 @@ export class SpatialAudioWidget extends HTMLElement {
           <label class="volume-row"><span>Volume</span><input data-role="volume" type="range" min="0" max="100" value="65" aria-label="Volume"><output data-role="volume-value">65%</output></label>
           <div class="divider"></div>
           <div class="control-heading"><span class="eyebrow">SOURCE POSITION</span><button class="text-button" data-action="position" type="button">Reset</button></div>
-          <p class="position-hint" data-role="position-hint">Drag the sphere’s axis handles, or use the sliders. Drag the sphere to change angles at a fixed distance.</p>
           ${['x', 'y', 'z'].map((axis, index) => `
             <label class="axis-row" data-position-row="${index}">
               <span class="axis-label axis-${axis}">${['Y', 'Z', 'X'][index]}<span>${['Left / Right', 'Up / Down', 'Front / Back'][index]}</span></span>
               <output data-output="${axis}">0.00 m</output>
               <input data-axis="${axis}" data-sign="${index === 0 ? -1 : 1}" type="range" min="-4" max="4" step="0.05" value="0" aria-label="${['Y, left/right', 'Z, up/down', 'X, front/back'][index]} position in metres">
             </label>`).join('')}
-          <p class="status" data-role="status" role="status" aria-live="polite">Choose a WAV to start listening.</p>
+          <p class="distance-note">Blending the 0.50 m, 1.50 m and 3.25 m recordings. Outside this range, the nearest recording is used.</p>
           <p class="headphone-note"><span class="headphone-pulse" aria-hidden="true">◖◗</span> Headphones required</p>
         </div>
       </section>`;
@@ -231,9 +232,6 @@ export class SpatialAudioWidget extends HTMLElement {
       row.querySelector('output').dataset.output = key;
     });
     this.shadowRoot.querySelectorAll('[data-mode]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.mode === this._coordinateSystem)));
-    this.shadowRoot.querySelector('[data-role="position-hint"]').textContent = spherical
-      ? 'Drag the sphere’s axis handles, or use the sliders. Drag the sphere to change angles at a fixed distance.'
-      : 'Drag the sphere’s axis handles, or use the sliders. Drag the sphere to change coordinates in a fixed plane.';
     this._scene?.setCoordinateSystem(this._coordinateSystem);
     this._scene?.setPosition(this._position, this._sphericalPosition);
     this._refreshPosition();
@@ -336,13 +334,10 @@ export class SpatialAudioWidget extends HTMLElement {
     let pendingNode = null;
     this._enginePromise = (async () => {
       if (!context.audioWorklet) throw new Error('AudioWorklet is unavailable. Use a browser with Web Audio and open the page on localhost or HTTPS.');
-      const [decoderResponse] = await Promise.all([
-        fetch(decoderURL, { signal: this._events.signal }),
+      const [distanceDecoders] = await Promise.all([
+        this._loadDistanceDecoders(),
         context.audioWorklet.addModule(workletURL),
       ]);
-      if (!decoderResponse.ok) throw new Error('The AACHEN MRT40 binaural decoder could not be loaded. Press play to retry.');
-      const decoder = await decoderResponse.arrayBuffer();
-      if (!decoder.byteLength) throw new Error('The binaural decoder file is empty.');
       if (!this._mounted || generation !== this._generation) return;
       const node = new AudioWorkletNode(context, 'moebius-binaural-processor', {
         numberOfInputs: 1,
@@ -351,7 +346,7 @@ export class SpatialAudioWidget extends HTMLElement {
         channelCount: 1,
         channelCountMode: 'explicit',
         channelInterpretation: 'speakers',
-        processorOptions: { decoder },
+        processorOptions: { distanceDecoders },
       });
       pendingNode = node;
       this._pendingWorklet = node;
@@ -366,7 +361,10 @@ export class SpatialAudioWidget extends HTMLElement {
         this._cancelEngine = () => finish(new Error('Audio initialization was cancelled.'));
         node.onprocessorerror = () => finish(new Error('The binaural audio processor could not start.'));
         node.port.onmessage = ({ data }) => {
-          if (data.type === 'ready') finish();
+          if (data.type === 'ready') {
+            this._decoderDistances = data.distances;
+            finish();
+          }
           if (data.type === 'error') finish(new Error(data.message));
         };
       });
@@ -413,6 +411,35 @@ export class SpatialAudioWidget extends HTMLElement {
     }
   }
 
+  async _loadDistanceDecoders() {
+    const signal = this._events.signal;
+    const response = await fetch(decoderManifestURL, { signal });
+    if (!response.ok) throw new Error('The KU100 distance recordings could not be loaded. Press play to retry.');
+    const manifest = await response.json();
+    const entries = manifest?.distances;
+    if (!Array.isArray(entries) || !entries.length || manifest.maxOrder !== 5
+        || manifest.channelOrdering !== 'ACN' || manifest.inputNormalization !== 'SN3D'
+        || entries.some((entry, index) => !Number.isFinite(entry?.distanceMetres)
+          || entry.distanceMetres <= 0 || typeof entry.decoder !== 'string' || !entry.decoder
+          || !Number.isInteger(entry.bytes) || entry.bytes <= 0
+          || (index && entry.distanceMetres <= entries[index - 1].distanceMetres))) {
+      throw new Error('The KU100 distance recording manifest is invalid.');
+    }
+    const selected = entries.filter((entry) => PLAYBACK_DISTANCES.includes(entry.distanceMetres));
+    if (selected.length !== PLAYBACK_DISTANCES.length) {
+      throw new Error('The selected KU100 distance recordings are missing from the manifest.');
+    }
+    return Promise.all(selected.map(async (entry) => {
+      const response = await fetch(new URL(entry.decoder, decoderManifestURL), { signal });
+      if (!response.ok) throw new Error(`The KU100 recording at ${entry.distanceMetres} m could not be loaded. Press play to retry.`);
+      const decoder = await response.arrayBuffer();
+      if (!decoder.byteLength || decoder.byteLength !== entry.bytes) {
+        throw new Error(`The KU100 recording at ${entry.distanceMetres} m is incomplete. Press play to retry.`);
+      }
+      return { distance: entry.distanceMetres, decoder };
+    }));
+  }
+
   _handleProcessorFailure(node, error) {
     if (this._worklet !== node) return;
     this.pause();
@@ -445,11 +472,11 @@ export class SpatialAudioWidget extends HTMLElement {
       if (immediate) parameter.setValueAtTime(value, now);
       else parameter.setTargetAtTime(value, now, 0.015);
     }
-    const distanceGain = this._distanceGain.gain;
+    const gain = this._distanceGain.gain;
     const value = gainForDistance(this._sphericalPosition.distance);
-    distanceGain.cancelScheduledValues(now);
-    if (immediate) distanceGain.setValueAtTime(value, now);
-    else distanceGain.setTargetAtTime(value, now, 0.015);
+    gain.cancelScheduledValues(now);
+    if (immediate) gain.setValueAtTime(value, now);
+    else gain.setTargetAtTime(value, now, 0.015);
   }
 
   play() {
@@ -543,6 +570,7 @@ export class SpatialAudioWidget extends HTMLElement {
     this._context = null;
     this._worklet = null;
     this._pendingWorklet = null;
+    this._decoderDistances = [];
     this._gain = null;
     this._buffer = null;
     this._enginePromise = null;

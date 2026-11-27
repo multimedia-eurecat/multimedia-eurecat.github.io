@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "name": "THK KU100 distance decoders",
+  "method": "magls",
+  "maxOrder": 5,
+  "sampleRate": 48000,
+  "samplesPerFilter": 1024,
+  "channelsPerEar": 36,
+  "channelOrdering": "ACN",
+  "inputNormalization": "SN3D",
+  "coordinates": "+X front, +Y left, +Z up",
+  "levelPolicy": "Preserve supplied SOFA levels; no cross-distance level restoration.",
+  "naturalLevelRestorationApplied": false,
+  "naturalLevelRestorationReference": "https://audiogroup.web.th-koeln.de/FILES/NF_Datasets_Gains_infos.pdf",
+  "naturalLevelRestorationReferenceDistanceMetres": 0.25,
+  "farFieldLevelCalibration": null,
+  "timingPolicy": "Retain SOFA timing; shared 4-sample MagLS input padding; no cross-distance alignment or added propagation delay.",
+  "phasePolicy": "Independent MagLS per order and distance; avg continuation; transition = order * 600 Hz.",
+  "distances": [
+    {
+      "distanceMetres": 0.5,
+      "decoder": "ku100-050cm.bindec",
+      "metadata": "ku100-050cm.json",
+      "bytes": 1675820,
+      "binarySha256": "a92ae4a4bc7a4e408dffb412dfaa8374ebba2addb97b3e4dfda970650d05895d",
+      "sourceFile": "HRIR_L2702_NF050.sofa",
+      "sourceSha256": "f00c890c68b54af2be353c4a2248b9bc67a66056a2efeacc5e60a99d40ef9bae",
+      "naturalLevelRestorationFactor": 0.33
+    },
+    {
+      "distanceMetres": 0.75,
+      "decoder": "ku100-075cm.bindec",
+      "metadata": "ku100-075cm.json",
+      "bytes": 1675820,
+      "binarySha256": "93e68cf5b8c091d834be9345092ee69af66afc7de32fba6624e982ebb50c17e8",
+      "sourceFile": "HRIR_L2702_NF075.sofa",
+      "sourceSha256": "0483062dfa7904256db41061f82a49debdae11d13405bed608e5e450e96ecd15",
+      "naturalLevelRestorationFactor": 0.25
+    },
+    {
+      "distanceMetres": 1.0,
+      "decoder": "ku100-100cm.bindec",
+      "metadata": "ku100-100cm.json",
+      "bytes": 1675820,
+      "binarySha256": "4aa6a14b2e3da746e41ec775e2e8848b820483549114b35ec6d5e1ea50d8582f",
+      "sourceFile": "HRIR_L2702_NF100.sofa",
+      "sourceSha256": "9db67c767aae8a78c957bd25adb9445beaae1e31260dcac548a7507c5eb13fd7",
+      "naturalLevelRestorationFactor": 0.16
+    },
+    {
+      "distanceMetres": 1.5,
+      "decoder": "ku100-150cm.bindec",
+      "metadata": "ku100-150cm.json",
+      "bytes": 1675820,
+      "binarySha256": "2710084d15fcbfde90ba2c433df8887b211ccb74461d410e03acfa670d943d96",
+      "sourceFile": "HRIR_L2702_NF150.sofa",
+      "sourceSha256": "9bbd0213da99a3d4a48b1c3a04e1fee3f74fc099e683fc7949c06e9a54341730",
+      "naturalLevelRestorationFactor": 0.095
+    },
+    {
+      "distanceMetres": 3.25,
+      "decoder": "ku100-325cm.bindec",
+      "metadata": "ku100-325cm.json",
+      "bytes": 1675820,
+      "binarySha256": "3221d4744e6a386e7aded280f1270ba1ee358ce6990dbe8536fba23a455e0bf3",
+      "sourceFile": "HRIR_FULL2DEG_FF325.sofa",
+      "sourceSha256": "d3671e6829323b93b7ae95aff6d9316d15d6c128b7f2ab615c21cc3ab085ddb7",
+      "naturalLevelRestorationFactor": null,
+      "sourcePublication": {
+        "url": "https://zenodo.org/records/3928297",
+        "doi": "10.5281/zenodo.3928297",
+        "title": "Spherical Far-Field HRIR Compilation of the Neumann KU100",
+        "publishedFilename": "HRIR_FULL2DEG.sofa",
+        "publishedChecksum": "md5:aa48acb20c1fb8ff3d8de116107b73c2",
+        "recordLicense": "cc-by-3.0",
+        "paperUrl": "https://audiogroup.web.th-koeln.de/FILES/AIA-DAGA2013_HRIRs.pdf",
+        "checksumVerified": true
+      }
+    }
+  ]
+}

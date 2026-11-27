@@ -192,18 +192,50 @@ try {
   assert.equal(defaultAudio.playing, false, 'Loading the sample does not start playback');
   assert.equal(defaultAudio.channels, 1, 'The default sample is mixed to mono for spatial rendering');
   assert.equal(defaultAudio.coordinateSystem, 'spherical', 'The widget starts in spherical mode');
-  assert.ok(Math.abs(defaultAudio.distance - 2) < 1e-10, 'The source starts at the 2 m reference distance');
+  assert.ok(Math.abs(defaultAudio.distance - 2) < 1e-10, 'The source starts at 2 m');
+  for (const failure of ['manifest', 'recording']) {
+    const failedLoad = await evaluate(`(async () => {
+      const widget = document.querySelector('spatial-audio-widget');
+      const originalFetch = window.fetch;
+      window.fetch = (input, options) => {
+        const url = String(input);
+        if (${JSON.stringify(failure)} === 'manifest' && url.endsWith('/ku100/manifest.json')) {
+          return Promise.resolve(new Response('null', { status: 200 }));
+        }
+        if (${JSON.stringify(failure)} === 'recording' && url.endsWith('/ku100-050cm.bindec')) {
+          return Promise.resolve(new Response('', { status: 503 }));
+        }
+        return originalFetch(input, options);
+      };
+      try {
+        await widget.play();
+        return { rejected: false };
+      } catch (error) {
+        return { rejected: true, state: widget.state, message: error.message,
+          noProcessor: widget._worklet === null && !widget._pendingWorklet };
+      } finally {
+        window.fetch = originalFetch;
+      }
+    })()`);
+    assert.equal(failedLoad.rejected, true, `${failure} loading failure rejects playback`);
+    assert.equal(failedLoad.state, 'error');
+    assert.equal(failedLoad.noProcessor, true, 'Incomplete distance assets do not start an audio processor');
+    assert.match(failedLoad.message, failure === 'manifest' ? /manifest is invalid/ : /0.5 m could not be loaded/);
+  }
   await evaluate(`document.querySelector('spatial-audio-widget').play()`);
   await until(() => evaluate(`document.querySelector('spatial-audio-widget').playing`), 'default sample playback');
-  assert.ok(Math.abs(await evaluate(`document.querySelector('spatial-audio-widget')._distanceGain.gain.value`) - 1) < 1e-5, 'Reference distance has unity distance gain');
-  for (const distance of [4, 1, 0.01, 0]) {
+  assert.deepEqual(await evaluate(`document.querySelector('spatial-audio-widget')._decoderDistances`), [.5, 1.5, 3.25], 'Only closest/farthest near-field and far-field recordings are installed');
+  assert.ok(Math.abs(await evaluate(`document.querySelector('spatial-audio-widget')._distanceGain.gain.value`) - Math.SQRT1_2) < 1e-5, 'The initial 2 m position has half-strength attenuation');
+  for (const [distance, gain] of [[1, 1], [2, Math.SQRT1_2], [4, .5], [.5, Math.SQRT2], [.25, 2], [.01, 1 / Math.sqrt(.0875)], [0, 1 / Math.sqrt(.0875)], [7, 1 / Math.sqrt(7)]]) {
     await evaluate(`document.querySelector('spatial-audio-widget').setSphericalPosition({ distance: ${distance} })`);
-    const gain = 2 / Math.max(0.0875, distance);
-    await until(() => evaluate(`Math.abs(document.querySelector('spatial-audio-widget')._distanceGain.gain.value - ${gain}) < 0.01`), 'distance gain with a head-radius floor');
+    await until(() => evaluate(`Math.abs(document.querySelector('spatial-audio-widget')._worklet.parameters.get('x').value - ${distance}) < 0.001`), 'distance reaches the crossfade worklet');
+    await until(() => evaluate(`Math.abs(document.querySelector('spatial-audio-widget')._distanceGain.gain.value - ${gain}) < 0.001`), 'smoothed inverse-square-root gain with unity at 1 m and a close-range cap');
+    assert.ok(Math.abs(await evaluate(`document.querySelector('spatial-audio-widget')._gain.gain.value`) - .65) < 1e-5, 'Distance does not change the volume gain');
     assert.ok(Math.abs(await evaluate(`document.querySelector('spatial-audio-widget').getSphericalPosition().distance`) - distance) < 1e-10, 'Visual distance can reach zero');
   }
   await evaluate(`document.querySelector('spatial-audio-widget').shadowRoot.querySelector('[data-action="position"]').click()`);
   assert.deepEqual(await evaluate(`document.querySelector('spatial-audio-widget').getPosition()`), defaultAudio.position, 'Reset restores the original direction at 2 m');
+  await until(() => evaluate(`Math.abs(document.querySelector('spatial-audio-widget')._distanceGain.gain.value - ${Math.SQRT1_2}) < 0.001`), 'reset restores the gain for 2 m');
   await evaluate(`document.querySelector('spatial-audio-widget').pause()`);
 
   await evaluate(`(async () => {
@@ -213,7 +245,7 @@ try {
     sphericalChecks.runSphericalChecks(sphericalWidget);
     sphericalChecks.runCartesianBoundaryChecks(sphericalWidget);
     sphericalChecks.runDepthCueChecks(sphericalWidget);
-    sphericalChecks.checkMatchingHandleSizes(sphericalWidget);
+    sphericalChecks.checkHandleGrowth(sphericalWidget);
   })()`);
   for (const orbited of [false, true]) {
     for (const dimension of ['surface', 'azimuth', 'elevation', 'distance']) {
@@ -484,10 +516,17 @@ try {
   await evaluate(`document.querySelector('spatial-audio-widget').destroy()`);
   assert.ok(requests.includes('/spatial-audio-widget.js'), 'Nested host imports the widget module');
   assert.ok(requests.includes('/drumloop.wav'), 'The default sample resolves relative to the widget module');
-  assert.ok(requests.includes('/decoders/aachen-mrt40.bindec'), 'The Aachen decoder resolves relative to the widget module');
+  assert.ok(requests.includes('/decoders/ku100/manifest.json'), 'The distance manifest resolves relative to the widget module');
+  for (const name of ['050', '150', '325']) {
+    assert.ok(requests.includes(`/decoders/ku100/ku100-${name}cm.bindec`), `KU100 ${name} cm resolves relative to the widget module`);
+  }
+  for (const name of ['075', '100']) {
+    assert.equal(requests.includes(`/decoders/ku100/ku100-${name}cm.bindec`), false, `Intermediate KU100 ${name} cm is not fetched`);
+  }
+  assert.equal(requests.includes('/decoders/aachen-mrt40.bindec'), false, 'Playback uses the KU100 recordings');
   assert.ok(requests.some((name) => name.includes('binaural') && name.endsWith('.js')), 'Spatial worklet was fetched');
   assert.deepEqual(errors, [], 'Browser console has no errors');
-  console.log('PASS: demo mount, mouse dragging, independent instances, zero coordinates, sliders and keyboard, reconnect, invalid WAV handling, WAV decoding, looping binaural playback/pause/resume, volume, processor-failure retry, pending-play cleanup, resizing, nested-page embedding, and no browser errors.');
+  console.log('PASS: KU100 manifest/recording loading and failure retry, logarithmic arrow growth in both modes, smoothed distance rolloff with close-range cap, independent volume, demo mount, mouse dragging, independent instances, zero coordinates, sliders and keyboard, reconnect, invalid WAV handling, WAV decoding, looping playback/pause/resume, processor-failure retry, pending-play cleanup, resizing, nested-page embedding, and no browser errors.');
 } catch (error) {
   console.error(error.stack || error);
   if (errors.length) console.error('Browser errors:', errors);

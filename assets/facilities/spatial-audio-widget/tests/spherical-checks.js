@@ -1,5 +1,5 @@
 import { MAX_DISTANCE, constrainCartesian, toCartesian, toSpherical } from '../coordinates.js';
-import { HANDLE_COLOURS, HANDLE_HIGHLIGHT, HANDLE_HEAD_RADIUS, HANDLE_HEAD_LENGTH, HANDLE_SHAFT_RADIUS } from '../handle-appearance.js';
+import { HANDLE_COLOURS, HANDLE_HIGHLIGHT, HANDLE_HEAD_RADIUS, HANDLE_HEAD_LENGTH, HANDLE_SHAFT_RADIUS, handleScale, HANDLE_MIN_SCALE, SPHERICAL_HANDLE_MAX_SCALE, CARTESIAN_HANDLE_MAX_SCALE } from '../handle-appearance.js';
 
 function assert(condition, message) { if (!condition) throw new Error(message); }
 function close(a, b, message, tolerance = 1e-7) { assert(Math.abs(a - b) <= tolerance, `${message}: ${a} != ${b}`); }
@@ -233,16 +233,41 @@ export function cartesianHandlePoint(widget, axis) {
   throw new Error(`No visible ${axis} Cartesian arrow found`);
 }
 
-export function checkMatchingHandleSizes(widget) {
+export function checkHandleGrowth(widget) {
   const view = widget._scene;
   const original = { position: widget.getPosition(), mode: widget.coordinateSystem, camera: view.camera.position.clone(), target: view.controls.target.clone() };
-  let worldGeometry;
   let cases = 0;
   try {
-    for (const distance of [0, 0.2, 1, 2.5, 6, 7]) {
+    // No plateaus anywhere in the usable range, and each equal distance step
+    // must add less size than the one before it.
+    for (const maximum of [SPHERICAL_HANDLE_MAX_SCALE, CARTESIAN_HANDLE_MAX_SCALE]) {
+      close(handleScale(0, maximum), HANDLE_MIN_SCALE, 'Smallest handle scale');
+      close(handleScale(MAX_DISTANCE, maximum), maximum, 'Existing maximum reached at 7 m');
+      let previous = handleScale(0, maximum);
+      let previousGrowth = Infinity;
+      for (let step = 1; step <= 70; step++) {
+        const next = handleScale(MAX_DISTANCE * step / 70, maximum);
+        const growth = next - previous;
+        assert(growth > 0, 'Handles grow at every distance step');
+        assert(growth < previousGrowth, 'Growth slows as distance increases');
+        previous = next;
+        previousGrowth = growth;
+      }
+    }
+    let previousCartesianLength = 0;
+    let previousSphericalLength = 0;
+    for (const distance of [0, 0.2, 1, 1.3, 1.4, 2.5, 3.4, 3.5, 3.6, 6, 7]) {
+      let worldGeometry;
       for (const cameraGap of [1.5, 5, 12]) {
         widget.setCoordinateSystem('spherical');
         widget.setSphericalPosition({ azimuth: 35, elevation: 20, distance });
+        const radialHead = view.spherical.pickers.find(handle => handle.geometry.type === 'ConeGeometry' && handle.userData.dimension === 'distance');
+        const sphericalLength = radialHead.geometry.parameters.height;
+        close(sphericalLength, HANDLE_HEAD_LENGTH * handleScale(distance), 'Spherical heads follow the logarithmic size');
+        if (cameraGap === 1.5) {
+          assert(sphericalLength > previousSphericalLength, 'Spherical head geometry grows beyond the old clamps');
+          previousSphericalLength = sphericalLength;
+        }
         // Keep the source in view while changing the camera distance.
         view.controls.target.set(0, 0, 0);
         const direction = view.source.getWorldPosition(view.source.position.clone()).normalize();
@@ -251,26 +276,57 @@ export function checkMatchingHandleSizes(widget) {
         view.controls.update();
         widget.setCoordinateSystem('cartesian');
         view._draw();
-        const handles = view.transform._gizmo.gizmo.translate.children.filter(handle => handle.visible && ['X', 'Y', 'Z'].includes(handle.name));
+        const scale = handleScale(distance, CARTESIAN_HANDLE_MAX_SCALE);
+        const handles = view.transform._gizmo.gizmo.translate.children.filter(handle => ['X', 'Y', 'Z'].includes(handle.name));
         for (const handle of handles) {
           if (handle.geometry.type === 'ConeGeometry') {
-            close(handle.geometry.parameters.radius * handle.scale.x, HANDLE_HEAD_RADIUS, 'Cartesian head width stays fixed');
-            close(handle.geometry.parameters.height * handle.scale.x, HANDLE_HEAD_LENGTH, 'Cartesian head length stays fixed');
+            close(handle.geometry.parameters.radius * handle.scale.x, HANDLE_HEAD_RADIUS * scale, 'Cartesian head width follows distance');
+            close(handle.geometry.parameters.height * handle.scale.x, HANDLE_HEAD_LENGTH * scale, 'Cartesian head length follows distance');
           } else {
             for (const axis of ['x', 'y', 'z'].filter(axis => axis !== handle.name.toLowerCase())) {
-              close(handle.geometry.parameters.radiusTop * handle.scale[axis], HANDLE_SHAFT_RADIUS, 'Cartesian shaft width stays fixed');
+              close(handle.geometry.parameters.radiusTop * handle.scale[axis], HANDLE_SHAFT_RADIUS * scale, 'Cartesian shaft width follows distance');
             }
           }
+        }
+        const head = handles.find(handle => handle.geometry.type === 'ConeGeometry');
+        if (cameraGap === 1.5) {
+          const length = head.geometry.parameters.height * head.scale.x;
+          assert(length > previousCartesianLength, 'Cartesian geometry grows at every sampled distance');
+          previousCartesianLength = length;
+        }
+        for (const picker of view.transform._gizmo.picker.translate.children.filter(handle => ['X', 'Y', 'Z'].includes(handle.name))) {
+          assert(picker.scale.getComponent(picker.name === 'X' ? 0 : picker.name === 'Y' ? 1 : 2) >= 0, 'Small pickers never acquire a negative length');
+          if (distance === 0) assert(!picker.visible, 'Arrow pickers inside the source sphere are inactive');
         }
         const geometry = [...view.transform._gizmo.gizmo.translate.children, ...view.transform._gizmo.picker.translate.children]
           .flatMap(handle => handle.matrixWorld.elements.map((value, index) =>
             index >= 12 && index <= 14 ? value - view.transform.worldPosition.getComponent(index - 12) : value));
-        if (worldGeometry) geometry.forEach((value, index) => close(value, worldGeometry[index], 'Zoom and listener distance preserve arrow and picker dimensions'));
+        if (worldGeometry) geometry.forEach((value, index) => close(value, worldGeometry[index], 'Zoom preserves arrow and picker world dimensions at a given distance'));
         worldGeometry = geometry;
+        if (distance === 0) {
+          const centre = view.source.getWorldPosition(view.source.position.clone());
+          for (const handle of handles) {
+            const vertices = handle.geometry.attributes.position;
+            const point = view.source.position.clone();
+            for (let index = 0; index < vertices.count; index++) {
+              point.fromBufferAttribute(vertices, index).applyMatrix4(handle.matrixWorld);
+              assert(point.distanceTo(centre) < view.source.geometry.parameters.radius, 'Minimum Cartesian arrows fit inside the source sphere');
+            }
+          }
+          widget.setCoordinateSystem('spherical');
+          for (const handle of view.spherical.group.children.filter(handle => handle.isMesh && handle.material !== view.spherical.pickMaterial)) {
+            const vertices = handle.geometry.attributes.position;
+            const point = view.source.position.clone();
+            for (let index = 0; index < vertices.count; index++) {
+              point.fromBufferAttribute(vertices, index).applyMatrix4(handle.matrixWorld);
+              assert(point.distanceTo(centre) < view.source.geometry.parameters.radius, 'Minimum spherical arrows fit inside the source sphere');
+            }
+          }
+        }
         cases++;
       }
     }
-    return { cases, cameraScalingCompensated: true, worldSizesStable: true, listenerDistanceIndependent: true };
+    return { cases, cameraScalingCompensated: true, continuousGrowth: true, diminishingGrowth: true };
   } finally {
     widget.setPosition(original.position);
     widget.setCoordinateSystem(original.mode);
