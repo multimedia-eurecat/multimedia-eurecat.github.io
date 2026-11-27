@@ -40,7 +40,7 @@ button:focus-visible, input:focus-visible, canvas:focus-visible, [data-role="fil
 .file-title { margin-top: 4px; font-size: 12px; font-weight: 600; color: #424c3c; }
 .file-caption { font-size: 10px; color: #8a9183; }
 .file-info { display: flex; flex-direction: column; gap: 2px; margin: 11px 0 14px; min-width: 0; }
-.current-audio { display: flex; align-items: flex-start; gap: 4px; min-width: 0; font-size: 10px; color: #8a9085; }
+.current-audio { display: flex; flex-direction: column; gap: 2px; min-width: 0; font-size: 10px; color: #8a9085; }
 .current-audio-label { flex: 0 0 auto; white-space: nowrap; }
 .filename-viewport { position: relative; flex: 1; min-width: 0; }
 .filename-viewport.has-overflow::after { content: ""; position: absolute; top: 0; right: 0; width: 24px; height: 1.5em; background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff); pointer-events: none; }

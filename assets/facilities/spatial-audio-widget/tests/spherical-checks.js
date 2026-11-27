@@ -1,8 +1,59 @@
 import { MAX_DISTANCE, constrainCartesian, toCartesian, toSpherical } from '../coordinates.js';
+import * as THREE from '../vendor/three.module.js';
 import { HANDLE_COLOURS, HANDLE_HIGHLIGHT, HANDLE_HEAD_RADIUS, HANDLE_HEAD_LENGTH, HANDLE_SHAFT_RADIUS, handleScale, HANDLE_MIN_SCALE, SPHERICAL_HANDLE_MAX_SCALE, CARTESIAN_HANDLE_MAX_SCALE } from '../handle-appearance.js';
 
 function assert(condition, message) { if (!condition) throw new Error(message); }
 function close(a, b, message, tolerance = 1e-7) { assert(Math.abs(a - b) <= tolerance, `${message}: ${a} != ${b}`); }
+
+export function runLabelOcclusionChecks(widget) {
+  const view = widget._scene;
+  const renderer = view.renderer;
+  const previousTarget = renderer.getRenderTarget();
+  const size = 128;
+  const target = new THREE.WebGLRenderTarget(size, size);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf3f2ed);
+  scene.add(new THREE.AmbientLight(0xffffff));
+  const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, .1, 10);
+  camera.position.set(0, 0, 4);
+  camera.lookAt(0, 0, 0);
+  // Use the widget's actual source geometry/material and label texture/material.
+  const sphere = view.source.clone();
+  sphere.position.set(0, 0, .5);
+  const label = view.content.children.find(child => child.isSprite).clone();
+  label.position.set(0, 0, 0);
+  scene.add(sphere, label);
+  const capture = () => {
+    const pixels = new Uint8Array(size * size * 4);
+    renderer.setRenderTarget(target);
+    renderer.render(scene, camera);
+    renderer.readRenderTargetPixels(target, 0, 0, size, size, pixels);
+    return pixels;
+  };
+  const changedInsideSphere = (a, b) => {
+    let changed = 0;
+    for (let y = 0; y < size; y++) for (let x = 0; x < size; x++) {
+      // Sample a disk safely inside the source sphere's projected silhouette.
+      if (Math.hypot((x + .5) * 2 / size - 1, (y + .5) * 2 / size - 1) > .12) continue;
+      const index = (y * size + x) * 4;
+      if ([0, 1, 2].some(channel => Math.abs(a[index + channel] - b[index + channel]) > 1)) changed++;
+    }
+    return changed;
+  };
+  try {
+    label.visible = false;
+    const sphereOnly = capture();
+    label.visible = true;
+    assert(changedInsideSphere(sphereOnly, capture()) === 0, 'Text behind the sphere must not draw over it');
+    label.position.z = 1;
+    assert(changedInsideSphere(sphereOnly, capture()) > 0, 'Text in front of the sphere must remain visible');
+    return { sphereOccludesText: true, foregroundTextVisible: true };
+  } finally {
+    renderer.setRenderTarget(previousTarget);
+    target.dispose();
+    view._draw();
+  }
+}
 
 export function runCartesianBoundaryChecks(widget) {
   const original = { position: widget.getPosition(), mode: widget.coordinateSystem };

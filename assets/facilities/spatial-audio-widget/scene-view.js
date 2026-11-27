@@ -243,7 +243,9 @@ export class SceneView {
     context.fillText(text, canvas.width / 2, canvas.height / 2);
     const texture = new THREE.CanvasTexture(canvas);
     texture.encoding = THREE.sRGBEncoding;
-    const label = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, depthWrite: false, depthTest: false, transparent: true, opacity: 0.9 }));
+    // Keep transparent text from writing depth, but let nearer scene geometry
+    // (especially the source sphere) occlude it.
+    const label = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, depthWrite: false, depthTest: true, transparent: true, opacity: 0.9 }));
     label.position.set(x, y, z);
     label.scale.set(1.55, 0.29, 1);
     this.content.add(label);

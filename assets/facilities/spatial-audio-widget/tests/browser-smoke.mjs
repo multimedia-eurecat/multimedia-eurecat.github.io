@@ -245,6 +245,7 @@ try {
     sphericalChecks.runSphericalChecks(sphericalWidget);
     sphericalChecks.runCartesianBoundaryChecks(sphericalWidget);
     sphericalChecks.runDepthCueChecks(sphericalWidget);
+    sphericalChecks.runLabelOcclusionChecks(sphericalWidget);
     sphericalChecks.checkHandleGrowth(sphericalWidget);
   })()`);
   for (const orbited of [false, true]) {

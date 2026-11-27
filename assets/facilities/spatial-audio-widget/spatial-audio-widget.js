@@ -60,10 +60,14 @@ export class SpatialAudioWidget extends HTMLElement {
         </div>
         <div class="controls">
           <div class="control-heading"><span class="eyebrow">YOUR AUDIO</span></div>
-          <p class="status" data-role="status" role="status" aria-live="polite">Choose a WAV to start listening.</p>
+          <p class="status" data-role="status" role="status" aria-live="polite">Loading the default drum loop…</p>
+          <button class="play-button" data-action="play" type="button" disabled>
+            <span data-role="play-icon" aria-hidden="true">▶</span><span data-role="play-label">Play Loop</span>
+          </button>
+          <label class="volume-row"><span>Volume</span><input data-role="volume" type="range" min="0" max="100" value="65" aria-label="Volume"><output data-role="volume-value">65%</output></label>
           <label class="file-picker">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-5"/></svg>
-            <span class="file-title">Choose a WAV file</span>
+            <span class="file-title">Choose another WAV</span>
             <span class="file-caption">or drop it here</span>
             <input type="file" accept=".wav,audio/wav,audio/x-wav,audio/wave" aria-label="Choose a WAV file">
           </label>
@@ -76,10 +80,6 @@ export class SpatialAudioWidget extends HTMLElement {
             </div>
             <span class="file-detail" data-role="file-detail">Your file stays in your browser.</span>
           </div>
-          <button class="play-button" data-action="play" type="button" disabled>
-            <span data-role="play-icon" aria-hidden="true">▶</span><span data-role="play-label">Play Loop</span>
-          </button>
-          <label class="volume-row"><span>Volume</span><input data-role="volume" type="range" min="0" max="100" value="65" aria-label="Volume"><output data-role="volume-value">65%</output></label>
           <div class="divider"></div>
           <div class="control-heading"><span class="eyebrow">SOURCE POSITION</span><button class="text-button" data-action="position" type="button">Reset</button></div>
           ${['x', 'y', 'z'].map((axis, index) => `
@@ -317,7 +317,7 @@ export class SpatialAudioWidget extends HTMLElement {
       this._ui.filename.scrollLeft = 0;
       this._refreshFilenameOverflow();
       this._ui.fileDetail.textContent = `${decoded.duration.toFixed(1)} s · ${decoded.numberOfChannels === 1 ? 'Mono' : 'Mixed to mono'} · Looped`;
-      this._setState('ready', 'Ready. Press play and move the sound.');
+      this._setState('ready', 'Ready. Press Play Loop to listen.');
       this.dispatchEvent(new CustomEvent('audioload', { detail: { name: file.name, duration: decoded.duration }, bubbles: true, composed: true }));
     } catch (error) {
       if (request !== this._loadRequest || !this._mounted) return;
